@@ -1,0 +1,40 @@
+/* Navbar.css */
+
+nav {
+    display: sticky;
+    justify-content: center;
+    background-color: rgb(104, 0, 178);
+    padding: 10px 50px;
+    
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; /* spacing between items */
+  }
+  
+  li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: Varela-Round, sans-serif;
+    font-size: 2rem;
+  }
+  
+  li a:hover {
+    color: #FFD700;
+  }
+  
+  /* Active state - you'll need to implement logic to apply this class */
+  li a.active {
+    color: #FF4500;
+  }
+  
+  @media (max-width: 768px) {
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

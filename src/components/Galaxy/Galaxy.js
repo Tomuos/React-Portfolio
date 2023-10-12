@@ -1,184 +1,100 @@
-import { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 export const Galaxy = () => {
-    useEffect(() => {
-      // Existing setup for scene and camera
-      const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x030020);
-  
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-  
-      const container = document.getElementById('threejs-container');
-      if (container) {
-        container.appendChild(renderer.domElement);
-      } else {
-        console.log("Couldn't find element with ID 'threejs-container'");
-        return;
-      }
-        
-        ////////////// Particles in Three.js //////////////
-        
-const particleGeometry = new THREE.BufferGeometry();
-const particleCount = 5000;
+  const galaxyRef = useRef(null);
 
-const posArray = new Float32Array(particleCount * 3);
-const colorArray = new Float32Array(particleCount * 3);
-const sizeArray = new Float32Array(particleCount);
+  useEffect(() => {
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x1A0064); // Setting the background to navy
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-for (let i = 0, j = 0; i < posArray.length; i += 3, j += 3) {
-        posArray[i] = (Math.random() - 0.5) * 50;
-        posArray[i + 1] = (Math.random() - 0.5) * 50;
-        posArray[i + 2] = (Math.random() - 0.5) * 50;
-
-        colorArray[j] = Math.random();
-        colorArray[j + 1] = Math.random();
-        colorArray[j + 2] = Math.random();
-}
-
-for (let i = 0; i < sizeArray.length; i++) {
-    sizeArray[i] = Math.random() * 0.005 + 0.05 + 0.1;
-}
-
-particleGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-particleGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
-particleGeometry.setAttribute('size', new THREE.BufferAttribute(sizeArray, 1));
-
-
-////////////// Shaders for Particles //////////////
-
-const vertexShader = `
-attribute vec3 color;
-attribute float size;
-varying vec3 vColor;
-uniform float time;
-void main() {
-    vColor = color;
-    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-    gl_PointSize = size * (300.0 / -mvPosition.z) * (1.0 + sin(time + position.x));
-    gl_Position = projectionMatrix * mvPosition;
-}
-`;
-
-const fragmentShader = `
-varying vec3 vColor;
-    void main() {
-        float r = 0.0;
-        vec2 cxy = 2.0 * gl_PointCoord - 1.0;
-        r = dot(cxy, cxy);
-        float alpha = 1.0 - r * r;
-        
-        gl_FragColor = vec4(vColor, alpha);
+    if (galaxyRef.current) {
+      galaxyRef.current.appendChild(renderer.domElement);
     }
-    `;
-    
 
-// Add time uniform in ShaderMaterial
-const particleMaterial = new THREE.ShaderMaterial({
-        vertexShader: vertexShader,
-        fragmentShader: fragmentShader,
-        transparent: true,
-        uniforms: {
-                time: { value: 0.0 }
-        }
+    // Create a circular texture with a transparent background
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+    context.beginPath();
+    context.arc(32, 32, 30, 0, 2 * Math.PI);
+    context.fillStyle = 'white';
+    context.fill();
+
+    // Create a texture
+    const texture = new THREE.CanvasTexture(canvas);
+
+    // Create material with circular texture
+    const material = new THREE.PointsMaterial({
+      size: 0.02,
+      vertexColors: true,
+      map: texture,
+      transparent: true,
     });
 
-    
-    
-    ////////////// Adding Particles to Scene and Camera Configuration //////////////
-    
-    const particles = new THREE.Points(particleGeometry, particleMaterial);
-    
-    scene.add(particles);
-    
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(2000 * 3);
+    const colors = new Float32Array(2000 * 3);
+
+    for (let i = 0; i < positions.length; i += 3) {
+      positions[i] = (Math.random() - 0.5) * 10;
+      positions[i + 1] = (Math.random() - 0.5) * 10;
+      positions[i + 2] = (Math.random() - 0.5) * 10;
+
+      const color = new THREE.Color(Math.random(), Math.random(), Math.random());
+      colors[i] = color.r;
+      colors[i + 1] = color.g;
+      colors[i + 2] = color.b;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const points = new THREE.Points(geometry, material);
+
+    scene.add(points);
     camera.position.z = 5;
-    
-    // Load lensflare texture
-    const textureLoader = new THREE.TextureLoader();
-    const lensFlareTexture = textureLoader.load('/images/lensflare.png');
 
-    
-    // Create geometry and material for special stars
-    const specialStarGeometry = new THREE.BufferGeometry();
-    const specialStarCount = 200; // Number of special stars
-    
-    const specialPosArray = new Float32Array(specialStarCount * 3);
-    for (let i = 0; i < specialPosArray.length; i += 3) {
-        specialPosArray[i] = (Math.random() - 0.5) * 50;
-        specialPosArray[i + 1] = (Math.random() - 0.5) * 50;
-    specialPosArray[i + 2] = (Math.random() - 0.5) * 50;
+    const starTexture = new THREE.TextureLoader().load('/assets/images/lensflare.png');
+
+    // Create extra stars
+const numStars = 100; // You can adjust the number of extra stars as needed
+
+for (let i = 0; i < numStars; i++) {
+  const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
+  const star = new THREE.Sprite(starMaterial);
+
+  // Randomly position stars within a certain range
+  const x = (Math.random() - 0.5) * 20;
+  const y = (Math.random() - 0.5) * 20;
+  const z = (Math.random() - 0.5) * 20;
+
+  star.position.set(x, y, z);
+
+  // Adjust the scale of stars to make them larger
+  star.scale.set(0.2, 0.2, 0.2); // Increase the scale as needed
+
+  scene.add(star);
 }
 
-specialStarGeometry.setAttribute('position', new THREE.BufferAttribute(specialPosArray, 3));
+    const animate = () => {
+      requestAnimationFrame(animate);
+      points.rotation.x += 0.0003;
+      points.rotation.y += 0.0003;
+      renderer.render(scene, camera);
+    };
 
-const specialStarMaterial = new THREE.ShaderMaterial({
-    vertexShader: vertexShader, // You might need to write a different vertex shader for this
-    fragmentShader: fragmentShader, // Similarly, a different fragment shader might be needed
-    transparent: true,
-    uniforms: {
-        texture: { value: lensFlareTexture },
-        time: { value: 0.0 } // If you want time-dependent behavior
-    }
-});
+    animate();
+  }, []);
 
-// Create and add special stars to the scene
-const specialStars = new THREE.Points(specialStarGeometry, specialStarMaterial);
-scene.add(specialStars);
-
-////////////// Animation Function //////////////
-
-const animate = function () {
-    requestAnimationFrame(animate);
-    particles.rotation.x += 0.0005;
-    particles.rotation.y += 0.0005;
-    renderer.render(scene, camera);
+  return (
+    <div style={{ height: '100vh', overflow: 'hidden' }}>
+      <div ref={galaxyRef} />
+    </div>
+  );
 };
-
-animate();
-
-///////////// Fade-in Three.js Section and Reveal Message /////////////
-
-// Fade-in Three.js section and reveal message
-setTimeout(() => {
-    const section = document.getElementById('threejs-section');
-    if (section) {
-      section.classList.remove('hidden');
-      section.classList.add('visible');
-    }
-}, 2000);
-
-  // Text reveal logic
-  setTimeout(() => {
-      const message = document.getElementById('message');
-    if (message) {
-      message.style.visibility = 'visible';
-      let i = 0;
-      let text = message.textContent || '';
-      message.textContent = '';
-
-      const interval = setInterval(() => {
-          if (i < text.length) {
-          message.textContent += text.charAt(i);
-          i++;
-        } else {
-            clearInterval(interval);
-            revealWavingHand();  // Custom function to handle waving hand logic
-        }
-    }, 100);
-    }
-}, 4000);
-
-function revealWavingHand() {
-    setTimeout(() => {
-        const wavingHand = document.getElementById('waving-hand');
-        if (wavingHand) {
-            wavingHand.classList.remove('hidden');
-        wavingHand.classList.add('visible');
-    }
-}, 500);
-}
-});
-return <div id="threejs-container"></div>
-}
