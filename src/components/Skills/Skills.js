@@ -1,8 +1,6 @@
-import React from 'react';
-
-export const Skills = () => {
+export const Skills = ({ className }) => {
   return (
-    <section id="skills">
+    <section id="skills" className={className}>
       <h1>Skills</h1>
       <p>Your skills here.</p>
     </section>

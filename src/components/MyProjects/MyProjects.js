@@ -1,10 +1,8 @@
-import React from 'react';
-
-export const MyProjects = () => {
+export const MyProjects = ({ className }) => {
   return (
-    <section id="projects">
+    <section id="projects" className={className}>
       <h1>Projects</h1>
-      <p>information about your project here</p>
+      <p>Information about your project here</p>
     </section>
   );
 };

@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar/Navbar';
 import { Galaxy } from './components/Galaxy/Galaxy';
 import { AboutMe } from './components/AboutMe/AboutMe';
 import { Skills } from './components/Skills/Skills'; 
 import { MyProjects } from './components/MyProjects/MyProjects'; 
 import { Contact } from './components/Contact/Contact';
+import { initIntersectionObserver } from './helpers/intersectionObserver';
 
 function App() {
+  useEffect(() => {
+    initIntersectionObserver();
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
       <Galaxy />
-      <AboutMe />
-      <Skills /> {/* Add the Skills component */}
-      <MyProjects /> {/* Add the MyProjects component */}
-      <Contact/>
+      <AboutMe className="hidden" />
+      <Skills className="hidden" /> 
+      <MyProjects className="hidden" /> 
+      <Contact className="hidden" />
     </div>
   );
 }

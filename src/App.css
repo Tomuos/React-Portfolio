@@ -9,3 +9,11 @@ body {
 }
 
 
+.App > * {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.App > .show {
+  opacity: 1;
+}
