@@ -1,3 +1,8 @@
+/* Remove margin and padding from sections */
+#about, #skills, #projects, #contact {
+  margin: 0;
+  padding: 0;
+}
 
 
 /* App.css */

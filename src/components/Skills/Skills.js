@@ -1,3 +1,5 @@
+import './Skills.css'
+
 export const Skills = ({ className }) => {
   return (
     <section id="skills" className={className}>

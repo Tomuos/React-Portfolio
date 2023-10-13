@@ -6,7 +6,7 @@ import { Skills } from './components/Skills/Skills';
 import { MyProjects } from './components/MyProjects/MyProjects'; 
 import { Contact } from './components/Contact/Contact';
 import { initIntersectionObserver } from './helpers/intersectionObserver';
-import './tailwind.css'
+// import './tailwind.css'
 
 function App() {
   useEffect(() => {

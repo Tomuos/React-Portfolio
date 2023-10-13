@@ -1,3 +1,5 @@
+import './MyProjects.css'
+
 export const MyProjects = ({ className }) => {
   return (
     <section id="projects" className={className}>

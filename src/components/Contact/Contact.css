@@ -1,0 +1,21 @@
+#contact {
+    background-color: #1A0064;
+    color: #fff;
+    height: 100vh;
+    
+}
+#contact h1 {
+    font-size: 3rem;
+    color: rgb(221, 0, 0);
+    font-weight: 700;
+    text-align: center;
+    padding: 2rem 0;
+}
+    
+
+#contact p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 2rem 0;
+}

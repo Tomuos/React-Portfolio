@@ -62,6 +62,7 @@ export const Galaxy = () => {
 
     const starTexture = new THREE.TextureLoader().load('/assets/images/lensflare.png');
 
+
     // Create extra stars
 const numStars = 100; // You can adjust the number of extra stars as needed
 
@@ -77,7 +78,7 @@ for (let i = 0; i < numStars; i++) {
   star.position.set(x, y, z);
 
   // Adjust the scale of stars to make them larger
-  star.scale.set(0.2, 0.2, 0.2); // Increase the scale as needed
+  star.scale.set(0.1, 0.1, 0.1); // Increase the scale as needed
 
   scene.add(star);
 }

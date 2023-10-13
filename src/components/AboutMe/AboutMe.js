@@ -1,7 +1,7 @@
 // AboutMe.js
 
 import React from 'react';
-
+import './AboutMe.css'
 // In AboutMe.js
 export const AboutMe = ({ className }) => {
   return (
