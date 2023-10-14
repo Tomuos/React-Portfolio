@@ -14,14 +14,10 @@ body {
 }
 
 
-.App > * {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
+/* App.css (or your main CSS file) */
 
-.App > .show {
-  opacity: 1;
-}
+
+
 import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar/Navbar';
 import { Galaxy } from './components/Galaxy/Galaxy';
@@ -30,7 +26,7 @@ import { Skills } from './components/Skills/Skills';
 import { MyProjects } from './components/MyProjects/MyProjects'; 
 import { Contact } from './components/Contact/Contact';
 import { initIntersectionObserver } from './helpers/intersectionObserver';
-import './tailwind.css'
+// import './tailwind.css'
 
 function App() {
   useEffect(() => {
@@ -62,6 +58,7 @@ test('renders learn react link', () => {
     background-color: #1A0064;
     color: #fff;
     height: 100vh;
+    padding: 5rem 0;
     
 }
 #about h1 {
@@ -71,27 +68,91 @@ test('renders learn react link', () => {
     text-align: center;
     padding: 2rem 0;
 }
-    
+
+#about h2 {
+    font-size: 3rem;
+    color: rgb(81, 200, 255);
+    font-weight: 700;
+    text-align: center;
+    padding: 2rem 0;
+}    
 
 #about p {
     font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
     padding: 2rem 0;
-}// AboutMe.js
+}
 
 import React from 'react';
-import './AboutMe.css'
-// In AboutMe.js
+import './AboutMe.css';
+
+// Import images
+import brumJsLogo from '../../assets/images/brumjslogo.webp';
+import techmidsLogo from '../../assets/images/Techmidslogo.png';
+import benFishing from '../../assets/images/Ben fishing.jpg';
+import boysAndDucks from '../../assets/images/ducks.jpg';
+import theBoys from '../../assets/images/the boys.jpg';
+import sunflowerBoys from '../../assets/images/Sunflower boys.jpg';
+
 export const AboutMe = ({ className }) => {
   return (
-      <section id="about" className={className}>
-          <h1>About Me</h1>
-          <p>This is the About Me section.</p>
-      </section>
+    <section id="about" className={className}>
+      <h1>About Me</h1>
+      <h3>Coder & Tech Enthusiast 💻</h3>
+      <p>
+        Passionate about solving problems through coding. Becoming a regular at Tech meetups such as Brum.js and with a bit of luck Techmids in October.
+      </p>
+      <div>
+        <ul>
+          <li>
+            <a href="https://www.meetup.com/brum_js/">
+              <img src={brumJsLogo} alt="Brum.js Logo" />
+            </a>
+          </li>
+          <li>
+            <a href="https://conf.techmids.io/">
+              <img src={techmidsLogo} alt="Techmids Logo" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <h3>Family Man 👨‍👦‍👦</h3>
+      <p>Dad to two young boys. We love exploring the great outdoors.</p>
+      <div className="image-grid">
+        <div>
+          <img src={benFishing} alt="Ben Fishing" />
+          <span>Fishing</span>
+        </div>
+        <div>
+          <img src={boysAndDucks} alt="Boys and Ducks" />
+          <span>Feeding time</span>
+        </div>
+        <div>
+          <img src={theBoys} alt="The Boys" />
+          <span>The woods</span>
+        </div>
+        <div>
+          <img src={sunflowerBoys} alt="Sunflower Boys" />
+          <span>Sunflowers</span>
+        </div>
+      </div>
+
+      <h3>Hobbies 🎨🍕</h3>
+      <p>Known for my pizza parties and dabbling in digital art. Currently gaming through Zelda's TOTK.</p>
+      <div>
+        {/* Add more content here */}
+      </div>
+
+      <h3>Why I Code 💡</h3>
+      <p>It's not just about lines of code; it's about making things come alive and hopefully doing something useful with it.</p>
+
+      <h3>Let's Connect 🤝</h3>
+      <p>Interested in collaborating or networking? I'd love to hear from you!</p>
+    </section>
   );
 };
-
 #contact {
     background-color: #1A0064;
     color: #fff;
@@ -112,7 +173,8 @@ export const AboutMe = ({ className }) => {
     font-weight: 400;
     text-align: center;
     padding: 2rem 0;
-}import './Contact.css'
+}
+import './Contact.css'
 
 export const Contact = ({ className }) => {
   return (
@@ -261,45 +323,44 @@ export const MyProjects = ({ className }) => {
   );
 };
 /* Navbar.css */
-
 nav {
-    display: sticky;
-    justify-content: center;
-    background-color: rgb(104, 0, 178);
-    padding: 10px 50px;
-    
-  }
-  
+  position: sticky;
+  top: 0; /* Sticky at the top of the viewport */
+  background-color: rgb(104, 0, 178);
+  padding: 10px 50px;
+  z-index: 100; /* Ensure it's above other content */
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px; /* spacing between items */
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2rem;
+}
+
+li a:hover {
+  color: #ffd700;
+}
+
+/* Active state - you'll need to implement logic to apply this class */
+li a.active {
+  color: #ff4500;
+}
+
+@media (max-width: 768px) {
   ul {
-    list-style-type: none;
-    display: flex;
-    gap: 15px; /* spacing between items */
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-family: Varela-Round, sans-serif;
-    font-size: 2rem;
-  }
-  
-  li a:hover {
-    color: #FFD700;
-  }
-  
-  /* Active state - you'll need to implement logic to apply this class */
-  li a.active {
-    color: #FF4500;
-  }
-  
-  @media (max-width: 768px) {
-    ul {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-  // Navbar.js
+}
+// Navbar.js
 import React, { useState } from 'react';
 import './Navbar.css';
 
@@ -386,19 +447,33 @@ export const smoothScroll = (e) => {
             behavior: 'smooth'
         });
     };
-  body {
+  *{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+/* Import Google Font Varela Round */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
+body {
+
+  font-family: 'Varela Round', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Apply Varela Round to specific elements (e.g., headings) */
+h1, h2, h3 {
+  font-family: 'Varela Round', sans-serif;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

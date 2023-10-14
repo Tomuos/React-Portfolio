@@ -6,3 +6,10 @@
     
   }
   
+  .label {
+    color: white;
+    font-weight: bold;
+    font-size: 10rem;  /* You can adjust this value as needed */
+}
+
+  

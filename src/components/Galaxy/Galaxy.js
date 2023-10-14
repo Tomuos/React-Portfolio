@@ -95,6 +95,7 @@ for (let i = 0; i < numStars; i++) {
 
   return (
     <div style={{ height: '100vh', overflow: 'hidden' }}>
+    
       <div ref={galaxyRef} />
     </div>
   );

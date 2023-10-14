@@ -2,6 +2,11 @@
     background-color: #1A0064;
     color: #fff;
     height: 100vh;
+    padding: 5rem 0;
+    background-image: url('../../assets/images/LongBackgroundspacestars.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     
 }
 #about h1 {
@@ -11,7 +16,14 @@
     text-align: center;
     padding: 2rem 0;
 }
-    
+
+#about h3 {
+    font-size: 2rem;
+    color: aquamarine;
+    font-weight: 700;
+    text-align: center;
+    padding: 2rem 0;
+}    
 
 #about p {
     font-size: 1.5rem;

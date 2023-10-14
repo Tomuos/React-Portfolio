@@ -2,8 +2,12 @@
     background-color: #1A0064;
     color: #fff;
     height: 100vh;
-    
+    background-image: url('../../assets/images/LongBackgroundspacestars.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
 #projects h1 {
     font-size: 3rem;
     color: rgb(221, 0, 0);
