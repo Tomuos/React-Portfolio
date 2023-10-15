@@ -1,7 +1,6 @@
 #about {
     background-color: #1A0064;
     color: #fff;
-    height: 100vh;
     padding: 5rem 0;
     background-image: url('../../assets/images/LongBackgroundspacestars.png');
     background-repeat: no-repeat;
@@ -32,3 +31,25 @@
     padding: 2rem 0;
 }
 
+#about .gallery ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* space between images */
+    list-style: none; /* remove bullet points */
+    padding: 0; /* remove default padding */
+}
+
+#about .gallery ul li {
+    margin: 0 1rem; /* 1rem margin on the left and right */
+}
+
+#about .gallery img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* smooth transition for scaling and shadow */
+}
+
+#about .gallery img:hover {
+    transform: translateY(-10px) scale(1.1); /* rise up and scale */
+    box-shadow: 0px 0px 20px 5px rgba(0, 255, 255, 0.5); /* highlighting effect around the edges */
+}
+
+  
