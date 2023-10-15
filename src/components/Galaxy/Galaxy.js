@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import './Galaxy.css';
 
 export const Galaxy = () => {
   const galaxyRef = useRef(null);
@@ -94,11 +95,20 @@ for (let i = 0; i < numStars; i++) {
   }, []);
 
   return (
-    <section id="home" className="flex justify-center items-center">
-    <div style={{ height: '100vh', overflow: 'hidden' }}>
-    
-      <div ref={galaxyRef} />
-    </div>
+    <section id="home" className="flex justify-center items-center relative">
+      <div style={{ height: '100vh', overflow: 'hidden' }}>
+        {/* Your Three.js canvas */}
+        <div ref={galaxyRef} className="galaxy-canvas" />
+
+        {/* Overlay */}
+        <div className="overlay">
+          <div className="message">
+            <h1>Hello and welcome</h1>
+            <p>You have reached Tomulvlup Dev space</p>
+            <p>Explore my universe of code 😀</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
