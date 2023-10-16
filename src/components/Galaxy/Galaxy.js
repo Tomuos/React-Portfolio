@@ -61,7 +61,7 @@ export const Galaxy = () => {
     scene.add(points);
     camera.position.z = 5;
 
-    const starTexture = new THREE.TextureLoader().load('/assets/images/lensflare.png');
+    const starTexture = new THREE.TextureLoader().load('../../../public/assets/images/lensflare.png');
 
 
     // Create extra stars

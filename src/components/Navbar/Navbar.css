@@ -22,7 +22,7 @@ li a {
 }
 
 li a:hover {
-  color: #ffd700;
+  color: aquamarine;
 }
 
 /* Active state - you'll need to implement logic to apply this class */
