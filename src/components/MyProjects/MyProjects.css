@@ -2,7 +2,7 @@
     background-color: #1A0064;
     color: #fff;
     
-    background-image: url('../../assets/images/LongBackgroundspacestars.png');
+    background-image: url('../../../public/images/LongBackgroundspacestars.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -10,7 +10,7 @@
 }
 
 #projects h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     color: rgb(221, 0, 0);
     font-weight: 700;
     text-align: center;

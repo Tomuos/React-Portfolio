@@ -1,3 +1,4 @@
+==== ./src/App.css ====
 /* Remove margin and padding from sections */
 #about, #skills, #projects, #contact {
   margin: 0;
@@ -18,6 +19,7 @@ body {
 
 
 
+==== ./src/App.js ====
 import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar/Navbar';
 import { Galaxy } from './components/Galaxy/Galaxy';
@@ -26,7 +28,8 @@ import { Skills } from './components/Skills/Skills';
 import { MyProjects } from './components/MyProjects/MyProjects'; 
 import { Contact } from './components/Contact/Contact';
 import { initIntersectionObserver } from './helpers/intersectionObserver';
-// import './tailwind.css'
+
+
 
 function App() {
   useEffect(() => {
@@ -46,6 +49,7 @@ function App() {
 }
 
 export default App;
+==== ./src/App.test.js ====
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
@@ -54,13 +58,17 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+==== ./src/components/AboutMe/AboutMe.css ====
 #about {
     background-color: #1A0064;
     color: #fff;
-    height: 100vh;
-    padding: 5rem 0;
-    
+    padding: 8rem 0; /* Increase padding top and bottom */
+    background-image: url('../../assets/images/LongBackgroundspacestars.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
 #about h1 {
     font-size: 3rem;
     color: rgb(221, 0, 0);
@@ -69,9 +77,9 @@ test('renders learn react link', () => {
     padding: 2rem 0;
 }
 
-#about h2 {
-    font-size: 3rem;
-    color: rgb(81, 200, 255);
+#about h3 {
+    font-size: 2rem;
+    color: aquamarine;
     font-weight: 700;
     text-align: center;
     padding: 2rem 0;
@@ -84,80 +92,134 @@ test('renders learn react link', () => {
     padding: 2rem 0;
 }
 
+#about .gallery ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* space between images */
+    list-style: none; /* remove bullet points */
+    padding: 0; /* remove default padding */
+}
+
+#about .gallery ul li {
+    margin: 0 1rem; /* 1rem margin on the left and right */
+}
+
+#about .gallery img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* smooth transition for scaling and shadow */
+}
+
+#about .gallery img:hover {
+    transform: translateY(-10px) scale(1.1); /* rise up and scale */
+    box-shadow: 0px 0px 20px 5px aquamarine; /* highlighting effect around the edges */
+}
+
+
+
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 4% 2%;
+    box-sizing: border-box;
+    height: auto;
+  }
+  
+  .box {
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0 2%;
+    box-shadow: 0 20px 30px rgba(0,0,0,.1);
+    line-height: 0;
+    width: 50px; /* Reduce the width to your desired size */
+    height: 450px; /* Adjust the height to maintain aspect ratio */
+  }
+  
+  .box > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: .5s;
+  }
+  
+  .box:hover > img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .box > span {
+    font-size: 3.8vh;
+    display: block;
+    text-align: center;
+    height: 10vh;
+    line-height: 2.6;
+  }
+
+
+  
+  .box:hover { flex: 1 1 50%; }
+  .box:hover > img {
+    width: 100%;
+    height: 100%;
+  }
+==== ./src/components/AboutMe/AboutMe.js ====
 import React from 'react';
 import './AboutMe.css';
 
-// Import images
-import brumJsLogo from '../../assets/images/brumjslogo.webp';
-import techmidsLogo from '../../assets/images/Techmidslogo.png';
-import benFishing from '../../assets/images/Ben fishing.jpg';
-import boysAndDucks from '../../assets/images/ducks.jpg';
-import theBoys from '../../assets/images/the boys.jpg';
-import sunflowerBoys from '../../assets/images/Sunflower boys.jpg';
 
-export const AboutMe = ({ className }) => {
+
+export const AboutMe = () => {
   return (
-    <section id="about" className={className}>
+    <section id="about" className="hidden">
       <h1>About Me</h1>
       <h3>Coder & Tech Enthusiast 💻</h3>
       <p>
-        Passionate about solving problems through coding. Becoming a regular at Tech meetups such as Brum.js and with a bit of luck Techmids in October.
+        Passionate about solving problems through coding. Becoming a regular at Tech meetups such as Brum.js and with a bit of luck Techmids in October
       </p>
-      <div>
+      <div className="gallery">
         <ul>
           <li>
-            <a href="https://www.meetup.com/brum_js/">
-              <img src={brumJsLogo} alt="Brum.js Logo" />
+            <a href="https://www.meetup.com/brum_js/" className="img-container">
+              <img src="../../../public/assets/images/brumjslogo.webp" alt="Brum.js Logo" width="450" height="250" />
             </a>
           </li>
           <li>
-            <a href="https://conf.techmids.io/">
-              <img src={techmidsLogo} alt="Techmids Logo" />
+            <a href="https://conf.techmids.io/" className="img-container">
+              <img src="../../../public/images/Techmidslogo.png" alt="Techmids Logo" width="450" height="250" />
             </a>
           </li>
         </ul>
       </div>
-
-      <h3>Family Man 👨‍👦‍👦</h3>
-      <p>Dad to two young boys. We love exploring the great outdoors.</p>
-      <div className="image-grid">
-        <div>
-          <img src={benFishing} alt="Ben Fishing" />
-          <span>Fishing</span>
+      <div id="familySection">
+            <h3>Family Man 👨‍👦‍👦</h3>
+            <p>Dad to two young boys. We love exploring the great outdoors.</p>
+            <div className="container">
+                <div className="box portrait">
+                    <img src="../../../public/images/Ben fishing.jpg" alt="Ben fishing"/>
+                    <span>Fishing</span>
+                </div>
+                <div className="box landscape">
+                    <img src="../../../public/images/ducks.jpg" alt="Boys and ducks"/>
+                    <span>Feeding time</span>
+                </div>
+                <div className="box landscape">
+                    <img src="../../../public/images/the boys.jpg" alt="The boys in the woods"/>
+                    <span>The woods</span>
+                </div>
+                <div className="box portrait">
+                    <img src="../../../public/images/Sunflower boys.jpg" alt="Boys with sunflowers"/>
+                    <span>Sunflowers</span>
+                </div>
+            </div>
         </div>
-        <div>
-          <img src={boysAndDucks} alt="Boys and Ducks" />
-          <span>Feeding time</span>
-        </div>
-        <div>
-          <img src={theBoys} alt="The Boys" />
-          <span>The woods</span>
-        </div>
-        <div>
-          <img src={sunflowerBoys} alt="Sunflower Boys" />
-          <span>Sunflowers</span>
-        </div>
-      </div>
-
-      <h3>Hobbies 🎨🍕</h3>
-      <p>Known for my pizza parties and dabbling in digital art. Currently gaming through Zelda's TOTK.</p>
-      <div>
-        {/* Add more content here */}
-      </div>
-
-      <h3>Why I Code 💡</h3>
-      <p>It's not just about lines of code; it's about making things come alive and hopefully doing something useful with it.</p>
-
-      <h3>Let's Connect 🤝</h3>
-      <p>Interested in collaborating or networking? I'd love to hear from you!</p>
     </section>
   );
 };
+==== ./src/components/Contact/Contact.css ====
 #contact {
     background-color: #1A0064;
     color: #fff;
-    height: 100vh;
-    
+    padding: 5rem 0;
 }
 #contact h1 {
     font-size: 3rem;
@@ -173,7 +235,8 @@ export const AboutMe = ({ className }) => {
     font-weight: 400;
     text-align: center;
     padding: 2rem 0;
-}
+}==== ./src/components/Contact/Contact.js ====
+
 import './Contact.css'
 
 export const Contact = ({ className }) => {
@@ -184,6 +247,7 @@ export const Contact = ({ className }) => {
     </section>
   );
 };
+==== ./src/components/Galaxy/Galaxy.css ====
 #galaxy {
     width: 100vw;
     height: 100vh;
@@ -191,8 +255,44 @@ export const Contact = ({ className }) => {
     overflow: hidden;
     
   }
-  import React, { useEffect, useRef } from 'react';
+  
+ /* Add these styles to your CSS */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeIn 2s forwards;
+}
+
+.message {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+  ==== ./src/components/Galaxy/Galaxy.js ====
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import './Galaxy.css';
 
 export const Galaxy = () => {
   const galaxyRef = useRef(null);
@@ -253,7 +353,7 @@ export const Galaxy = () => {
     scene.add(points);
     camera.position.z = 5;
 
-    const starTexture = new THREE.TextureLoader().load('/assets/images/lensflare.png');
+    const starTexture = new THREE.TextureLoader().load('../../../public/assets/images/lensflare.png');
 
 
     // Create extra stars
@@ -287,17 +387,35 @@ for (let i = 0; i < numStars; i++) {
   }, []);
 
   return (
-    <div style={{ height: '100vh', overflow: 'hidden' }}>
-      <div ref={galaxyRef} />
-    </div>
+    <section id="home" className="flex justify-center items-center relative">
+      <div style={{ height: '100vh', overflow: 'hidden' }}>
+        {/* Your Three.js canvas */}
+        <div ref={galaxyRef} className="galaxy-canvas" />
+
+        {/* Overlay */}
+        <div className="overlay">
+          <div className="message">
+            <h1>Hello and welcome</h1>
+            <p>You have reached Tomulvlup Dev space</p>
+            <p>Explore my universe of code 😀</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
+==== ./src/components/MyProjects/MyProjects.css ====
 #projects {
     background-color: #1A0064;
     color: #fff;
-    height: 100vh;
     
+    background-image: url('../../assets/images/LongBackgroundspacestars.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
 }
+
 #projects h1 {
     font-size: 3rem;
     color: rgb(221, 0, 0);
@@ -312,7 +430,8 @@ for (let i = 0; i < numStars; i++) {
     font-weight: 400;
     text-align: center;
     padding: 2rem 0;
-}import './MyProjects.css'
+}==== ./src/components/MyProjects/MyProjects.js ====
+import './MyProjects.css'
 
 export const MyProjects = ({ className }) => {
   return (
@@ -322,6 +441,7 @@ export const MyProjects = ({ className }) => {
     </section>
   );
 };
+==== ./src/components/Navbar/Navbar.css ====
 /* Navbar.css */
 nav {
   position: sticky;
@@ -346,7 +466,7 @@ li a {
 }
 
 li a:hover {
-  color: #ffd700;
+  color: aquamarine;
 }
 
 /* Active state - you'll need to implement logic to apply this class */
@@ -360,38 +480,112 @@ li a.active {
     align-items: flex-start;
   }
 }
-// Navbar.js
-import React, { useState } from 'react';
+==== ./src/components/Navbar/Navbar.js ====
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 export const Navbar = () => {
-    const [activeItem, setActiveItem] = useState('home');
+  const [activeItem, setActiveItem] = useState('home');
 
-    const handleItemClick = (e, item) => {
-        e.preventDefault();
-        setActiveItem(item);
-        const target = document.getElementById(item);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+  const handleItemClick = (e, item) => {
+    e.preventDefault();
+    setActiveItem(item);
+    const target = document.getElementById(item);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setActiveItem('');
+      } else {
+        setActiveItem('home'); // Reset active item on larger screens
+      }
     };
 
-    return (
-        <nav className="bg-blue-600 p-4 text-white">
-            <ul className="flex justify-around">
-                <li><a href="#home" className={activeItem === 'home' ? 'underline' : ''} onClick={(e) => handleItemClick(e, 'home')}>Home</a></li>
-                <li><a href="#about" className={activeItem === 'about' ? 'underline' : ''} onClick={(e) => handleItemClick(e, 'about')}>About Me</a></li>
-                <li><a href="#skills" className={activeItem === 'skills' ? 'underline' : ''} onClick={(e) => handleItemClick(e, 'skills')}>Skills</a></li>
-                <li><a href="#projects" className={activeItem === 'projects' ? 'underline' : ''} onClick={(e) => handleItemClick(e, 'projects')}>My Projects</a></li>
-                <li><a href="#contact" className={activeItem === 'contact' ? 'underline' : ''} onClick={(e) => handleItemClick(e, 'contact')}>Contact</a></li>
-            </ul>
-        </nav>
-    );
+    // Add a resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <nav className="bg-blue-600 p-4 text-white sticky top-0">
+      <ul className="flex justify-around">
+        <li>
+          <a
+            href="#home"
+            className={`${
+              activeItem === 'home' ? 'underline' : ''
+            } sm:underline`}
+            onClick={(e) => handleItemClick(e, 'home')}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#about"
+            className={`${
+              activeItem === 'about' ? 'underline' : ''
+            } sm:underline`}
+            onClick={(e) => handleItemClick(e, 'about')}
+          >
+            About Me
+          </a>
+        </li>
+        <li>
+          <a
+            href="#skills"
+            className={`${
+              activeItem === 'skills' ? 'underline' : ''
+            } sm:underline`}
+            onClick={(e) => handleItemClick(e, 'skills')}
+          >
+            Skills
+          </a>
+        </li>
+        <li>
+          <a
+            href="#projects"
+            className={`${
+              activeItem === 'projects' ? 'underline' : ''
+            } sm:underline`}
+            onClick={(e) => handleItemClick(e, 'projects')}
+          >
+            My Projects
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            className={`${
+              activeItem === 'contact' ? 'underline' : ''
+            } sm:underline`}
+            onClick={(e) => handleItemClick(e, 'contact')}
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
 };
+==== ./src/components/Skills/Skills.css ====
 #skills {
     background-color: #1A0064;
     color: #fff;
-    height: 100vh;
+    
+    background-image: url('../../assets/images/earthnobgwp.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
     
 }
 #skills h1 {
@@ -408,7 +602,8 @@ export const Navbar = () => {
     font-weight: 400;
     text-align: center;
     padding: 2rem 0;
-}import './Skills.css'
+}==== ./src/components/Skills/Skills.js ====
+import './Skills.css'
 
 export const Skills = ({ className }) => {
   return (
@@ -418,6 +613,7 @@ export const Skills = ({ className }) => {
     </section>
   );
 };
+==== ./src/helpers/intersectionObserver.js ====
 export const initIntersectionObserver = () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -436,6 +632,7 @@ export const initIntersectionObserver = () => {
   const hiddenElements = document.querySelectorAll('.hidden');
   hiddenElements.forEach((el) => observer.observe(el));
 };
+==== ./src/helpers/smoothScroll.js ====
 // helpers/smoothScroll.js
 
 export const smoothScroll = (e) => {
@@ -447,7 +644,8 @@ export const smoothScroll = (e) => {
             behavior: 'smooth'
         });
     };
-  *{
+  ==== ./src/index.css ====
+*{
   margin: 0;
   padding: 0;
 }
@@ -474,6 +672,7 @@ code {
     monospace;
 }
 
+==== ./src/index.js ====
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -489,12 +688,14 @@ root.render(
   </React.StrictMode>
 );
 
+==== ./src/postcss.config.js ====
 module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
   },
 }
+==== ./src/tailwind.config.js ====
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [],
@@ -504,6 +705,7 @@ module.exports = {
   plugins: [],
 }
 
+==== ./src/tailwind.css ====
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

@@ -61,11 +61,11 @@ export const Galaxy = () => {
     scene.add(points);
     camera.position.z = 5;
 
-    const starTexture = new THREE.TextureLoader().load('../../../public/assets/images/lensflare.png');
+    // Update this line to refer to the image in the public folder
+const starTexture = new THREE.TextureLoader().load('/images/lensflare.png');
 
-
-    // Create extra stars
-const numStars = 100; // You can adjust the number of extra stars as needed
+// rest of your code
+const numStars = 1000; // You can adjust the number of extra stars as needed
 
 for (let i = 0; i < numStars; i++) {
   const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
@@ -83,6 +83,7 @@ for (let i = 0; i < numStars; i++) {
 
   scene.add(star);
 }
+
 
     const animate = () => {
       requestAnimationFrame(animate);
