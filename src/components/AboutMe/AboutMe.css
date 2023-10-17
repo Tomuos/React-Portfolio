@@ -1,5 +1,5 @@
 #about {
-    background-color: #1A0064;
+    background-color: #10003a;
     color: #fff;
     padding: 8rem 0; /* Increase padding top and bottom */
     background-image: url('../../../public/images/LongBackgroundspacestars.png');
@@ -15,7 +15,7 @@
 
 #about h1 {
     font-size: 5rem;
-    color: rgb(255, 200, 0);
+    color: rgb(254, 27, 27);
     font-weight: 700;
     text-align: center;
     padding: 2rem 0;
