@@ -111,3 +111,27 @@
   transform: scale(1);  /* Zoom out the image on hover */
 }
 
+.about-me-section {
+  padding: 50px;
+  background-color: blueviolet;
+  
+
+}
+
+.about-me-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me-text {
+  width: 60%;
+}
+
+.about-me-image {
+  width: 35%;
+}
+
+.about-me-image img {
+  width: 100%;
+  border-radius: 10px;
+}

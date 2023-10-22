@@ -33,6 +33,9 @@
     padding: 2rem 0;
   }
   
-  #skill p {
-    padding: 2rem;
-  }
+  #skills p {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 2rem 0;
+}

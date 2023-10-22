@@ -7,6 +7,34 @@ export const AboutMe = () => {
     <section id="about" className="hidden">
     <div className="content">
       <h1>About Me</h1>
+      <section id="about-me" className="about-me-section">
+      
+      <div className="about-me-content">
+        
+        <div className="about-me-text">
+          <p>
+            Hello, I'm Tom! I'm a developer with a focus on front-end technologies like React, HTML, and CSS. 
+            I have a deep-rooted passion for coding and love taking on new challenges to expand my skill set.
+          </p>
+          <p>
+            When I'm not coding, you can find me building computers, attending tech meetups like TechMids, or 
+            spending quality time outdoors with my family. I also love hosting pizza parties and gaming — 
+            the new Zelda game TOTK is my current favorite!
+          </p>
+          <p>
+            I'm currently looking for new job opportunities where I can bring my unique blend of skills and 
+            passion to a forward-thinking company.
+          </p>
+        </div>
+        
+        <div className="about-me-image">
+          <img src="/images/Tom.jpg" alt="Tom"/>
+        </div>
+        
+      </div>
+    </section>
+  
+
       <h3>Coder & Tech Enthusiast 💻</h3>
       <p>
         I'm a full-stack developer with a passion for creating beautiful, functional and accessible web applications. I have a keen interest in the latest technologies and enjoy learning new skills.
