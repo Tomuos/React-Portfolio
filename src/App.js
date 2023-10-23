@@ -9,6 +9,7 @@ import { initIntersectionObserver } from './helpers/intersectionObserver';
 
 
 
+
 function App() {
   useEffect(() => {
     initIntersectionObserver();
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Galaxy />
+      
       <AboutMe className="hidden" />
       <Skills className="hidden" /> 
       <MyProjects className="hidden" /> 
