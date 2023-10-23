@@ -28,8 +28,10 @@ export const AboutMe = () => {
         </div>
         
         <div className="about-me-image">
-          <img src="/images/Tom.jpg" alt="Tom"/>
-        </div>
+  <img src="/images/Tom.jpg" alt="Tom" className="cover-image"/>
+  <img src="/images/nobgboys.png" alt="Hover Image" className="hover-image"/>
+</div>
+
         
       </div>
     </section>
