@@ -113,7 +113,7 @@
 
 .about-me-section {
   padding: 50px;
-  background-color: rgb(135, 43, 222, 0.5);
+  background-color: rgba(136, 0, 255, 0.551);
   border-radius: 30px;
   
 
@@ -121,7 +121,7 @@
 
 .about-me-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .about-me-text {
@@ -129,10 +129,10 @@
 }
 
 .about-me-image {
-  width: 35%;
+  width: 25%;
 }
 
 .about-me-image img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 30px;
 }

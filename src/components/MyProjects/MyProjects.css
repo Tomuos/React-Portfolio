@@ -1,7 +1,6 @@
 #projects {
     background-color: #1A0064;
     color: #fff;
-    
     background-image: url('../../../public/images/LongBackgroundspacestars.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,24 +18,74 @@
     text-align: center;
     padding: 2rem 0;
 }
-    
 
-#projects p {
-    font-size: 1.5rem;
-    font-weight: 400;
+#projects h3 {
+    font-size: 2.5rem;
+    color: aquamarine;
+    font-weight: 700;
     text-align: center;
     padding: 2rem 0;
+}
+
+.motion-button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    font-size: 2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.motion-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#projects p, 
+#projects a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+#projects a:hover {
+    text-decoration: underline;
 }
 
 .motion-div {
     padding: 10px;
     margin: 10px;
-    border: 1px solid #ccc;
+    font-size: 2em;
     cursor: pointer;
-  }
-  
-  .motion-button {
+}
+
+.motion-div img {
+    width: 650px;
+    border-radius: 30px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    background-color: rgba(136, 0, 255, 0.551);
+}
+
+.motion-div video {
+    width: 650px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 30px;
+}
+
+.motion-button {
     width: fit-content;
-    margin: 10px auto; 
-  }
-  
+    margin: 10px auto;
+}
+
+.link-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
