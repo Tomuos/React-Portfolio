@@ -19,7 +19,7 @@ export const MyProjects = ({ className }) => {
   ];
   
   const [selectedId, setSelectedId] = useState(null);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, ] = useState(null);
 
   return (
     <section id="projects" className={className}>
@@ -35,6 +35,7 @@ export const MyProjects = ({ className }) => {
 
           <div style={{marginTop: "20px"}}>
             <iframe 
+              title="Kindr Presentation"
               src={projects[0].links.find(link => link.type === "presentation").url}
               className="project-video"
               width="400"
