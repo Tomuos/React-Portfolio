@@ -84,8 +84,15 @@
 }
 
 .link-icon {
-    height: 20px;
-    width: 20px;
-    margin-right: 8px;
     vertical-align: middle;
-}
+  }
+  
+  .project-image, .project-video {
+    width: 400px;
+    height: auto;
+  }
+  
+  .motion-div {
+    text-align: center;
+    margin-bottom: 20px;
+  }

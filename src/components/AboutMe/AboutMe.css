@@ -114,6 +114,7 @@
 .about-me-section {
   padding: 50px;
   background-color: rgba(136, 0, 255, 0.551);
+  border-style: groove ;
   border-radius: 30px;
   
 

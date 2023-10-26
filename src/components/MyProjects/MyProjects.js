@@ -24,25 +24,39 @@ export const MyProjects = ({ className }) => {
   return (
     <section id="projects" className={className}>
       <h1>Projects</h1>
-      
       <div>
-      {projects.map(project => (
-  <motion.div 
-      key={project.id} 
-      layoutId={project.id} 
-      onClick={() => {
-        setSelectedId(project.id);
-        setSelectedProject(project);
-      }}
-      className="motion-div"
-  >
-    <motion.img src={project.image} alt={project.title} />
-    <motion.h5>{project.subtitle}</motion.h5>
-  </motion.div>
-))}
+        <div className="motion-div">
+          <p>{projects[0].description}</p>
 
+          <a href={projects[0].links.find(link => link.type === "app").url} target="_blank" rel="noopener noreferrer">
+            <img src={projects[0].image} alt="Kindr Logo" className="project-image link-icon" /> 
+            App Link
+          </a>
 
+          <div style={{marginTop: "20px"}}>
+            <iframe 
+              src={projects[0].links.find(link => link.type === "presentation").url}
+              className="project-video"
+              width="400"
+              height="auto"
+              frameborder="0" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <a href={projects[0].links.find(link => link.type === "github").url} target="_blank" rel="noopener noreferrer" style={{display: "block", margin: "10px"}}>
+            <img src="images/github.png" alt="GitHub Logo" className="link-icon" style={{width: "150px"}}/> 
+            GitHub
+          </a>
+        </div>
       </div>
+
+
+
+
+
+
+    
 
       <AnimatePresence>
         {selectedId && (

@@ -103,6 +103,7 @@ for (let i = 0; i < numStars; i++) {
 
         {/* Overlay */}
         <div className="overlay">
+        <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
           <div className="message">
             <h1>Hello and welcome</h1>
             <p>You have reached Tomulvlup Dev space</p>
