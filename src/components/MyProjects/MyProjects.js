@@ -11,7 +11,7 @@ export const MyProjects = ({ className }) => {
       links: [
         { type: "github", url: "https://github.com/jsonandthearguments/kindr" },
         { type: "app", url: "https://kindr.netlify.app/" },
-        { type: "presentation", url: "https://github.com/Tomuos/Tomuos/assets/110429174/14af227d-5a52-4cb9-9636-5d1de81f07af" }
+        { type: "presentation", url: "https://www.youtube.com/watch?v=Fc4mhUFAl10&ab_channel=percygr" }
       ],
       image: "images/bg1.png"
     }
@@ -25,31 +25,35 @@ export const MyProjects = ({ className }) => {
     <section id="projects" className={className}>
       <h1>Projects</h1>
       <div>
+      <div className='project-container'>
         <div className="motion-div">
           <p>{projects[0].description}</p>
 
           <a href={projects[0].links.find(link => link.type === "app").url} target="_blank" rel="noopener noreferrer">
             <img src={projects[0].image} alt="Kindr Logo" className="project-image link-icon" /> 
-            App Link
+            Kindr Website
           </a>
 
           <div style={{marginTop: "20px"}}>
             <iframe 
-              title="Kindr Presentation"
-              src={projects[0].links.find(link => link.type === "presentation").url}
+              title="Kindr App Presentation"
+              src={`https://www.youtube.com/embed/${projects[0].links.find(link => link.type === "presentation").url.split("v=")[1]}`}
               className="project-video"
-              width="400"
-              height="auto"
-              frameborder="0" 
-              allowfullscreen>
+              style={{width: "650px", height: "400px", border: "none", borderRadius: "10px"}}
+              
+              allowFullScreen>
             </iframe>
+            <h3>Kindr App presentation</h3>
           </div>
-
-          <a href={projects[0].links.find(link => link.type === "github").url} target="_blank" rel="noopener noreferrer" style={{display: "block", margin: "10px"}}>
-            <img src="images/github.png" alt="GitHub Logo" className="link-icon" style={{width: "150px"}}/> 
-            GitHub
-          </a>
+    
+          
         </div>
+
+          <a href={projects[0].links.find(link => link.type === "github").url} target="_blank" rel="noopener noreferrer" className="github-link">
+            <img src="images/github.png" alt="GitHub Logo" style={{width: "150px"}}/> 
+            Link to the GitHub repo code
+          </a>
+      </div>
       </div>
 
 

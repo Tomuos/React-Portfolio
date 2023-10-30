@@ -31,11 +31,13 @@
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    font-size: 2em;
+    font-size: 1.5em; /* Standardized font size */
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: fit-content;
+    margin: 10px auto;
 }
 
 .motion-button:hover {
@@ -45,7 +47,7 @@
 #projects p, 
 #projects a {
     color: white;
-    font-size: 2em;
+    font-size: 1em;
     text-decoration: none;
     transition: text-decoration 0.3s;
 }
@@ -54,11 +56,19 @@
     text-decoration: underline;
 }
 
+#projects div, 
+#projects span, 
+#projects button {
+    font-size: 1.5em;
+}
+
 .motion-div {
     padding: 10px;
     margin: 10px;
-    font-size: 2em;
+    font-size: 1.5em; /* Standardized font size */
     cursor: pointer;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .motion-div img {
@@ -78,21 +88,35 @@
     border-radius: 30px;
 }
 
-.motion-button {
-    width: fit-content;
-    margin: 10px auto;
-}
-
 .link-icon {
     vertical-align: middle;
-  }
-  
-  .project-image, .project-video {
+}
+
+.project-image, .project-video {
     width: 400px;
     height: auto;
-  }
+}
   
-  .motion-div {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5em; /* Standardized font size */
+    text-decoration: none;
+    margin-top: 20px;
+    transition: text-decoration 0.3s;
+}
+
+.github-link img {
+    margin-right: 10px;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
