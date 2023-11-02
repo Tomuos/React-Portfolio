@@ -44,10 +44,17 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#projects p, 
-#projects a {
+#projects p 
+ {
     color: white;
-    font-size: 1em;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+#projects a {
+    color: rgb(167, 245, 255);
+    font-size: 2.5rem;
     text-decoration: none;
     transition: text-decoration 0.3s;
 }
@@ -59,7 +66,7 @@
 #projects div, 
 #projects span, 
 #projects button {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 .motion-div {
@@ -107,7 +114,7 @@
     display: flex;
     align-items: center;
     color: white;
-    font-size: 1.5em; /* Standardized font size */
+    font-size: 1.5rem; /* Standardized font size */
     text-decoration: none;
     margin-top: 20px;
     transition: text-decoration 0.3s;

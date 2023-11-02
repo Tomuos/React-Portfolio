@@ -43,7 +43,7 @@ export const MyProjects = ({ className }) => {
               
               allowFullScreen>
             </iframe>
-            <h3>Kindr App presentation</h3>
+            <p>Kindr App presentation</p>
           </div>
     
           
