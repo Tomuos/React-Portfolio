@@ -54,7 +54,7 @@
 
 #about .gallery img:hover {
     transform: translateY(-10px) scale(1.1); /* rise up and scale */
-    box-shadow: 0px 0px 20px 5px aquamarine; /* highlighting effect around the edges */
+    box-shadow: 0px 0px 20px 5px rgb(127, 255, 212); /* highlighting effect around the edges */
 }
 
 
@@ -113,8 +113,8 @@
 
 .about-me-section {
   padding: 50px;
-  background-color: rgba(136, 0, 255, 0.551);
-  border-style: groove ;
+  /* background-color: rgba(127, 255, 212, 0.786);
+  color: black; */
   border-radius: 30px;
   
 

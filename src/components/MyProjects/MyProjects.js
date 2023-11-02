@@ -13,7 +13,7 @@ export const MyProjects = ({ className }) => {
         { type: "app", url: "https://kindr.netlify.app/" },
         { type: "presentation", url: "https://www.youtube.com/watch?v=Fc4mhUFAl10&ab_channel=percygr" }
       ],
-      image: "images/bg1.png"
+      image: "images/bg1wb.png"
     }
     // ... Add other projects in a similar manner if needed
   ];
@@ -39,7 +39,7 @@ export const MyProjects = ({ className }) => {
               title="Kindr App Presentation"
               src={`https://www.youtube.com/embed/${projects[0].links.find(link => link.type === "presentation").url.split("v=")[1]}`}
               className="project-video"
-              style={{width: "650px", height: "400px", border: "none", borderRadius: "10px"}}
+              style={{width: "650px", height: "400px", border: "none", borderRadius: "30px"}}
               
               allowFullScreen>
             </iframe>
