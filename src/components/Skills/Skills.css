@@ -1,9 +1,10 @@
+/* Skills.css */
 #skills {
   position: relative;
   background-color: #1A0064;
   color: #fff;
   padding: 5rem 0;
-  background-image: url('../../../public/images/earthstarswp.png');
+  background-image: url('/public/images/earthstarswp.png'); 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -20,66 +21,75 @@
   font-size: 1.5rem;
   font-weight: 400;
   padding: 2rem 0;
-  
+}
+
+#skills h1, #skills h2 {
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  margin: 1rem 0;
 }
 
 #skills h1 {
   font-size: 5rem;
-  color: rgb(221, 0, 0);
-  font-weight: 700;
-  text-align: center;
-  padding: 2rem 0;
+  color:rgb(255, 45, 45)
+}
+
+#skills h2 {
+  font-size: 4rem;
 }
 
 #skills h3 {
   font-size: 2.5rem;
   color: aquamarine;
-  font-weight: 700;
-  text-align: center;
   margin: 1rem 0;
 }
 
 .skills-icons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Allows icons to wrap onto the next line if needed */
-  gap: 2rem; /* Adjust the gap as needed */
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .skill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s, filter 0.3s; /* Updated to include filter */
+  transition: transform 0.3s, filter 0.3s;
   cursor: pointer;
-  animation: float 3s ease-in-out infinite;
 }
 
 .skill img {
-  width: 80px; /* Adjust image size as needed */
+  width: 80px;
   height: auto;
   margin-bottom: 1rem;
 }
 
 .skill:hover {
   transform: translateY(-10px) scale(1.1);
-  filter: drop-shadow(0 0 20px rgb(127, 255, 212)); /* Glow effect */
+  filter: drop-shadow(0 0 20px rgb(127, 255, 212));
 }
 
-
-/* Floating animation */
-@keyframes float {
-  0% {
-      transform: translateY(0px);
-  }
-  50% {
-      transform: translateY(-10px);
-  }
-  100% {
-      transform: translateY(0px);
-  }
-}
-
-.skill {
+/* Floating animation for different skill groups */
+.front-end-skills .skill {
   animation: float 3s ease-in-out infinite;
+}
+
+.design-skills .skill {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.photography-skills .skill {
+  animation: float 4s ease-in-out infinite;
+}
+
+.other-tools-skills .skill {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+/* Keyframes for floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }

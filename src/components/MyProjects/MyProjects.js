@@ -22,9 +22,9 @@ export const MyProjects = ({ className }) => {
 
   return (
     <section id="projects" className={className}>
-      <h1>Projects</h1>
       <div>
       <div className='project-container'>
+      <h1>Projects</h1>
         <div className="motion-div">
           <p>{projects[0].description}</p>
 
