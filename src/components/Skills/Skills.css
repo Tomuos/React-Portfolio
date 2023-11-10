@@ -3,6 +3,7 @@
     background-color: #1A0064;
     color: #fff;
     padding: 5rem 0;
+    background-image: url('../../../public/images/nightsky.png');
   }
   
   .threejs-container {

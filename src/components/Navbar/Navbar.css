@@ -1,16 +1,27 @@
 /* Navbar.css */
 nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: sticky;
-  top: 0; /* Sticky at the top of the viewport */
+  top: 0;
   background-color: rgb(104, 0, 178);
   padding: 10px 50px;
-  z-index: 100; /* Ensure it's above other content */
+  z-index: 100;
+}
+
+.logo {
+  height: 100px; /* Logo size increased to 100px */
+  /* Removed margin-right as it may not be necessary */
 }
 
 ul {
   list-style-type: none;
   display: flex;
   gap: 15px; /* spacing between items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  align-items: center; /* This will vertically center the links */
 }
 
 li a {
@@ -25,14 +36,57 @@ li a:hover {
   color: aquamarine;
 }
 
-/* Active state - you'll need to implement logic to apply this class */
 li a.active {
-  color: #ff4500;
+  color: #92ffff;
 }
 
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Toggle lines for burger animation */
+.burger.open div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  ul {
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  nav {
+    justify-content: space-between; /* This will keep the logo on the left and the burger menu on the right */
+  }
+
+  .logo {
+    height: 80px; /* Optional: Change the size on mobile if needed */
   }
 }

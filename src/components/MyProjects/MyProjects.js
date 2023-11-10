@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+
 import './MyProjects.css';
 
 export const MyProjects = ({ className }) => {
@@ -18,8 +18,7 @@ export const MyProjects = ({ className }) => {
     // ... Add other projects in a similar manner if needed
   ];
   
-  const [selectedId, setSelectedId] = useState(null);
-  const [selectedProject, ] = useState(null);
+ 
 
   return (
     <section id="projects" className={className}>
@@ -34,13 +33,12 @@ export const MyProjects = ({ className }) => {
             Kindr Website
           </a>
 
-          <div style={{marginTop: "20px"}}>
+          
+          <div className="project-video-wrapper">
             <iframe 
               title="Kindr App Presentation"
-              src={`https://www.youtube.com/embed/${projects[0].links.find(link => link.type === "presentation").url.split("v=")[1]}`}
+              src="https://www.youtube.com/embed/Fc4mhUFAl10"
               className="project-video"
-              style={{width: "650px", height: "400px", border: "none", borderRadius: "30px"}}
-              
               allowFullScreen>
             </iframe>
             <p>Kindr App presentation</p>
@@ -63,18 +61,7 @@ export const MyProjects = ({ className }) => {
 
     
 
-      <AnimatePresence>
-        {selectedId && (
-          <motion.div layoutId={selectedId}>
-            <motion.h3>{selectedProject.title}</motion.h3>
-            <motion.p>{selectedProject.description}</motion.p>
-            <motion.a href={selectedProject.links.find(link => link.type === "github").url}>GitHub</motion.a>
-            <motion.a href={selectedProject.links.find(link => link.type === "app").url}>App Link</motion.a>
-            <motion.a href={selectedProject.links.find(link => link.type === "presentation").url}>Video Presentation</motion.a>
-            <motion.button className="motion-button" onClick={() => setSelectedId(null)}>Close</motion.button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      
     </section>
   );
 };

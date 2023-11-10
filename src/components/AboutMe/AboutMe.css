@@ -2,7 +2,7 @@
     background-color: #1A0064;
     color: #fff;
     padding: 8rem 0; /* Increase padding top and bottom */
-    background-image: url('../../../public/images/LongBackgroundspacestars.png');
+    background-image: url('../../../public/images/nightsky.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -11,6 +11,7 @@
 #about .content {
   max-width: 80%;  /* Limits the content width to 80% */
   margin: 0 auto;  /* Centers the content horizontally */
+  background-color: #1A0064;
 }
 
 #about h1 {
