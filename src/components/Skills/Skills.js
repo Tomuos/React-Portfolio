@@ -30,6 +30,27 @@ export const Skills = ({ className }) => {
           </div>
         </div>
       </div>
+      <div className="content-overlay">
+        <h3>Other Skills</h3>
+        <div className="skills-icons other-skills">
+          <div className="skill">
+            <img src="images/adobe.png" alt="Adobe Suite"/>
+            <h3>Adobe suite</h3>
+          </div>
+          <div className="skill">
+            <img src="images/icons8-affinity-designer-240.png" alt="Affinity designer"/>
+            <h3>Alt to Illustrator</h3>
+          </div>
+          <div className="skill">
+            <img src="images/icons8-affinity-photo-240.png" alt="AffinityPhoto"/>
+            <h3>Alt to Photoshop</h3>
+          </div>
+          <div className="skill">
+            <img src="images/icons8-affinity-publisher-240.png" alt="Affinity Publisher"/>
+            <h3>Alt to Publisher</h3>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

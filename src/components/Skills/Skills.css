@@ -4,8 +4,12 @@
   color: #fff;
   padding: 5rem 0;
   background-image: url('../../../public/images/earthstarswp.png');
-;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
+
 .content-overlay {
   position: relative;
   z-index: 1;

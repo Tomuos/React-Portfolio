@@ -69,6 +69,15 @@ export const Navbar = () => {
             className={activeItem === 'projects' ? 'active' : ''}
             onClick={(e) => handleItemClick(e, 'projects')}
           >
+            Skills
+          </a>
+        </li>
+        <li>
+          <a
+            href="#projects"
+            className={activeItem === 'projects' ? 'active' : ''}
+            onClick={(e) => handleItemClick(e, 'projects')}
+          >
             My Projects
           </a>
         </li>
