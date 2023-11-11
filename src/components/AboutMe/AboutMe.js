@@ -99,6 +99,25 @@ export const AboutMe = () => {
           </div>
         </div>
 
+        <div className="hobbies-gallery">
+          <div className="hobby-item">
+            <img src="/images/Totk1.jpg" alt="Link using the ascend ability" className="hobby-image" />
+            <span>Link Ascending</span>
+          </div>
+          <div className="hobby-item">
+            <img src="/images/Totk5.webp" alt="Link fighting a construct" className="hobby-image" />
+            <span>Link fighting a construct</span>
+          </div>
+          <div className="hobby-item">
+            <img src="/images/Totk3.jpg" alt="Link at Lookout Landing" className="hobby-image" />
+            <span>Link at Lookout Landing</span>
+          </div>
+          <div className="hobby-item">
+            <img src="/images/Totk4.webp" alt="Link on his Hover Bike" className="hobby-image" />
+            <span>Link on his Hover Bike</span>
+          </div>
+        </div>
+
         </div>
       </div>
     </section>

@@ -2,10 +2,11 @@
     background-color: #1A0064;
     color: #fff;
     padding: 8rem 0; /* Increase padding top and bottom */
-    background-image: url('../../../public/images/nightsky.png');
+    background-image: url('../../../public/images/wallpaper-stars.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 #about .content {
@@ -149,10 +150,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Creates four equal columns */
   justify-content: center;
-  grid-gap: 1rem;
+  align-items: center;
+  grid-gap: 2rem;
+  
   padding: 1rem;
   margin: auto;
-  width: calc(400px * 4 + 3rem); /* width of four items plus three 1rem gaps */
+  width: calc(350px * 4 + 3rem); /* width of four items plus three 1rem gaps */
   max-width: 100%; /* Make sure it doesn't exceed the width of its container */
 }
 
@@ -163,13 +166,15 @@
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   overflow: hidden;
+  border-radius: 30px;
 }
 
 .hobby-item img {
-  width: 600px; /* Ensure the image fills the container */
+  width: 500px; /* Ensure the image fills the container */
   height: 400px; /* Fixed height to make all images the same size */
-  object-fit: cover; /* This will cover the area, cropping the image if necessary */
+  object-fit:cover; /* This will cover the area, cropping the image if necessary */
   transition: transform 0.3s ease-in-out;
+  
   
 }
 
