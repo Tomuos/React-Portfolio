@@ -138,3 +138,62 @@
   width: 100%;
   border-radius: 30px;
 }
+
+
+#hobbiesSection {
+  text-align: center; /* This will center the title and text */
+  padding: 2rem;
+}
+
+.hobbies-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates four equal columns */
+  justify-content: center;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin: auto;
+  width: calc(400px * 4 + 3rem); /* width of four items plus three 1rem gaps */
+  max-width: 100%; /* Make sure it doesn't exceed the width of its container */
+}
+
+
+.hobby-item {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow: hidden;
+}
+
+.hobby-item img {
+  width: 600px; /* Ensure the image fills the container */
+  height: 400px; /* Fixed height to make all images the same size */
+  object-fit: cover; /* This will cover the area, cropping the image if necessary */
+  transition: transform 0.3s ease-in-out;
+  
+}
+
+.hobby-item span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Caption background */
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Hide caption initially */
+  visibility: hidden; /* Hide caption initially */
+  transform: translateY(100%); /* Start hidden below the image */
+}
+
+.hobby-item:hover img {
+  transform: scale(1.1); /* Slightly enlarge images on hover */
+}
+
+.hobby-item:hover span {
+  opacity: 1;
+  visibility: visible; /* Show caption on hover */
+  transform: translateY(0); /* Slide up caption on hover */
+}

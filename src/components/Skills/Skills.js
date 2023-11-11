@@ -39,7 +39,7 @@ export const Skills = () => {
             <h3>Affinity Designer</h3>
           </div>
           <div className="skill">
-            <img src="images/icons8-affinity-photo-240.png" alt="Affinity Photo Logo"/>
+            <img src="images/icons8-affinity-photo-240.png" alt="Affinity PhotoLogo"/>
             <h3>Affinity Photo</h3>
           </div>
           <div className="skill">

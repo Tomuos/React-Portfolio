@@ -75,11 +75,30 @@ export const AboutMe = () => {
           <p>The boys love the outdoors and occasionally they become right posers</p>
         </div>
 
-        <div>
-        <h3>Hobbies and Funtimes</h3>
-        <p>
-       I also love hosting pizza parties and gaming — the new Zelda game TOTK is my current favorite!
+        <div id="hobbiesSection">
+          <h3>Hobbies and Funtimes</h3>
+          <p>
+            I also love hosting pizza parties and gaming — the new Zelda game TOTK is my current favorite!
           </p>
+          <div className="hobbies-gallery">
+          <div className="hobby-item">
+            <img src="/images/crispy.jpg" alt="Crispy Pizza" className="hobby-image" />
+            <span>Crispy Pizza</span>
+          </div>
+          <div className="hobby-item">
+            <img src="/images/ooni.jpg" alt="Ooni Pizza Oven" className="hobby-image" />
+            <span>Ooni Pizza Oven</span>
+          </div>
+          <div className="hobby-item">
+            <img src="/images/nduja.jpg" alt="Nduja Pizza" className="hobby-image" />
+            <span>Nduja Pizza</span>
+          </div>
+          <div className="hobby-item">
+            <img src="/images/sweetcorn.jpg" alt="Sweetcorn Pizza" className="hobby-image" />
+            <span>Sweetcorn Pizza</span>
+          </div>
+        </div>
+
         </div>
       </div>
     </section>

@@ -77,15 +77,15 @@
 }
 
 .design-skills .skill {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+.other-tools-skills .skill {
   animation: float 3.5s ease-in-out infinite;
 }
 
 .photography-skills .skill {
-  animation: float 4s ease-in-out infinite;
-}
-
-.other-tools-skills .skill {
-  animation: float 4.5s ease-in-out infinite;
+  animation: float 3.7s ease-in-out infinite;
 }
 
 /* Keyframes for floating animations */
