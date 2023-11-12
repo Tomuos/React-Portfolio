@@ -1,15 +1,16 @@
 #projects {
     background-color: #1A0064;
     color: #fff;
-    background-image: url('../../../public/images/nightsky.png');
-    background-repeat: no-repeat;
+    background-image: url('../../../public/images/wallpaper-galaxy-stars.png');
+    background-repeat: repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     padding: 5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-attachment: fixed;
+    
 }
 
 #projects h1 {
@@ -107,7 +108,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1A0064;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
 }
 
 .github-link {

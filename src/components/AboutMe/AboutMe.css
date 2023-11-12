@@ -2,17 +2,21 @@
     background-color: #1A0064;
     color: #fff;
     padding: 8rem 0; /* Increase padding top and bottom */
-    background-image: url('../../../public/images/wallpaper-stars.png');
-    background-repeat: no-repeat;
+    background-image: url('../../../public/images/wallpaper-sun-stars.png');
+    background-repeat: repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    
+    
 }
 
 #about .content {
   max-width: 80%;  /* Limits the content width to 80% */
   margin: 0 auto;  /* Centers the content horizontally */
-  background-color: #1A0064;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
 }
 
 #about h1 {
