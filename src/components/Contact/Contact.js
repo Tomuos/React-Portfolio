@@ -1,64 +1,38 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
-export const Contact = ({ className }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+export const Contact = () => {
+  const form = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    // Here you would handle the form submission.
-    // For instance, sending the data to your backend or a third-party email service.
-    console.log(formData); // For now, we'll just log the data to the console.
+
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   };
 
   return (
-    <section id="contact" className={className}>
-    
-    <div className="gradient-heading-container">
-      <h1 className='gradient-heading' >Contact</h1>
+    <section id="contact">
+      <div className="contact-container"> {/* Use the new container class here */}
+      <div className="gradient-heading-container">
+        <h1 className="gradient-heading">Contact</h1>
       </div>
       <p>Here is my contact info and Resume</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-
-        <button type="submit">Submit</button>
-      </form>
+        <form ref={form} onSubmit={sendEmail}>
+          <label htmlFor="user_name">Name</label>
+          <input type="text" name="user_name" id="user_name" />
+          <label htmlFor="user_email">Email</label>
+          <input type="email" name="user_email" id="user_email" />
+          <label htmlFor="message">Message</label>
+          <textarea name="message" id="message" />
+          <input type="submit" value="Send" />
+        </form>
+      </div>
     </section>
   );
 };
