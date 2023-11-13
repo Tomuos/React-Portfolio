@@ -19,13 +19,32 @@
   backdrop-filter: blur(10px);
 }
 
-#about h1 {
+.gradient-heading-container {
+  background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+  border-radius: 10px;
+  text-align: center;
+  padding: 1rem 0;
+  margin: auto; /* Center the container */
+  width: 100%; /* Fill the entire width of the section */
+}
+
+.gradient-heading {
+  color: white;
+  font-size: 5rem;
+  display: inline-block; /* Allows the text to only take up as much space as it needs */
+  margin: 0; /* Remove any default margin */
+}
+
+
+
+/* #about h1 {
     font-size: 5rem;
-    color: rgb(255, 45, 45);
+    background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+    border-radius: 10px;
     font-weight: 700;
     text-align: center;
     padding: 2rem 0;
-}
+} */
 
 #about h3 {
     font-size: 2.5rem;
@@ -137,9 +156,11 @@
 
 .about-me-image {
   width: 25%;
+  
 }
 
 .about-me-image img {
+  padding-top: 2em;
   width: 100%;
   border-radius: 30px;
 }
@@ -202,6 +223,49 @@
 }
 
 .hobby-item:hover span {
+  opacity: 1;
+  visibility: visible; /* Show caption on hover */
+  transform: translateY(0); /* Slide up caption on hover */
+}
+
+.hobby-item2 {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.hobby-item2 img {
+  width: 500px; /* Ensure the image fills the container */
+  height: 400px; /* Fixed height to make all images the same size */
+  object-fit:cover; /* This will cover the area, cropping the image if necessary */
+  transition: transform 0.3s ease-in-out;
+  
+  
+}
+
+.hobby-item2 span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Caption background */
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Hide caption initially */
+  visibility: hidden; /* Hide caption initially */
+  transform: translateY(100%); /* Start hidden below the image */
+}
+
+.hobby-item2:hover img {
+  transform: scale(0.8); /* Slightly shrink images on hover */
+}
+
+.hobby-item2:hover span {
   opacity: 1;
   visibility: visible; /* Show caption on hover */
   transform: translateY(0); /* Slide up caption on hover */

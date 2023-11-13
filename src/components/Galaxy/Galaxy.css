@@ -29,12 +29,15 @@
 }
 
 .message h1 {
-  background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(0, 0, 255));
+  background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
   font-size: 2em; /* Adjust the size as needed */
   text-align: center; /* Center the text */
 }
+
 
 
 @keyframes fadeIn {

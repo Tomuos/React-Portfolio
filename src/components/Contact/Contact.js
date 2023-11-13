@@ -25,7 +25,10 @@ export const Contact = ({ className }) => {
 
   return (
     <section id="contact" className={className}>
-      <h1>Contact</h1>
+    
+    <div className="gradient-heading-container">
+      <h1 className='gradient-heading' >Contact</h1>
+      </div>
       <p>Here is my contact info and Resume</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>

@@ -6,7 +6,9 @@ export const Skills = () => {
     <section id="skills">
     <div className='white-block'>
       <div className="content-overlay">
-        <h1>Skills</h1>
+      <div className="gradient-heading-container">
+        <h1 className="gradient-heading">Skills</h1>
+        </div>
         <h2>Front End</h2>
         <div className="skills-icons front-end-skills"> {/* Container for front-end skills icons */}
           <div className="skill">

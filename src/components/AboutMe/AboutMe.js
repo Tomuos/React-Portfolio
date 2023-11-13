@@ -7,8 +7,9 @@ export const AboutMe = () => {
     <section id="about" className="hidden">
     <div className="content">
       <section id="about-me" className="about-me-section">
-      <h1>About Me</h1>
-      
+      <div className="gradient-heading-container">
+      <h1 className="gradient-heading">About Me</h1>
+      </div>
       <div className="about-me-content">
         
         <div className="about-me-text">
@@ -100,19 +101,19 @@ export const AboutMe = () => {
         </div>
 
         <div className="hobbies-gallery">
-          <div className="hobby-item">
+          <div className="hobby-item2">
             <img src="/images/Totk1.jpg" alt="Link using the ascend ability" className="hobby-image" />
             <span>Link Ascending</span>
           </div>
-          <div className="hobby-item">
+          <div className="hobby-item2">
             <img src="/images/Totk5.webp" alt="Link fighting a construct" className="hobby-image" />
             <span>Link fighting a construct</span>
           </div>
-          <div className="hobby-item">
+          <div className="hobby-item2">
             <img src="/images/Totk3.jpg" alt="Link at Lookout Landing" className="hobby-image" />
             <span>Link at Lookout Landing</span>
           </div>
-          <div className="hobby-item">
+          <div className="hobby-item2">
             <img src="/images/Totk4.webp" alt="Link on his Hover Bike" className="hobby-image" />
             <span>Link on his Hover Bike</span>
           </div>

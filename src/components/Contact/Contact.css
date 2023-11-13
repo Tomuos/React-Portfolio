@@ -2,14 +2,22 @@
     background-color: #1A0064;
     color: #fff;
     padding: 5rem 0;
+    background-image: url('../../../public/images/wallpaper-meteor-stars.png');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-#contact h1 {
+
+
+/* #contact h1 {
     font-size: 5rem;
-    color: rgb(255, 45, 45);
+    background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+    border-radius: 10px;
     font-weight: 700;
     text-align: center;
     padding: 2rem 0;
-}
+} */
     
 
 #contact p {
@@ -18,3 +26,19 @@
     text-align: center;
     padding: 2rem 0;
 }
+
+.gradient-heading-container {
+    background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem 0;
+    margin: auto; /* Center the container */
+    width: 100%; /* Fill the entire width of the section */
+  }
+  
+  .gradient-heading {
+    color: white;
+    font-size: 5rem;
+    display: inline-block; /* Allows the text to only take up as much space as it needs */
+    margin: 0; /* Remove any default margin */
+  }

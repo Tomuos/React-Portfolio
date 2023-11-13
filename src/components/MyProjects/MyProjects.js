@@ -24,7 +24,9 @@ export const MyProjects = ({ className }) => {
     <section id="projects" className={className}>
       <div>
       <div className='project-container'>
-      <h1>Projects</h1>
+      <div className="gradient-heading-container">
+      <h1 className='gradient-heading' >Projects</h1>
+      </div>
         <div className="motion-div">
           <p>{projects[0].description}</p>
 

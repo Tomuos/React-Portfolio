@@ -106,8 +106,8 @@ for (let i = 0; i < numStars; i++) {
         <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
           <div className="message">
             <h1>Hello and welcome</h1>
-            <p>You have reached Tomulvlup Dev space</p>
-            <p>Explore my universe of code 😀</p>
+            <p>You have reached Tom's Dev space</p>
+            <p>My universe of code 😀</p>
           </div>
         </div>
       </div>
