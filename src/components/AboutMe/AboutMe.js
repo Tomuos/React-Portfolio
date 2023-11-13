@@ -84,19 +84,19 @@ export const AboutMe = () => {
           <div className="hobbies-gallery">
           <div className="hobby-item">
             <img src="/images/crispy.jpg" alt="Crispy Pizza" className="hobby-image" />
-            <span>Crispy Pizza</span>
+            <span>Crispy Pizza so tasty!</span>
           </div>
           <div className="hobby-item">
             <img src="/images/ooni.jpg" alt="Ooni Pizza Oven" className="hobby-image" />
-            <span>Ooni Pizza Oven</span>
+            <span>Ooni Pizza Oven, best purchase ever</span>
           </div>
           <div className="hobby-item">
             <img src="/images/nduja.jpg" alt="Nduja Pizza" className="hobby-image" />
-            <span>Nduja Pizza</span>
+            <span>Nduja Pizza bit of oomph</span>
           </div>
           <div className="hobby-item">
             <img src="/images/sweetcorn.jpg" alt="Sweetcorn Pizza" className="hobby-image" />
-            <span>Sweetcorn Pizza</span>
+            <span>Cheese ham and Sweetcorn Pizza</span>
           </div>
         </div>
 
