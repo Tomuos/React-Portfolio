@@ -22,7 +22,7 @@ export const Contact = () => {
       <div className="gradient-heading-container">
         <h1 className="gradient-heading">Contact</h1>
       </div>
-      <p>Here is my contact info and Resume</p>
+      
         <form ref={form} onSubmit={sendEmail}>
           <label htmlFor="user_name">Name</label>
           <input type="text" name="user_name" id="user_name" />
