@@ -1,31 +1,26 @@
 #galaxy {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    /* background-color: #1A0064; */
-  }
-  
- /* Add these styles to your CSS */
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
- 
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
+  text-align: center;
   animation: fadeIn 2s forwards;
 }
 
 .message {
-  text-align: center;
   color: white;
-  font-size: 3rem;
+  font-size: 3rem; /* Large font size for larger screens */
 }
 
 .message h1 {
@@ -33,12 +28,14 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  font-size: 2em; /* Adjust the size as needed */
-  text-align: center; /* Center the text */
+  font-size: 2em; /* Adjust heading size */
+  text-align: center;
 }
 
-
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 @keyframes fadeIn {
   from {
@@ -51,4 +48,25 @@
   }
 }
 
-  
+@media screen and (max-width: 768px) {
+  .message {
+    font-size: 1.5rem; /* Smaller font size for mobile devices */
+  }
+
+  .message h1 {
+    font-size: 1.5em; /* Adjust heading size for mobile devices */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .overlay {
+    flex-direction: column;
+  }
+
+  .message, .pillars {
+    margin: 10px 0; /* Add some margin for spacing */
+  }
+  img {
+    max-width: 80%;
+    height: auto;}
+}

@@ -16,8 +16,10 @@ export const Navbar = () => {
   };
 
   const toggleBurger = () => {
+    console.log("Burger toggled");
     setBurgerOpen(!burgerOpen);
   };
+  
 
   useEffect(() => {
     const sections = ['home', 'about', 'skills', 'projects', 'contact'];
