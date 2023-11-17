@@ -123,3 +123,36 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
+@media screen and (max-width: 768px) {
+
+  #skills .gradient-heading{
+    font-size: 2rem;
+  }
+
+  
+
+  .white-block {
+    max-width: 95%;
+  }
+
+  #skills h1 {
+    font-size: 3rem;
+  }
+
+  #skills h2 {
+    font-size: 2rem;
+  }
+
+  #skills h3 {
+    font-size: 1.5rem;
+  }
+
+  .skills-icons {
+    gap: 1rem;
+  }
+
+  .skill img {
+    width: 50px;
+  }
+}

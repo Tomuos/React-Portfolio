@@ -77,8 +77,10 @@ export const AboutMe = () => {
               <span>Sunflowers</span>
           </div>
         </div>
-          <p>The boys love the outdoors and occasionally they become right posers</p>
+          <p>The boys love the outdoors and occasionally they become right posers.</p>
         </div>
+
+        
 
         <div id="hobbiesSection">
           <h3>Hobbies and Funtimes</h3>

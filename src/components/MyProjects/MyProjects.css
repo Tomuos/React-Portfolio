@@ -147,3 +147,10 @@
     border-radius: 30px;
   }
   
+
+  @media screen and (max-width: 768px) {
+
+    #projects .gradient-heading{
+      font-size: 3rem;
+    }
+}

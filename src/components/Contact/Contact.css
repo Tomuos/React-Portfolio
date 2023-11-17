@@ -28,7 +28,7 @@
 }
 
 .contact-container {
-    max-width: 60%;  /* Limits the content width to 80% */
+    max-width: 40%;  /* Limits the content width to 80% */
     margin: 0 auto;  /* Centers the content horizontally */
     padding: 2rem; /* Adds padding around the content */
     display: flex;
@@ -78,3 +78,22 @@
     cursor: pointer;
   }
   
+
+  @media screen and (max-width: 768px) {
+    .contact-container {
+      max-width: 80%;  /* Limits the content width to 80% */
+      margin: 0 auto;  /* Centers the content horizontally */
+      padding: 2rem; /* Adds padding around the content */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+      border-radius: 10px; /* Rounded corners */
+      backdrop-filter: blur(10px); /* Blurred background effect */
+  }
+
+  #contact .gradient-heading{
+    font-size: 2rem;
+  }
+
+  }

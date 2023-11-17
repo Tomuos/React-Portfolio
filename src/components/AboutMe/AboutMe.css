@@ -90,7 +90,7 @@ margin: 0; /* Remove any default margin */
 
 
 
-
+/*                      Family section                    */
 .container {
 display: flex;
 width: 100%;
@@ -328,6 +328,45 @@ transform: translateY(0); /* Slide up caption on hover */
     }
   }
   
+}
 
+@media screen and (max-width: 768px) {
+  /* Adjust the .gallery list for mobile */
+  #about .gallery ul {
+    display: grid;
+    grid-template-columns: 1fr; /* One column grid */
+    gap: 1rem; /* Space between images */
+  }
 
+  #about .gallery li {
+    /* If necessary, adjust margins and padding for list items */
+  }
+
+  #about .gallery img {
+    max-width: 100%; /* Full width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center images within the list item */
+    border-radius: 15px; /* Optional: rounded corners for images */
+  }
+
+  /* Family Section - adjust the box containers for mobile */
+  #familySection .container {
+    display: grid;
+    grid-template-columns: 1fr; /* One column grid */
+    gap: 1rem; /* Space between boxes */
+  }
+
+  #familySection .box {
+    max-width: 100%; /* Allow boxes to fill the grid column */
+    height: auto; /* Height is automatic to maintain the aspect ratio */
+  }
+
+  #familySection .box img {
+    /* Adjust height as needed to maintain aspect ratio */
+    object-fit: cover; /* Cover the area of the box */
+  }
+
+  #familySection .box span {
+    /* Adjust the font-size and padding if necessary for smaller screens */
+  }
 }
