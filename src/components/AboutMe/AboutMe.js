@@ -6,13 +6,20 @@ export const AboutMe = () => {
   return (
     <section id="about" className="hidden">
     <div className="content">
-      <section id="about-me" className="about-me-section">
+      <div id="about-me" className="about-me-section">
+
       <div className="gradient-heading-container">
       <h1 className="gradient-heading">About Me</h1>
       </div>
+
       <div className="about-me-content">
         
-        <div className="about-me-text">
+        <div className="about-me-image">
+            <img src="/images/Tom.jpg" alt="Tom" className="cover-image"/>
+  
+        </div>
+        
+        
           <p>
             Hello, I'm Tom! I'm a developer with a focus on front-end technologies like React, HTML, and CSS. 
             I have a deep-rooted passion for coding and love taking on new challenges to expand my skill set.
@@ -22,16 +29,13 @@ export const AboutMe = () => {
             I'm currently looking for new job opportunities where I can bring my unique blend of skills and 
             passion to a forward-thinking company.
           </p>
-        </div>
+       
         
-        <div className="about-me-image">
-  <img src="/images/Tom.jpg" alt="Tom" className="cover-image"/>
-  
-</div>
+        
      
       </div>
 
-    </section>
+    </div>
   
 
       <h3>Coder & Tech Enthusiast 💻</h3>

@@ -1,20 +1,18 @@
 ==== ./src/components/AboutMe/AboutMe.css ====
 #about {
-    background-color: #1A0064;
-    color: #fff;
-    padding: 8rem 0; /* Increase padding top and bottom */
-    background-image: url('../../../public/images/wallpaper-sun-stars.png');
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    
-    
+  background-color: #1A0064;
+  color: #fff;
+  padding: 8rem 0;
+  background-image: url('../../../public/images/wallpaper-sun-stars.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #about .content {
-  max-width: 80%;  /* Limits the content width to 80% */
-  margin: 0 auto;  /* Centers the content horizontally */
+  max-width: 80%;
+  margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -25,253 +23,81 @@
   border-radius: 10px;
   text-align: center;
   padding: 1rem 0;
-  margin: auto; /* Center the container */
-  width: 100%; /* Fill the entire width of the section */
+  margin: auto;
+  width: 100%;
 }
 
 .gradient-heading {
   color: white;
   font-size: 5rem;
-  display: inline-block; /* Allows the text to only take up as much space as it needs */
-  margin: 0; /* Remove any default margin */
+  display: inline-block;
+  margin: 0;
 }
-
-
-
-/* #about h1 {
-    font-size: 5rem;
-    background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
-    border-radius: 10px;
-    font-weight: 700;
-    text-align: center;
-    padding: 2rem 0;
-} */
 
 #about h3 {
-    font-size: 2.5rem;
-    color: aquamarine;
-    font-weight: 700;
-    text-align: center;
-    padding: 2rem 0;
-}    
+  font-size: 2.5rem;
+  color: aquamarine;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 0;
+}
 
 #about p {
-    font-size: 2rem;
-    font-weight: 400;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-#about .gallery ul {
-    display: flex;
-    justify-content: center;
-    gap: 1rem; /* space between images */
-    list-style: none; /* remove bullet points */
-    padding: 0; /* remove default padding */
-}
-
-#about .gallery ul li {
-    margin: 0 1rem; /* 1rem margin on the left and right */
-}
-
-#about .gallery img {
-    transition: transform 0.5s ease, box-shadow 0.5s ease; /* smooth transition for scaling and shadow */
-}
-
-#about .gallery img:hover {
-    transform: translateY(-10px) scale(1.1); /* rise up and scale */
-    box-shadow: 0px 0px 20px 5px rgb(127, 255, 212); /* highlighting effect around the edges */
-}
-
-
-
-
-.container {
-  display: flex;
-  width: 100%;
-  padding: 4% 2%;
-  box-sizing: border-box;
-  height: auto;
-}
-
-.box {
-  flex: 1;
-  overflow: hidden;
-  transition: .5s;
-  margin: 0 2%;
-  box-shadow: 0 20px 30px rgba(0,0,0,.1);
-  line-height: 0;
-  width: 50px;
-  height: 450px;
-}
-
-.box > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: .5s;
-}
-
-.box > span {
-  font-size: 3.8vh;
-  display: block;
+  font-size: 2rem;
+  font-weight: 400;
   text-align: center;
-  height: 10vh;
-  line-height: 2.6;
+  padding: 2rem 0;
 }
 
-/* Scale for landscape */
-.box.landscape:hover {
-  flex: 1 1 50%;
-}
-.box.landscape:hover > img {
-  width: 100%;
-  height: 100%;
-}
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  #about {
+    padding: 4rem 1rem; /* Reduce padding */
+  }
 
-/* Scale for portrait */
-.box.portrait > img {
-  transform: scale(1.2);  /* Initially zoom in the image */
-}
-.box.portrait:hover > img {
-  transform: scale(1);  /* Zoom out the image on hover */
-}
+  .gradient-heading {
+    font-size: 2.5rem; /* Adjust header font size */
+  }
 
-.about-me-section {
-  padding: 50px;
-  /* background-color: rgba(127, 255, 212, 0.786);
-  color: black; */
-  border-radius: 30px;
-  
+  #about .content {
+    max-width: 95%; /* Increase content width */
+  }
 
-}
+  .about-me-text p {
+    font-size: 1.2rem; /* Reduce paragraph text size */
+  }
 
-.about-me-content {
-  display: flex;
-  justify-content: space-around;
-}
+  .gallery ul {
+    flex-direction: column; /* Stack images vertically */
+  }
 
-.about-me-text {
-  width: 60%;
-}
+  .gallery img {
+    width: 80%; /* Increase logo size */
+    margin: 0 auto 1rem; /* Center and add space below logos */
+  }
 
-.about-me-image {
-  width: 25%;
-  
-}
+  /* Adjust the pizza and Zelda images */
+  .hobbies-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  }
 
-.about-me-image img {
-  padding-top: 2em;
-  width: 100%;
-  border-radius: 30px;
-}
+  .hobby-item img, .hobby-item2 img {
+    width: 100%; /* Full width of their container */
+    margin-bottom: 0.5rem; /* Space between image and description */
+  }
 
-
-#hobbiesSection {
-  text-align: center; /* This will center the title and text */
-  padding: 2rem;
-}
-
-.hobbies-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Creates four equal columns */
-  justify-content: center;
-  align-items: center;
-  grid-gap: 2rem;
-  
-  padding: 1rem;
-  margin: auto;
-  width: calc(350px * 4 + 3rem); /* width of four items plus three 1rem gaps */
-  max-width: 100%; /* Make sure it doesn't exceed the width of its container */
-}
-
-
-.hobby-item {
-  position: relative;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  overflow: hidden;
-  border-radius: 30px;
-}
-
-.hobby-item img {
-  width: 500px; /* Ensure the image fills the container */
-  height: 400px; /* Fixed height to make all images the same size */
-  object-fit:cover; /* This will cover the area, cropping the image if necessary */
-  transition: transform 0.3s ease-in-out;
-  
-  
-}
-
-.hobby-item span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Caption background */
-  color: white;
-  padding: 0.5rem;
-  text-align: center;
-  transition: opacity 0.3s ease;
-  opacity: 0; /* Hide caption initially */
-  visibility: hidden; /* Hide caption initially */
-  transform: translateY(100%); /* Start hidden below the image */
-}
-
-.hobby-item:hover img {
-  transform: scale(1.1); /* Slightly enlarge images on hover */
-}
-
-.hobby-item:hover span {
-  opacity: 1;
-  visibility: visible; /* Show caption on hover */
-  transform: translateY(0); /* Slide up caption on hover */
-}
-
-.hobby-item2 {
-  position: relative;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  overflow: hidden;
-  border-radius: 30px;
-}
-
-.hobby-item2 img {
-  width: 500px; /* Ensure the image fills the container */
-  height: 400px; /* Fixed height to make all images the same size */
-  object-fit:cover; /* This will cover the area, cropping the image if necessary */
-  transition: transform 0.3s ease-in-out;
-  
-  
-}
-
-.hobby-item2 span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Caption background */
-  color: white;
-  padding: 0.5rem;
-  text-align: center;
-  transition: opacity 0.3s ease;
-  opacity: 0; /* Hide caption initially */
-  visibility: hidden; /* Hide caption initially */
-  transform: translateY(100%); /* Start hidden below the image */
-}
-
-.hobby-item2:hover img {
-  transform: scale(0.8); /* Slightly shrink images on hover */
-}
-
-.hobby-item2:hover span {
-  opacity: 1;
-  visibility: visible; /* Show caption on hover */
-  transform: translateY(0); /* Slide up caption on hover */
-}
-==== ./src/components/AboutMe/AboutMe.js ====
+  .hobby-item span, .hobby-item2 span {
+    display: block; /* Ensure descriptions are block level */
+    text-align: center; /* Center text */
+    font-size: 1rem; /* Adjust description text size */
+    opacity: 1; /* Always visible */
+    visibility: visible;
+    transform: none; /* Remove any transforms */
+    position: relative; /* Reset position */
+    background-color: transparent; /* Remove background */
+    color: #fff; /* Text color */
+  }
+}==== ./src/components/AboutMe/AboutMe.js ====
 // Example: In your src/components/AboutMe.js
 import React from 'react';
 import './AboutMe.css';
@@ -521,33 +347,28 @@ export const Contact = () => {
 export default Contact;
 ==== ./src/components/Galaxy/Galaxy.css ====
 #galaxy {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    /* background-color: #1A0064; */
-  }
-  
- /* Add these styles to your CSS */
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
- 
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
+  text-align: center;
   animation: fadeIn 2s forwards;
 }
 
 .message {
-  text-align: center;
   color: white;
-  font-size: 3rem;
+  font-size: 3rem; /* Large font size for larger screens */
 }
 
 .message h1 {
@@ -555,12 +376,14 @@ export default Contact;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  font-size: 2em; /* Adjust the size as needed */
-  text-align: center; /* Center the text */
+  font-size: 2em; /* Adjust heading size */
+  text-align: center;
 }
 
-
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 @keyframes fadeIn {
   from {
@@ -575,11 +398,26 @@ export default Contact;
 
 @media screen and (max-width: 768px) {
   .message {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Smaller font size for mobile devices */
   }
-  /* Other responsive styles */
+
+  .message h1 {
+    font-size: 1.5em; /* Adjust heading size for mobile devices */
+  }
 }
-==== ./src/components/Galaxy/Galaxy.js ====
+
+@media screen and (max-width: 768px) {
+  .overlay {
+    flex-direction: column;
+  }
+
+  .message, .pillars {
+    margin: 10px 0; /* Add some margin for spacing */
+  }
+  img {
+    max-width: 80%;
+    height: auto;}
+}==== ./src/components/Galaxy/Galaxy.js ====
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import './Galaxy.css';
@@ -588,39 +426,65 @@ export const Galaxy = () => {
   const galaxyRef = useRef(null);
 
   useEffect(() => {
+    // Initialize scene, camera, and renderer
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1A0064); // Setting the background to navy
+    scene.background = new THREE.Color(0x1A0064);
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    
+    // Append renderer to the DOM
+    if (galaxyRef.current) {
+      galaxyRef.current.appendChild(renderer.domElement);
+    }
+
+    // Handle window resize
     const updateCamera = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
-    
     window.addEventListener('resize', updateCamera);
-    
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
 
-    if (galaxyRef.current) {
-      galaxyRef.current.appendChild(renderer.domElement);
-    }
+    // Cleanup function
+    const cleanup = () => {
+      window.removeEventListener('resize', updateCamera);
+      galaxyRef.current.removeChild(renderer.domElement);
+    };
 
-    // Create a circular texture with a transparent background
+    // Create particles
+    const particles = createParticles();
+    scene.add(particles);
+
+    // Create stars
+    const stars = createStars();
+    stars.forEach(star => scene.add(star));
+
+    // Animation loop
+    const animate = () => {
+      requestAnimationFrame(animate);
+      particles.rotation.x += 0.0003;
+      particles.rotation.y += 0.0003;
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // Cleanup on component unmount
+    return cleanup;
+  }, []);
+
+  // Function to create particles
+  function createParticles() {
     const canvas = document.createElement('canvas');
     canvas.width = 64;
     canvas.height = 64;
     const context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
     context.beginPath();
     context.arc(32, 32, 30, 0, 2 * Math.PI);
     context.fillStyle = 'white';
     context.fill();
 
-    // Create a texture
     const texture = new THREE.CanvasTexture(canvas);
-
-    // Create material with circular texture
     const material = new THREE.PointsMaterial({
       size: 0.02,
       vertexColors: true,
@@ -646,54 +510,32 @@ export const Galaxy = () => {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    const points = new THREE.Points(geometry, material);
+    return new THREE.Points(geometry, material);
+  }
 
-    scene.add(points);
-    camera.position.z = 5;
+  // Function to create stars
+  function createStars() {
+    const starTexture = new THREE.TextureLoader().load('/images/lensflare.png');
+    const stars = [];
+    const numStars = 1000;
 
-    
-const starTexture = new THREE.TextureLoader().load('/images/lensflare.png');
+    for (let i = 0; i < numStars; i++) {
+      const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
+      const star = new THREE.Sprite(starMaterial);
+      star.position.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
+      star.scale.set(0.1, 0.1, 0.1);
+      stars.push(star);
+    }
 
-
-const numStars = 1000; // You can adjust the number of extra stars as needed
-
-for (let i = 0; i < numStars; i++) {
-  const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
-  const star = new THREE.Sprite(starMaterial);
-
-  // Randomly position stars within a certain range
-  const x = (Math.random() - 0.5) * 20;
-  const y = (Math.random() - 0.5) * 20;
-  const z = (Math.random() - 0.5) * 20;
-
-  star.position.set(x, y, z);
-
-  // Adjust the scale of stars to make them larger
-  star.scale.set(0.1, 0.1, 0.1); // Increase the scale as needed
-
-  scene.add(star);
-}
-
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      points.rotation.x += 0.0003;
-      points.rotation.y += 0.0003;
-      renderer.render(scene, camera);
-    };
-
-    animate();
-  }, []);
+    return stars;
+  }
 
   return (
     <section id="home" className="flex justify-center items-center relative">
       <div style={{ height: '100vh', overflow: 'hidden' }}>
-        {/* Your Three.js canvas */}
         <div ref={galaxyRef} className="galaxy-canvas" />
-
-        {/* Overlay */}
         <div className="overlay">
-        <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
+          <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
           <div className="message">
             <h1>Hello and welcome</h1>
             <p>You have reached Tom's Dev space</p>

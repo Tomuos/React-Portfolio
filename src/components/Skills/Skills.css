@@ -67,7 +67,7 @@
   width: 100%; /* Fill the entire width of the section */
 }
 
-.gradient-heading {
+#skills .gradient-heading {
   color: white;
   font-size: 5rem;
   display: inline-block; /* Allows the text to only take up as much space as it needs */

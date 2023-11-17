@@ -1,37 +1,50 @@
 #about {
   background-color: #1A0064;
   color: #fff;
-  padding: 8rem 0;
+  padding: 8rem 0; /* Increase padding top and bottom */
   background-image: url('../../../public/images/wallpaper-sun-stars.png');
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  
+  
 }
 
 #about .content {
-  max-width: 80%;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
+max-width: 80%;  /* Limits the content width to 80% */
+margin: 0 auto;  /* Centers the content horizontally */
+background-color: rgba(255, 255, 255, 0.2);
+border-radius: 10px;
+backdrop-filter: blur(10px);
 }
 
 .gradient-heading-container {
-  background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
-  border-radius: 10px;
-  text-align: center;
-  padding: 1rem 0;
-  margin: auto;
-  width: 100%;
+background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+border-radius: 10px;
+text-align: center;
+padding: 1rem 0;
+margin: auto; /* Center the container */
+width: 100%; /* Fill the entire width of the section */
 }
 
 .gradient-heading {
-  color: white;
-  font-size: 5rem;
-  display: inline-block;
-  margin: 0;
+color: white;
+font-size: 5rem;
+display: inline-block; /* Allows the text to only take up as much space as it needs */
+margin: 0; /* Remove any default margin */
 }
+
+
+
+/* #about h1 {
+  font-size: 5rem;
+  background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 0;
+} */
 
 #about h3 {
   font-size: 2.5rem;
@@ -39,7 +52,7 @@
   font-weight: 700;
   text-align: center;
   padding: 2rem 0;
-}
+}    
 
 #about p {
   font-size: 2rem;
@@ -48,52 +61,273 @@
   padding: 2rem 0;
 }
 
+#about .gallery ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Adjust the gap as necessary */
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+
+}
+
+#about .gallery ul li {
+  margin: 0 1rem; /* 1rem margin on the left and right */
+  
+}
+
+#about .gallery img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* smooth transition for scaling and shadow */
+  border-radius: 30px;
+  width: 350px;
+  display: block;
+}
+
+#about .gallery img:hover {
+  transform: translateY(-10px) scale(1.1); /* rise up and scale */
+  box-shadow: 0px 0px 20px 5px rgb(127, 255, 212); /* highlighting effect around the edges */
+}
+
+
+
+
+.container {
+display: flex;
+width: 100%;
+padding: 4% 2%;
+box-sizing: border-box;
+height: auto;
+}
+
+.box {
+flex: 1;
+overflow: hidden;
+transition: .5s;
+margin: 0 2%;
+box-shadow: 0 20px 30px rgba(0,0,0,.1);
+line-height: 0;
+width: 50px;
+height: 450px;
+}
+
+.box > img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: .5s;
+}
+
+.box > span {
+font-size: 3.8vh;
+display: block;
+text-align: center;
+height: 10vh;
+line-height: 2.6;
+}
+
+/* Scale for landscape */
+.box.landscape:hover {
+flex: 1 1 50%;
+}
+.box.landscape:hover > img {
+width: 100%;
+height: 100%;
+}
+
+/* Scale for portrait */
+.box.portrait > img {
+transform: scale(1.2);  /* Initially zoom in the image */
+}
+.box.portrait:hover > img {
+transform: scale(1);  /* Zoom out the image on hover */
+}
+
+.about-me-section {
+padding: 50px;
+/* background-color: rgba(127, 255, 212, 0.786);
+color: black; */
+border-radius: 30px;
+
+
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: column; /* Keep it in a single column */
+  align-items: center; /* Center-align items for a better look */
+}
+
+.about-me-text {
+width: 60%;
+}
+
+.about-me-image {
+width: 25%;
+
+}
+
+.about-me-image img {
+padding-top: 2em;
+width: 100%;
+border-radius: 30px;
+}
+
+
+#hobbiesSection {
+text-align: center; /* This will center the title and text */
+padding: 2rem;
+}
+
+.hobbies-gallery {
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* Creates four equal columns */
+justify-content: center;
+align-items: center;
+grid-gap: 2rem;
+
+padding: 1rem;
+margin: auto;
+width: calc(350px * 4 + 3rem); /* width of four items plus three 1rem gaps */
+max-width: 100%; /* Make sure it doesn't exceed the width of its container */
+}
+
+
+.hobby-item {
+position: relative;
+display: flex;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+overflow: hidden;
+border-radius: 30px;
+}
+
+.hobby-item img {
+width: 500px; /* Ensure the image fills the container */
+height: 400px; /* Fixed height to make all images the same size */
+object-fit:cover; /* This will cover the area, cropping the image if necessary */
+transition: transform 0.3s ease-in-out;
+
+
+}
+
+.hobby-item span {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.7); /* Caption background */
+color: white;
+padding: 0.5rem;
+text-align: center;
+transition: opacity 0.3s ease;
+opacity: 0; /* Hide caption initially */
+visibility: hidden; /* Hide caption initially */
+transform: translateY(100%); /* Start hidden below the image */
+}
+
+.hobby-item:hover img {
+transform: scale(1.1); /* Slightly enlarge images on hover */
+}
+
+.hobby-item:hover span {
+opacity: 1;
+visibility: visible; /* Show caption on hover */
+transform: translateY(0); /* Slide up caption on hover */
+}
+
+.hobby-item2 {
+position: relative;
+display: flex;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+overflow: hidden;
+border-radius: 30px;
+}
+
+.hobby-item2 img {
+width: 500px; /* Ensure the image fills the container */
+height: 400px; /* Fixed height to make all images the same size */
+object-fit:cover; /* This will cover the area, cropping the image if necessary */
+transition: transform 0.3s ease-in-out;
+
+
+}
+
+.hobby-item2 span {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.7); /* Caption background */
+color: white;
+padding: 0.5rem;
+text-align: center;
+transition: opacity 0.3s ease;
+opacity: 0; /* Hide caption initially */
+visibility: hidden; /* Hide caption initially */
+transform: translateY(100%); /* Start hidden below the image */
+}
+
+.hobby-item2:hover img {
+transform: scale(0.8); /* Slightly shrink images on hover */
+}
+
+.hobby-item2:hover span {
+opacity: 1;
+visibility: visible; /* Show caption on hover */
+transform: translateY(0); /* Slide up caption on hover */
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  #about {
-    padding: 4rem 1rem; /* Reduce padding */
+  .about-me-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for a better look */
   }
 
-  .gradient-heading {
-    font-size: 2.5rem; /* Adjust header font size */
+  
+
+  #about p {
+    font-size: 1rem; /* Adjust font size for readability */
+    text-align: center; /* Center-align the text */
+     
   }
 
-  #about .content {
-    max-width: 95%; /* Increase content width */
+  .about-me-image {
+    
+    width: 100%; /* Full width to utilize space */
   }
 
-  .about-me-text p {
-    font-size: 1.2rem; /* Reduce paragraph text size */
+  .about-me-image img {
+    max-width: 100%; /* Ensure image is not larger than its container */
+    height: auto; /* Maintain aspect ratio */
   }
 
-  .gallery ul {
-    flex-direction: column; /* Stack images vertically */
+  #about .content{
+    max-width: 100%;
   }
 
-  .gallery img {
-    width: 80%; /* Increase logo size */
-    margin: 0 auto 1rem; /* Center and add space below logos */
+  .gradient-heading{
+    font-size: 2rem;
   }
 
-  /* Adjust the pizza and Zelda images */
-  .hobbies-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  @media screen and (max-width: 768px) {
+    .gallery ul {
+      flex-direction: column; /* Stack the list items vertically */
+    }
+  
+    .gallery li {
+      margin-bottom: 1rem; /* Add some space between the items */
+    }
+  
+    .img-container img {
+      max-width: 80%; /* Take up to 80% of the container width */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0 auto; /* Center the images */
+    }
   }
+  
 
-  .hobby-item img, .hobby-item2 img {
-    width: 100%; /* Full width of their container */
-    margin-bottom: 0.5rem; /* Space between image and description */
-  }
 
-  .hobby-item span, .hobby-item2 span {
-    display: block; /* Ensure descriptions are block level */
-    text-align: center; /* Center text */
-    font-size: 1rem; /* Adjust description text size */
-    opacity: 1; /* Always visible */
-    visibility: visible;
-    transform: none; /* Remove any transforms */
-    position: relative; /* Reset position */
-    background-color: transparent; /* Remove background */
-    color: #fff; /* Text color */
-  }
 }
