@@ -16,11 +16,9 @@ export const Navbar = () => {
   };
 
   const toggleBurger = () => {
-    console.log("Burger toggled");
     setBurgerOpen(!burgerOpen);
   };
   
-
   useEffect(() => {
     const sections = ['home', 'about', 'skills', 'projects', 'contact'];
 
@@ -32,7 +30,6 @@ export const Navbar = () => {
           const topBound = element.offsetTop;
           const bottomBound = topBound + element.offsetHeight;
           const scrollTop = window.scrollY;
-          // Check if the section is in view
           if (scrollTop >= topBound && scrollTop < bottomBound) {
             currentSection = section;
             break;
@@ -48,7 +45,10 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <img src="/images/cometLogo.png" alt="Comet Logo" className="logo" />
+      {/* Wrap the logo in an anchor tag */}
+      <a href="#home" onClick={(e) => handleItemClick(e, 'home')} className="logo-link">
+        <img src="/images/logo3.png" alt="Comet Logo" className="logo" />
+      </a>
       <div className="burger" onClick={toggleBurger}>
         <div className="line"></div>
         <div className="line"></div>
@@ -62,7 +62,7 @@ export const Navbar = () => {
               className={activeItem === item ? 'active' : ''}
               onClick={(e) => handleItemClick(e, item)}
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)} {/* Capitalize the first letter */}
+              {item.charAt(0).toUpperCase() + item.slice(1)}
             </a>
           </li>
         ))}
