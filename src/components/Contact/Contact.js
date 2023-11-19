@@ -1,13 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'; // Example for React Icons usage
-import { BsFillFileEarmarkPdfFill } from 'react-icons/bs'; // Icon for PDF
-
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'; // For GitHub and LinkedIn icons
+import { BsFillFileEarmarkPdfFill } from 'react-icons/bs'; // For PDF icon
 
 export const Contact = () => {
   const form = useRef();
+  const [formData, setFormData] = useState({
+    user_name: '',
+    user_email: '',
+    message: '',
+  });
+  
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,23 +26,36 @@ export const Contact = () => {
       });
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
+    
+    // Check if all fields are filled out to enable the submit button
+    setIsSubmitDisabled(
+      !formData.user_name || !formData.user_email || !formData.message
+    );
+  };
+
   return (
     <section id="contact">
       <div className="contact-container"> 
-      <div className="gradient-heading-container">
-        <h1 className="gradient-heading">Contact</h1>
-      </div>
+        <div className="gradient-heading-container">
+          <h1 className="gradient-heading">Contact</h1>
+        </div>
       
         <form ref={form} onSubmit={sendEmail}>
           <label htmlFor="user_name">Name</label>
-          <input type="text" name="user_name" id="user_name" />
+          <input type="text" name="user_name" id="user_name" onChange={handleInputChange} />
           <label htmlFor="user_email">Email</label>
-          <input type="email" name="user_email" id="user_email" />
+          <input type="email" name="user_email" id="user_email" onChange={handleInputChange} />
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" />
-          <input type="submit" value="Send" />
+          <textarea name="message" id="message" onChange={handleInputChange} />
+          <input type="submit" value="Send" disabled={isSubmitDisabled} />
         </form>
-</div>
+      </div>
       <div className="contact-container">
         <div className="social-links">
           <a href="https://github.com/Tomuos" target="_blank" rel="noopener noreferrer">
@@ -45,7 +64,7 @@ export const Contact = () => {
           <a href="https://www.linkedin.com/in/tomulvlup/" target="_blank" rel="noopener noreferrer">
             <FaLinkedinIn size={60} />
           </a>
-          <a href="images/Tom BT CV 2023 Nov 16.pdf" download>
+          <a href="/images/Tom BT CV 2023 Nov 16.pdf" download>
             <BsFillFileEarmarkPdfFill size={60} />
           </a>
         </div>
