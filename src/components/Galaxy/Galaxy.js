@@ -36,22 +36,30 @@ export const Galaxy = () => {
     const particles = createParticles();
     scene.add(particles);
 
-    // Create stars
-    const stars = createStars();
-    stars.forEach(star => scene.add(star));
+  // Create stars
+  const stars = createStars();
+  stars.forEach(star => scene.add(star));
 
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      particles.rotation.x += 0.0003;
-      particles.rotation.y += 0.0003;
-      renderer.render(scene, camera);
-    };
-    animate();
+  // Animation loop
+  const animate = () => {
+    requestAnimationFrame(animate);
 
-    // Cleanup on component unmount
-    return cleanup;
-  }, []);
+    // Animate stars
+    stars.forEach(star => {
+      star.position.add(star.velocity);
+    });
+
+    // Particles rotation
+    particles.rotation.x += 0.0003;
+    particles.rotation.y += 0.0003;
+
+    renderer.render(scene, camera);
+  };
+  animate();
+
+  // Cleanup on component unmount
+  return cleanup;
+}, []);
 
   // Function to create particles
   function createParticles() {
@@ -73,8 +81,8 @@ export const Galaxy = () => {
     });
 
     const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(2000 * 3);
-    const colors = new Float32Array(2000 * 3);
+    const positions = new Float32Array(7000 * 3);
+    const colors = new Float32Array(7000 * 3);
 
     for (let i = 0; i < positions.length; i += 3) {
       positions[i] = (Math.random() - 0.5) * 10;
@@ -93,22 +101,35 @@ export const Galaxy = () => {
     return new THREE.Points(geometry, material);
   }
 
-  // Function to create stars
-  function createStars() {
-    const starTexture = new THREE.TextureLoader().load('/images/lensflare.png');
-    const stars = [];
-    const numStars = 1000;
-
-    for (let i = 0; i < numStars; i++) {
-      const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
-      const star = new THREE.Sprite(starMaterial);
-      star.position.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
-      star.scale.set(0.1, 0.1, 0.1);
-      stars.push(star);
+    // Enhanced createStars function with varied sizes and initial velocities
+    function createStars() {
+      const starTexture = new THREE.TextureLoader().load('/images/lensflare.png');
+      const stars = [];
+      const numStars = 1000;
+  
+      for (let i = 0; i < numStars; i++) {
+        const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
+        const star = new THREE.Sprite(starMaterial);
+  
+        // Randomize position
+        star.position.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
+  
+        // Randomize scale for varied sizes
+        const scale = Math.random() * 0.1 + 0.05; // Adjust this range for size variation
+        star.scale.set(scale, scale, scale);
+  
+        // Store velocity for movement
+        star.velocity = new THREE.Vector3(
+          (Math.random() - 0.5) * 0.002, 
+          (Math.random() - 0.5) * 0.002, 
+          (Math.random() - 0.5) * 0.002
+        );
+  
+        stars.push(star);
+      }
+  
+      return stars;
     }
-
-    return stars;
-  }
 
   return (
     <section id="home" className="flex justify-center items-center relative">
