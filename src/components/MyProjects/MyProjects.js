@@ -15,7 +15,7 @@ export const MyProjects = ({ className }) => {
       ],
       image: "images/bg1wb.png"
     }
-    // ... Add other projects in a similar manner if needed
+    
   ];
   
  
@@ -35,7 +35,11 @@ export const MyProjects = ({ className }) => {
             Kindr Website
           </a>
 
-          
+        <p>Please take a look at the app the team and I worked on. Things I worked on were the navigation for mobile and pc responsiveness, FAQ page accordian to name a few.</p>
+        <p>It was a team effort and I tended to work more on the frontend side of things as I enjoyed creating something that matched our Figma designs</p>
+        <p>I learnt a lot from my team, Bryony was a graphic designer and it really showed when were coming up with designs for the app. Naomi was happy to get stuck into front end</p>
+
+
           <div className="project-video-wrapper">
             <iframe 
               title="Kindr App Presentation"
@@ -50,7 +54,9 @@ export const MyProjects = ({ className }) => {
         </div>
 
           <a href={projects[0].links.find(link => link.type === "github").url} target="_blank" rel="noopener noreferrer" className="github-link">
-            <img src="images/github.png" alt="GitHub Logo" style={{width: "150px"}}/> 
+          <span class="github-icon-wrapper">
+          <img src="images/github.png" alt="GitHub Logo" style={{width: "150px"}}/> 
+          </span>
             Link to the GitHub repo code
           </a>
       </div>

@@ -35,14 +35,17 @@
 
 #projects p 
  {
-    color: white;
-    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
     text-decoration: none;
+    font-style: bold;
     transition: text-decoration 0.3s;
+    text-align: left;
+    padding: 1rem 0;
 }
 
 #projects a {
-    color: rgb(167, 245, 255);
+    color: rgb(133, 241, 255);
     font-size: 2.5rem;
     text-decoration: none;
     transition: text-decoration 0.3s;
@@ -108,7 +111,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
@@ -148,9 +151,69 @@
   }
   
 
-  @media screen and (max-width: 768px) {
-
-    #projects .gradient-heading{
-      font-size: 3rem;
+/* Keyframes for floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the same position */
     }
+    50% {
+        transform: translateY(-10px); /* Move up by 10px */
+    }
+}
+
+/* Apply the animation to the GitHub icon */
+.github-link img {
+    animation: float 2s ease-in-out infinite; /* 2 seconds duration, ease-in-out timing, infinite loop */
+    margin-right: 10px;
+    /* Rest of your styles... */
+}
+
+.github-link img:hover {
+    filter: drop-shadow(0 0 20px rgb(127, 255, 212)); /* Add a drop shadow on hover */
+    
+}
+
+/* Responsive Styles for Mobile Devices */
+@media screen and (max-width: 768px) {
+    #projects p, #projects a {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .motion-div img {
+        width: 100%; /* Full width images on mobile */
+        height: auto;
+    }
+
+    .project-image, .project-video {
+        width: 100%; /* Full width for project images and videos */
+        height: auto;
+    }
+
+    .project-container {
+        max-width: 100%; /* Use full width of the screen */
+    }
+
+    .gradient-heading-container {
+        padding: 0.5rem 0; /* Smaller padding */
+    }
+
+    #projects .gradient-heading {
+        font-size: 3rem; /* Smaller heading font size */
+    }
+
+    .github-link {
+        font-size: 1rem; /* Smaller font size for GitHub link */
+    }
+    
+
+    .project-video-wrapper {
+        padding-top: 75%; /* Adjust aspect ratio for mobile */
+    }
+
+    .github-link img {
+        width: 40px; /* Adjust the width as needed for mobile devices */
+        height: auto; /* Maintain the aspect ratio of the image */
+        animation: float 1.5s ease-in-out infinite; /* Optional: Adjust the animation speed if needed */
+    }
+
 }
