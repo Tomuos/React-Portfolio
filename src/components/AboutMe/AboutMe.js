@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AboutMe.css';
 
 export const AboutMe = () => {
   const [slideIndex, setSlideIndex] = useState(1);
+ 
 
   function moveSlide(n) {
     setSlideIndex((prevSlideIndex) => {
@@ -16,7 +17,6 @@ export const AboutMe = () => {
       return newIndex;
     });
   }
-  
   
   
 
@@ -44,6 +44,17 @@ export const AboutMe = () => {
       caption: "Sunflowers",
     },
   ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((currentSlideIndex) => {
+        return currentSlideIndex === slides.length ? 1 : currentSlideIndex + 1;
+      });
+    }, 5000); // Change slide every 5000ms (5 seconds)
+  
+    return () => clearInterval(timer);
+  }, [slides.length]); // Add slides.length to the dependency array
+  
 
   return (
     <section id="about" className="hidden">

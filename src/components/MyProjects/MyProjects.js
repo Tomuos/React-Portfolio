@@ -37,7 +37,7 @@ export const MyProjects = ({ className }) => {
 
         <p>Please take a look at the app the team and I worked on. Things I worked on were the navigation for mobile and pc responsiveness, FAQ page accordian to name a few.</p>
         <p>It was a team effort and I tended to work more on the frontend side of things as I enjoyed creating something that matched our Figma designs</p>
-        <p>I learnt a lot from my team, Bryony was a graphic designer and it really showed when were coming up with designs for the app. Naomi was happy to get stuck into front end</p>
+        <p>I learnt a lot from my team, and who knows maybe one day I'll convince them to collab again.</p>
 
 
           <div className="project-video-wrapper">
@@ -49,9 +49,9 @@ export const MyProjects = ({ className }) => {
             </iframe>
             <p>Kindr App presentation</p>
           </div>
-    
           
         </div>
+          
 
           <a href={projects[0].links.find(link => link.type === "github").url} target="_blank" rel="noopener noreferrer" className="github-link">
           <span class="github-icon-wrapper">
@@ -60,7 +60,7 @@ export const MyProjects = ({ className }) => {
             Link to the GitHub repo code
           </a>
       </div>
-      </div>
+    </div>
 
 
 
