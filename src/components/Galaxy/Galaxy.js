@@ -103,7 +103,7 @@ export const Galaxy = () => {
 
     // Enhanced createStars function with varied sizes and initial velocities
     function createStars() {
-      const starTexture = new THREE.TextureLoader().load('/images/lensflare.png');
+      const starTexture = new THREE.TextureLoader().load('/images/lens-flair.png');
       const stars = [];
       const numStars = 1000;
   

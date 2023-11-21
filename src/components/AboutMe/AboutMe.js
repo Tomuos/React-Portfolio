@@ -113,6 +113,9 @@ export const AboutMe = () => {
           <p>
             I also love hosting pizza parties and gaming — the new Zelda game TOTK is my current favorite!
           </p>
+
+            <h2>My Pizza's</h2>
+
           <div className="hobbies-gallery">
             <div className="hobby-item">
               <img src="/images/crispy.jpg" alt="Crispy Pizza" className="hobby-image" />
@@ -127,11 +130,12 @@ export const AboutMe = () => {
               <span>Nduja Pizza bit of oomph</span>
             </div>
             <div className="hobby-item">
-              <img src="/images/sweetcorn.jpg" alt="Sweetcorn Pizza" className="hobby-image" />
-              <span>Cheese ham and Sweetcorn Pizza</span>
+              <img src="/images/pizzatime.jpg" alt="Cheese n ham" className="hobby-image" />
+              <span>Cheese ham and red onions</span>
             </div>
           </div>
 
+            <h2>Some Tears of the kindom screenshots</h2>
           <div className="hobbies-gallery">
             <div className="hobby-item2">
               <img src="/images/Totk1.jpg" alt="Link using the ascend ability" className="hobby-image" />
@@ -142,7 +146,7 @@ export const AboutMe = () => {
               <span>Link fighting a construct</span>
             </div>
             <div className="hobby-item2">
-              <img src="/images/Totk3.jpg" alt="Link at Lookout Landing" className="hobby-image" />
+              <img src="/images/lookout-landing.jpg" alt="Link at Lookout Landing" className="hobby-image" />
               <span>Link at Lookout Landing</span>
             </div>
             <div className="hobby-item2">
