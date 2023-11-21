@@ -70,3 +70,19 @@ img {
     max-width: 80%;
     height: auto;}
 }
+
+@media screen and (max-width: 320px) {
+  .message {
+    font-size: 1rem; /* Smaller font size for mobile devices */
+  }
+
+  .message, .pillars {
+    margin: 2px 0; /* Add some margin for spacing */
+  }
+
+
+  img {
+    max-width: 70%;
+    height: auto;
+  }
+}

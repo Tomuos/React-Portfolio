@@ -6,6 +6,7 @@ import { Skills } from './components/Skills/Skills';
 import { MyProjects } from './components/MyProjects/MyProjects'; 
 import { Contact } from './components/Contact/Contact';
 import { initIntersectionObserver } from './helpers/intersectionObserver';
+import { Footer } from './components/Footer/Footer';
 
 
 
@@ -24,6 +25,7 @@ function App() {
       <Skills className="hidden" /> 
       <MyProjects className="hidden" /> 
       <Contact className="hidden" />
+      <Footer />
     </div>
   );
 }

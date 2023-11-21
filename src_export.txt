@@ -2,37 +2,50 @@
 #about {
   background-color: #1A0064;
   color: #fff;
-  padding: 8rem 0;
+  padding: 8rem 0; /* Increase padding top and bottom */
   background-image: url('../../../public/images/wallpaper-sun-stars.png');
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  
+  
 }
 
 #about .content {
-  max-width: 80%;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
+max-width: 80%;  /* Limits the content width to 80% */
+margin: 0 auto;  /* Centers the content horizontally */
+background-color: rgba(0, 0, 0, 0.3);
+border-radius: 10px;
+backdrop-filter: blur(10px);
 }
 
 .gradient-heading-container {
-  background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
-  border-radius: 10px;
-  text-align: center;
-  padding: 1rem 0;
-  margin: auto;
-  width: 100%;
+background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+border-radius: 10px;
+text-align: center;
+padding: 1rem 0;
+margin: auto; /* Center the container */
+width: 100%; /* Fill the entire width of the section */
 }
 
 .gradient-heading {
-  color: white;
-  font-size: 5rem;
-  display: inline-block;
-  margin: 0;
+color: white;
+font-size: 5rem;
+display: inline-block; /* Allows the text to only take up as much space as it needs */
+margin: 0; /* Remove any default margin */
 }
+
+
+
+/* #about h1 {
+  font-size: 5rem;
+  background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 0;
+} */
 
 #about h3 {
   font-size: 2.5rem;
@@ -40,7 +53,7 @@
   font-weight: 700;
   text-align: center;
   padding: 2rem 0;
-}
+}    
 
 #about p {
   font-size: 2rem;
@@ -49,131 +62,560 @@
   padding: 2rem 0;
 }
 
+#about h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+#about .gallery ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Adjust the gap as necessary */
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+
+}
+
+#about .gallery ul li {
+  margin: 0 1rem; /* 1rem margin on the left and right */
+  
+}
+
+#about .gallery img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* smooth transition for scaling and shadow */
+  border-radius: 30px;
+  width: 350px;
+  height: 200px;
+  display: block;
+}
+
+#about .gallery img:hover {
+  transform: translateY(-10px) scale(1.1); /* rise up and scale */
+  box-shadow: 0px 0px 20px 5px rgb(127, 255, 212); /* highlighting effect around the edges */
+}
+
+
+
+/*                      Family section                    */
+/* .container {
+display: flex;
+width: 100%;
+padding: 4% 2%;
+box-sizing: border-box;
+height: auto;
+} */
+
+/* .box {
+flex: 1;
+overflow: hidden;
+transition: .5s;
+margin: 0 2%;
+box-shadow: 0 20px 30px rgba(0,0,0,.1);
+line-height: 0;
+width: 50px;
+height: 450px;
+}
+
+.box > img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: .5s;
+}
+
+.box > span {
+font-size: 3.8vh;
+display: block;
+text-align: center;
+height: 10vh;
+line-height: 2.6;
+}
+
+/* Scale for landscape */
+/* .box.landscape:hover {
+flex: 1 1 80%;
+}
+.box.landscape:hover > img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+} */
+
+/* Scale for portrait */
+/* .box.portrait > img {
+transform: scale(1.2);  
+}
+.box.portrait:hover > img {
+transform: scale(1);  
+}  */
+
+.slider-container {
+  position: relative;
+  max-width: 1000px; /* Adjust max-width as needed */
+  margin: auto; /* This centers the slider on the page */
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  display: flex; /* Use flexbox to provide easier alignment */
+  justify-content: center; /* Center horizontally in the flex container */
+  align-items: center; /* Center vertically in the flex container */
+  min-width: 100%; /* Each slide takes full width of the container */
+  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+  position: relative;
+}
+
+.slide img {
+  width: 100%; /* Full width of the slide */
+  height: 600px; /* Fixed height for all images */
+  object-fit: cover; /* Cover the area, cropping the image if necessary */
+}
+
+
+.slide span {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(137, 59, 255, 0.9);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2;
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+
+
+.about-me-section {
+padding: 50px;
+/* background-color: rgba(127, 255, 212, 0.786);
+color: black; */
+border-radius: 30px;
+
+
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: column; /* Keep it in a single column */
+  align-items: center; /* Center-align items for a better look */
+}
+
+.about-me-text {
+width: 60%;
+}
+
+.about-me-image {
+width: 40%;
+
+}
+
+.about-me-image img {
+padding-top: 2em;
+width: 100%;
+border-radius: 30px;
+}
+
+
+/* #hobbiesSection {
+margin: auto;
+text-align: center; /* This will center the title and text */
+/* padding: 2rem;
+}  */
+
+
+/* Base styles for .hobbies-gallery */
+.hobbies-gallery {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 1rem; /* Space between items */
+  padding: 1rem; /* Padding around the gallery */
+}
+
+/* General styles */
+.hobby-item, .hobby-item2 {
+  width: 350px; /* Desired width for all items */
+  height: 200px; /* Desired height for all items */
+  position: relative;
+  margin: auto; /* Center the item */
+  border-radius: 10px; /* Adjust border-radius as needed */
+  overflow: hidden; /* This will hide any overflow */
+}
+
+.hobby-item img, .hobby-item2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will cover the entire area of the container */
+  border-radius: 10px; /* Match the container's border-radius */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.hobby-item span, .hobby-item2 span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the span */
+  color: white;
+  text-align: center; /* Center the text */
+  border-radius: 0 0 10px 10px; /* Rounded corners at the bottom to match the image */
+  transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+/* Hover effects for hobby-item */
+.hobby-item:hover img {
+  transform: scale(1.1); /* Slightly enlarge images on hover */
+}
+
+.hobby-item:hover span {
+  opacity: 1; /* Make the span fully visible on hover */
+  visibility: visible;
+}
+
+/* Hover effects for hobby-item2 */
+.hobby-item2:hover img {
+  transform: scale(1.1); /* Slightly shrink images on hover */
+}
+
+.hobby-item2:hover span {
+  opacity: 1; /* Make the span fully visible on hover */
+  visibility: visible;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  #about {
-    padding: 4rem 1rem; /* Reduce padding */
-  }
-
-  .gradient-heading {
-    font-size: 2.5rem; /* Adjust header font size */
-  }
-
-  #about .content {
-    max-width: 95%; /* Increase content width */
-  }
-
-  .about-me-text p {
-    font-size: 1.2rem; /* Reduce paragraph text size */
-  }
-
-  .gallery ul {
-    flex-direction: column; /* Stack images vertically */
-  }
-
-  .gallery img {
-    width: 80%; /* Increase logo size */
-    margin: 0 auto 1rem; /* Center and add space below logos */
-  }
-
-  /* Adjust the pizza and Zelda images */
-  .hobbies-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  .hobby-item, .hobby-item2 {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Height is auto to maintain aspect ratio */
+    min-height: 200px; /* Minimum height to keep some consistency */
   }
 
   .hobby-item img, .hobby-item2 img {
-    width: 100%; /* Full width of their container */
-    margin-bottom: 0.5rem; /* Space between image and description */
+    height: auto; /* Adjust height automatically */
+    min-height: 200px; /* Minimum height to match the hobby-item2 size */
+    object-fit: contain; /* Show the full image on smaller screens */
   }
 
   .hobby-item span, .hobby-item2 span {
-    display: block; /* Ensure descriptions are block level */
-    text-align: center; /* Center text */
-    font-size: 1rem; /* Adjust description text size */
-    opacity: 1; /* Always visible */
-    visibility: visible;
-    transform: none; /* Remove any transforms */
-    position: relative; /* Reset position */
-    background-color: transparent; /* Remove background */
-    color: #fff; /* Text color */
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Start at 50% from the left */
+    transform: translateX(-50%); /* Offset by half its width to center */
+    width: calc(100% - 1rem); /* Width minus padding */
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    text-align: center; /* Center the text */
+    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effects */
+    opacity: 0; /* Hide caption initially */
+    visibility: hidden; /* Hide caption initially */
   }
-}==== ./src/components/AboutMe/AboutMe.js ====
-// Example: In your src/components/AboutMe.js
-import React from 'react';
+  
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .about-me-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for a better look */
+  }
+
+  
+
+  #about p {
+    font-size: 1rem; /* Adjust font size for readability */
+    text-align: center; /* Center-align the text */
+     
+  }
+
+  .about-me-image {
+    
+    width: 100%; /* Full width to utilize space */
+  }
+
+  .about-me-image img {
+    max-width: 100%; /* Ensure image is not larger than its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  #about .content{
+    max-width: 100%;
+  }
+
+  .gradient-heading{
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .gallery ul {
+      flex-direction: column; /* Stack the list items vertically */
+    }
+  
+    .gallery li {
+      margin-bottom: 1rem; /* Add some space between the items */
+    }
+  
+    .img-container img {
+      max-width: 80%; /* Take up to 80% of the container width */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0 auto; /* Center the images */
+    }
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .box.landscape:hover {
+    flex: 1 1 100%;
+    width: max-content;
+    object-fit: contain;
+    transform: scale(0.9)
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .slider-container {
+    width: 100%;
+  }
+
+  .slide img {
+    height: 200px; /* Adjust the height for smaller screens */
+    width: 100vw;
+    border-radius: 10px;
+  }
+
+  .slide span {
+    position: absolute;
+    bottom: 0; /* Align the bottom of the span with the bottom of the slide */
+    left: 50%; /* Center the span from the left */
+    transform: translateX(-50%); /* Center the span horizontally */
+    width: auto; /* Let the span size according to its content */
+    max-width: 90%; /* Give some padding from the edges of the screen */
+    margin: 0 auto; /* Center the span */
+    padding: 0.5rem; /* Add some padding inside the span */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    text-align: center; /* Center the text inside the span */
+  }
+
+}
+
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 767px) {
+  .hobbies-gallery {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    
+    gap: 1rem; /* Space between the items */
+    padding: 1rem; /* Padding around the gallery */
+    margin: 0 auto; /* Center the gallery horizontally */
+    width: 100%; /* Full width of the container */
+    max-width: 350px; /* Maximum width of the gallery. Adjust as needed */
+  }
+
+  .hobby-item, .hobby-item2 {
+    margin: 0 auto; /* Center the items horizontally */
+    border-radius: 10px; /* Apply border-radius */
+    /* Remove max-height if it distorts the aspect ratio of images */
+  }
+
+  .hobby-item img, .hobby-item2 img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px; /* Apply border-radius */
+    max-width: 350px; /* Maximum width of the gallery. Adjust as needed */
+    max-height: 200px; /* Maximum height of the gallery. Adjust as needed */
+  }
+
+  .hobby-item span, .hobby-item2 span {
+    display: block; /* Make the span a block element */
+    width: 100%; /* Full width */
+    padding: 0.5rem; /* Padding for the span */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    text-align: center; /* Center the text */
+    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+    margin-top: -5px; /* Negative margin to move up the span slightly */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+
+  .hobby-item:hover img {
+    transform: none; /* Slightly enlarge images on hover */
+  }
+
+  .hobby-item2:hover img {
+    transform: none; /* Slightly enlarge images on hover */
+  }
+
+  .hobby-item span {
+    opacity: 1; /* Make the span fully visible on hover */
+    visibility: visible;
+  }
+  .hobby-item2 span {
+    opacity: 1; /* Make the span fully visible on hover */
+    visibility: visible;
+  }
+  /* Adjustments for hover effects are not needed for mobile */
+}
+
+
+
+
+==== ./src/components/AboutMe/AboutMe.js ====
+import React, { useState, useEffect } from 'react';
 import './AboutMe.css';
 
 export const AboutMe = () => {
+  const [slideIndex, setSlideIndex] = useState(1);
+ 
+
+  function moveSlide(n) {
+    setSlideIndex((prevSlideIndex) => {
+      let newIndex = prevSlideIndex + n;
+      // Wrap slide index when out of bounds
+      if (newIndex < 1) {
+        newIndex = slides.length; // Go to the last slide
+      } else if (newIndex > slides.length) {
+        newIndex = 1; // Go back to the first slide
+      }
+      return newIndex;
+    });
+  }
+  
+  
+
+  const slideIndexToShow = slideIndex - 1; // Adjust for array indexing
+
+  const slides = [
+    {
+      image: "images/benFishing.jpg",
+      alt: "Ben fishing",
+      caption: "Fishing",
+    },
+    {
+      image: "images/ducks.jpg",
+      alt: "Boys and ducks",
+      caption: "Feeding time",
+    },
+    {
+      image: "images/theBoys.jpg",
+      alt: "The boys in the woods",
+      caption: "The woods",
+    },
+    {
+      image: "images/sunflowerBoys.jpg",
+      alt: "Boys with sunflowers",
+      caption: "Sunflowers",
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((currentSlideIndex) => {
+        return currentSlideIndex === slides.length ? 1 : currentSlideIndex + 1;
+      });
+    }, 5000); // Change slide every 5000ms (5 seconds)
+  
+    return () => clearInterval(timer);
+  }, [slides.length]); // Add slides.length to the dependency array
+  
+
   return (
     <section id="about" className="hidden">
-    <div className="content">
-      <section id="about-me" className="about-me-section">
-      <div className="gradient-heading-container">
-      <h1 className="gradient-heading">About Me</h1>
-      </div>
-      <div className="about-me-content">
-        
-        <div className="about-me-text">
-          <p>
-            Hello, I'm Tom! I'm a developer with a focus on front-end technologies like React, HTML, and CSS. 
-            I have a deep-rooted passion for coding and love taking on new challenges to expand my skill set.
-          </p>
-          
-          <p>
-            I'm currently looking for new job opportunities where I can bring my unique blend of skills and 
-            passion to a forward-thinking company.
-          </p>
-        </div>
-        
-        <div className="about-me-image">
-  <img src="/images/Tom.jpg" alt="Tom" className="cover-image"/>
-  
-</div>
-     
-      </div>
+      <div className="content">
+        <div id="about-me" className="about-me-section">
+          <div className="gradient-heading-container">
+            <h1 className="gradient-heading">About Me</h1>
+          </div>
 
-    </section>
-  
+          <div className="about-me-content">
+            <div className="about-me-image">
+              <img src="/images/Tom.jpg" alt="Tom" className="cover-image" />
+            </div>
 
-      <h3>Coder & Tech Enthusiast 💻</h3>
-      <p>
-        I'm a full-stack developer with a passion for creating beautiful, functional and accessible web applications. I have a keen interest in the latest technologies and enjoy learning new skills.
-      </p>      
-      <div className="gallery">
-        <ul>
-          <li>
-            <a href="https://www.meetup.com/brum_js/" className="img-container">
-              <img src="images/brumjslogo.webp" alt="Brum.js Logo" width="450" height="250" />
-            </a>
-          </li>
-          <li>
-            <a href="https://conf.techmids.io/" className="img-container">
-              <img src="images/Techmidslogo.png" alt="Techmids Logo" width="450" height="250" />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div id="familySection">
-        <h3>Family Man 👨‍👦‍👦</h3>
-        <p>Dad to two young boys. We love exploring the great outdoors.</p>
-        <div className="container">
-          <div className="box portrait">
-              <img src="images/benFishing.jpg" alt="Ben fishing"/>
-              <span>Fishing</span>
-          </div>
-          <div className="box landscape">
-              <img src="images/ducks.jpg" alt="Boys and ducks"/>
-              <span>Feeding time</span>
-          </div>
-          <div className="box landscape">
-              <img src="images/theBoys.jpg" alt="The boys in the woods"/>
-              <span>The woods</span>
-          </div>
-          <div className="box portrait">
-              <img src="images/sunflowerBoys.jpg" alt="Boys with sunflowers"/>
-              <span>Sunflowers</span>
+            <p>
+              Hello, I'm Tom! I'm a developer with a focus on front-end technologies like React, HTML, and CSS.
+              I have a deep-rooted passion for coding and love taking on new challenges to expand my skill set.
+            </p>
+
+            <p>
+              I'm currently looking for new job opportunities where I can bring my unique blend of skills and
+              passion to a forward-thinking company.
+            </p>
           </div>
         </div>
-          <p>The boys love the outdoors and occasionally they become right posers</p>
+
+        <h3>Coder & Tech Enthusiast 💻</h3>
+        <p>
+          I'm a full-stack developer with a passion for creating beautiful, functional and accessible web applications. I have a keen interest in the latest technologies and enjoy learning new skills.
+        </p>
+        <div className="gallery">
+          <ul>
+            <li>
+              <a href="https://www.meetup.com/brum_js/" className="img-container">
+                <img src="images/brumjslogo.webp" alt="Brum.js Logo" width="450" height="250" />
+              </a>
+            </li>
+            <li>
+              <a href="https://conf.techmids.io/" className="img-container">
+                <img src="images/Techmidslogo.png" alt="Techmids Logo" width="450" height="250" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="familySection">
+          <h3>Family Man 👨‍👦‍👦</h3>
+          <p>Dad to two young boys. We love exploring the great outdoors.</p>
+          <div className="slider-container">
+          <div className="slider" id="imageSlider" style={{ transform: `translateX(-${slideIndexToShow * 100}%)` }}>
+          {slides.map((slide, index) => (
+          <div className={`slide ${index === slideIndexToShow ? 'active' : ''}`} key={index}>
+            <img src={slide.image} alt={slide.alt} />
+            <span>{slide.caption}</span>
+          </div>
+        ))}
+
+        </div>
+            <button className="slide-arrow prev-arrow" onClick={() => moveSlide(-1)}>❮</button>
+            <button className="slide-arrow next-arrow" onClick={() => moveSlide(1)}>❯</button>
+
+          </div>
+          <p>The boys love the outdoors and occasionally they become right posers.</p>
         </div>
 
         <div id="hobbiesSection">
@@ -181,44 +623,47 @@ export const AboutMe = () => {
           <p>
             I also love hosting pizza parties and gaming — the new Zelda game TOTK is my current favorite!
           </p>
+
+            <h2>My Pizza's</h2>
+
           <div className="hobbies-gallery">
-          <div className="hobby-item">
-            <img src="/images/crispy.jpg" alt="Crispy Pizza" className="hobby-image" />
-            <span>Crispy Pizza so tasty!</span>
+            <div className="hobby-item">
+              <img src="/images/crispy.jpg" alt="Crispy Pizza" className="hobby-image" />
+              <span>Crispy Pizza so tasty!</span>
+            </div>
+            <div className="hobby-item">
+              <img src="/images/ooni.jpg" alt="Ooni Pizza Oven" className="hobby-image" />
+              <span>Ooni Pizza Oven, best purchase ever</span>
+            </div>
+            <div className="hobby-item">
+              <img src="/images/nduja.jpg" alt="Nduja Pizza" className="hobby-image" />
+              <span>Nduja Pizza bit of oomph</span>
+            </div>
+            <div className="hobby-item">
+              <img src="/images/pizzatime.jpg" alt="Cheese n ham" className="hobby-image" />
+              <span>Cheese ham and red onions</span>
+            </div>
           </div>
-          <div className="hobby-item">
-            <img src="/images/ooni.jpg" alt="Ooni Pizza Oven" className="hobby-image" />
-            <span>Ooni Pizza Oven, best purchase ever</span>
-          </div>
-          <div className="hobby-item">
-            <img src="/images/nduja.jpg" alt="Nduja Pizza" className="hobby-image" />
-            <span>Nduja Pizza bit of oomph</span>
-          </div>
-          <div className="hobby-item">
-            <img src="/images/sweetcorn.jpg" alt="Sweetcorn Pizza" className="hobby-image" />
-            <span>Cheese ham and Sweetcorn Pizza</span>
-          </div>
-        </div>
 
-        <div className="hobbies-gallery">
-          <div className="hobby-item2">
-            <img src="/images/Totk1.jpg" alt="Link using the ascend ability" className="hobby-image" />
-            <span>Link Ascending</span>
+            <h2>Some Tears of the kindom screenshots</h2>
+          <div className="hobbies-gallery">
+            <div className="hobby-item2">
+              <img src="/images/Totk1.jpg" alt="Link using the ascend ability" className="hobby-image" />
+              <span>Link Ascending</span>
+            </div>
+            <div className="hobby-item2">
+              <img src="/images/Totk5.webp" alt="Link fighting a construct" className="hobby-image" />
+              <span>Link fighting a construct</span>
+            </div>
+            <div className="hobby-item2">
+              <img src="/images/lookout-landing.jpg" alt="Link at Lookout Landing" className="hobby-image" />
+              <span>Link at Lookout Landing</span>
+            </div>
+            <div className="hobby-item2">
+              <img src="/images/Totk4.webp" alt="Link on his Hover Bike" className="hobby-image" />
+              <span>Link on his Hover Bike</span>
+            </div>
           </div>
-          <div className="hobby-item2">
-            <img src="/images/Totk5.webp" alt="Link fighting a construct" className="hobby-image" />
-            <span>Link fighting a construct</span>
-          </div>
-          <div className="hobby-item2">
-            <img src="/images/Totk3.jpg" alt="Link at Lookout Landing" className="hobby-image" />
-            <span>Link at Lookout Landing</span>
-          </div>
-          <div className="hobby-item2">
-            <img src="/images/Totk4.webp" alt="Link on his Hover Bike" className="hobby-image" />
-            <span>Link on his Hover Bike</span>
-          </div>
-        </div>
-
         </div>
       </div>
     </section>
@@ -228,7 +673,7 @@ export const AboutMe = () => {
 #contact {
     background-color: #1A0064;
     color: #fff;
-    padding: 5rem 0;
+    padding: 10rem 0;
     background-image: url('../../../public/images/wallpaper-meteor-stars.png');
     background-repeat: repeat;
     background-size: cover;
@@ -255,15 +700,16 @@ export const AboutMe = () => {
 }
 
 .contact-container {
-    max-width: 60%;  /* Limits the content width to 80% */
+    max-width: 40%;  /* Limits the content width to 80% */
     margin: 0 auto;  /* Centers the content horizontally */
     padding: 2rem; /* Adds padding around the content */
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent white background */
     border-radius: 10px; /* Rounded corners */
     backdrop-filter: blur(10px); /* Blurred background effect */
+    margin-bottom: 2rem;;
 }
 
 .gradient-heading-container {
@@ -275,7 +721,7 @@ export const AboutMe = () => {
     width: 100%; /* Fill the entire width of the section */
   }
   
-  .gradient-heading {
+  #contact .gradient-heading {
     color: white;
     font-size: 5rem;
     display: inline-block; /* Allows the text to only take up as much space as it needs */
@@ -290,11 +736,26 @@ export const AboutMe = () => {
   
   /* Style the form elements */
   form input, form textarea {
-    width: 100%; /* Make input and textarea elements fill the container */
-    margin-bottom: 1rem; /* Add space between the elements */
-    padding: 0.5rem; /* Add some padding */
+    
+      box-sizing: border-box; /* Add this line */
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+    
+    
   }
   
+  form input[type="submit"]:disabled {
+    background-color: #ccc; /* Grey out the button */
+    cursor: not-allowed;
+  }
+  
+  textarea {
+    height: 10rem; /* Set a minimum height */
+    resize: none;
+  }
+  
+
   /* Optionally, style the submit button */
   form input[type="submit"] {
     background-color: rgb(0, 140, 255); /* Example button color */
@@ -304,13 +765,60 @@ export const AboutMe = () => {
     border-radius: 5px;
     cursor: pointer;
   }
-  ==== ./src/components/Contact/Contact.js ====
-import React, { useRef } from 'react';
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  
+  .social-links a {
+    color: #ffffff; /* or any color you prefer */
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: rgb(0, 140, 255);
+    
+  }
+  
+  
+
+  @media screen and (max-width: 768px) {
+    .contact-container {
+      max-width: 80%;  /* Limits the content width to 80% */
+      margin: 0 auto;  /* Centers the content horizontally */
+      padding: 2rem; /* Adds padding around the content */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+      border-radius: 10px; /* Rounded corners */
+      backdrop-filter: blur(10px); /* Blurred background effect */
+  }
+
+  #contact .gradient-heading{
+    font-size: 2rem;
+  }
+
+  }==== ./src/components/Contact/Contact.js ====
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'; // For GitHub and LinkedIn icons
+import { BsFillFileEarmarkPdfFill } from 'react-icons/bs'; // For PDF icon
+
 export const Contact = () => {
   const form = useRef();
+  const [formData, setFormData] = useState({
+    user_name: '',
+    user_email: '',
+    message: '',
+  });
+  
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -323,23 +831,49 @@ export const Contact = () => {
       });
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
+    
+    // Check if all fields are filled out to enable the submit button
+    setIsSubmitDisabled(
+      !formData.user_name || !formData.user_email || !formData.message
+    );
+  };
+
   return (
     <section id="contact">
-      <div className="contact-container"> {/* Use the new container class here */}
-      <div className="gradient-heading-container">
-        <h1 className="gradient-heading">Contact</h1>
-      </div>
+      <div className="contact-container"> 
+        <div className="gradient-heading-container">
+          <h1 className="gradient-heading">Contact</h1>
+        </div>
       
         <form ref={form} onSubmit={sendEmail}>
           <label htmlFor="user_name">Name</label>
-          <input type="text" name="user_name" id="user_name" />
+          <input type="text" name="user_name" id="user_name" onChange={handleInputChange} />
           <label htmlFor="user_email">Email</label>
-          <input type="email" name="user_email" id="user_email" />
+          <input type="email" name="user_email" id="user_email" onChange={handleInputChange} />
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" />
-          <input type="submit" value="Send" />
+          <textarea name="message" id="message" onChange={handleInputChange} />
+          <input type="submit" value="Send" disabled={isSubmitDisabled} />
         </form>
       </div>
+      <div className="contact-container">
+        <div className="social-links">
+          <a href="https://github.com/Tomuos" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={60} />
+          </a>
+          <a href="https://www.linkedin.com/in/tomulvlup/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedinIn size={60} />
+          </a>
+          <a href="/images/Tom BT CV 2023 Nov 16.pdf" download>
+            <BsFillFileEarmarkPdfFill size={60} />
+          </a>
+        </div>
+      </div> 
     </section>
   );
 };
@@ -456,22 +990,30 @@ export const Galaxy = () => {
     const particles = createParticles();
     scene.add(particles);
 
-    // Create stars
-    const stars = createStars();
-    stars.forEach(star => scene.add(star));
+  // Create stars
+  const stars = createStars();
+  stars.forEach(star => scene.add(star));
 
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      particles.rotation.x += 0.0003;
-      particles.rotation.y += 0.0003;
-      renderer.render(scene, camera);
-    };
-    animate();
+  // Animation loop
+  const animate = () => {
+    requestAnimationFrame(animate);
 
-    // Cleanup on component unmount
-    return cleanup;
-  }, []);
+    // Animate stars
+    stars.forEach(star => {
+      star.position.add(star.velocity);
+    });
+
+    // Particles rotation
+    particles.rotation.x += 0.0003;
+    particles.rotation.y += 0.0003;
+
+    renderer.render(scene, camera);
+  };
+  animate();
+
+  // Cleanup on component unmount
+  return cleanup;
+}, []);
 
   // Function to create particles
   function createParticles() {
@@ -493,8 +1035,8 @@ export const Galaxy = () => {
     });
 
     const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(2000 * 3);
-    const colors = new Float32Array(2000 * 3);
+    const positions = new Float32Array(7000 * 3);
+    const colors = new Float32Array(7000 * 3);
 
     for (let i = 0; i < positions.length; i += 3) {
       positions[i] = (Math.random() - 0.5) * 10;
@@ -513,22 +1055,35 @@ export const Galaxy = () => {
     return new THREE.Points(geometry, material);
   }
 
-  // Function to create stars
-  function createStars() {
-    const starTexture = new THREE.TextureLoader().load('/images/lensflare.png');
-    const stars = [];
-    const numStars = 1000;
-
-    for (let i = 0; i < numStars; i++) {
-      const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
-      const star = new THREE.Sprite(starMaterial);
-      star.position.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
-      star.scale.set(0.1, 0.1, 0.1);
-      stars.push(star);
+    // Enhanced createStars function with varied sizes and initial velocities
+    function createStars() {
+      const starTexture = new THREE.TextureLoader().load('/images/lens-flair.png');
+      const stars = [];
+      const numStars = 1000;
+  
+      for (let i = 0; i < numStars; i++) {
+        const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
+        const star = new THREE.Sprite(starMaterial);
+  
+        // Randomize position
+        star.position.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
+  
+        // Randomize scale for varied sizes
+        const scale = Math.random() * 0.1 + 0.05; // Adjust this range for size variation
+        star.scale.set(scale, scale, scale);
+  
+        // Store velocity for movement
+        star.velocity = new THREE.Vector3(
+          (Math.random() - 0.5) * 0.002, 
+          (Math.random() - 0.5) * 0.002, 
+          (Math.random() - 0.5) * 0.002
+        );
+  
+        stars.push(star);
+      }
+  
+      return stars;
     }
-
-    return stars;
-  }
 
   return (
     <section id="home" className="flex justify-center items-center relative">
@@ -584,14 +1139,17 @@ export const Galaxy = () => {
 
 #projects p 
  {
-    color: white;
-    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
     text-decoration: none;
+    font-style: bold;
     transition: text-decoration 0.3s;
+    text-align: left;
+    padding: 1rem 0;
 }
 
 #projects a {
-    color: rgb(167, 245, 255);
+    color: rgb(133, 241, 255);
     font-size: 2.5rem;
     text-decoration: none;
     transition: text-decoration 0.3s;
@@ -634,7 +1192,7 @@ export const Galaxy = () => {
     width: 100%; /* Fill the entire width of the section */
   }
   
-  .gradient-heading {
+  #projects .gradient-heading {
     color: white;
     font-size: 5rem;
     display: inline-block; /* Allows the text to only take up as much space as it needs */
@@ -657,7 +1215,7 @@ export const Galaxy = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
@@ -695,7 +1253,76 @@ export const Galaxy = () => {
     border: none;
     border-radius: 30px;
   }
-  ==== ./src/components/MyProjects/MyProjects.js ====
+  
+
+/* Keyframes for floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the same position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up by 10px */
+    }
+}
+
+/* Apply the animation to the GitHub icon */
+.github-link img {
+    animation: float 2s ease-in-out infinite; /* 2 seconds duration, ease-in-out timing, infinite loop */
+    margin-right: 10px;
+    /* Rest of your styles... */
+}
+
+.github-link img:hover {
+    filter: drop-shadow(0 0 20px rgb(127, 255, 212)); /* Add a drop shadow on hover */
+    
+}
+
+/* Responsive Styles for Mobile Devices */
+@media screen and (max-width: 768px) {
+    #projects p, #projects a {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .motion-div img {
+        width: 100%; /* Full width images on mobile */
+        height: auto;
+    }
+
+    .project-image, .project-video {
+        width: 100%; /* Full width for project images and videos */
+        height: auto;
+    }
+
+    .project-container {
+        max-width: 100%; /* Use full width of the screen */
+    }
+
+    .gradient-heading-container {
+        padding: 0.5rem 0; /* Smaller padding */
+    }
+
+    #projects .gradient-heading {
+        font-size: 3rem; /* Smaller heading font size */
+    }
+
+    .github-link {
+        font-size: 1rem; /* Smaller font size for GitHub link */
+    }
+    
+
+    .project-video-wrapper {
+        padding-top: 75%; /* Adjust aspect ratio for mobile */
+    }
+
+    .github-link img {
+        width: 40px; /* Adjust the width as needed for mobile devices */
+        height: auto; /* Maintain the aspect ratio of the image */
+        animation: float 1.5s ease-in-out infinite; /* Optional: Adjust the animation speed if needed */
+    }
+
+}
+
+==== ./src/components/MyProjects/MyProjects.js ====
 import React from 'react';
 
 import './MyProjects.css';
@@ -713,7 +1340,7 @@ export const MyProjects = ({ className }) => {
       ],
       image: "images/bg1wb.png"
     }
-    // ... Add other projects in a similar manner if needed
+    
   ];
   
  
@@ -733,7 +1360,11 @@ export const MyProjects = ({ className }) => {
             Kindr Website
           </a>
 
-          
+        <p>Please take a look at the app the team and I worked on. Things I worked on were the navigation for mobile and pc responsiveness, FAQ page accordian to name a few.</p>
+        <p>It was a team effort and I tended to work more on the frontend side of things as I enjoyed creating something that matched our Figma designs</p>
+        <p>I learnt a lot from my team, and who knows maybe one day I'll convince them to collab again.</p>
+
+
           <div className="project-video-wrapper">
             <iframe 
               title="Kindr App Presentation"
@@ -743,16 +1374,18 @@ export const MyProjects = ({ className }) => {
             </iframe>
             <p>Kindr App presentation</p>
           </div>
-    
           
         </div>
+          
 
           <a href={projects[0].links.find(link => link.type === "github").url} target="_blank" rel="noopener noreferrer" className="github-link">
-            <img src="images/github.png" alt="GitHub Logo" style={{width: "150px"}}/> 
+          <span class="github-icon-wrapper">
+          <img src="images/github.png" alt="GitHub Logo" style={{width: "150px"}}/> 
+          </span>
             Link to the GitHub repo code
           </a>
       </div>
-      </div>
+    </div>
 
 
 
@@ -834,6 +1467,24 @@ li a.active {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+
+@keyframes rumble {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, -2px); }
+  50% { transform: translate(2px, 2px); }
+  75% { transform: translate(-2px, 2px); }
+  100% { transform: translate(2px, -2px); }
+}
+
+.logo-link .logo {
+  transition: transform 0.9s ease; /* Shorter duration for transitions outside of hover */
+  display: inline-block; /* Needed to apply transform */
+}
+
+.logo-link:hover .logo {
+  animation: rumble 0.6s linear infinite; /* 'linear' for a consistent rumble effect */
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .burger {
@@ -855,9 +1506,22 @@ li a.active {
   }
 
   .logo {
-    height: 80px; /* Optional: Change the size on mobile if needed */
-  }
+    height: 50px; /* Adjust the size as needed for your design */
+    width: auto; /* Maintain the aspect ratio of the logo */
+
 }
+
+.logo-link .logo {
+  transition: none; 
+  
+}
+
+.logo-link:hover .logo {
+  animation: none; 
+}
+
+}
+
 ==== ./src/components/Navbar/Navbar.js ====
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
@@ -877,11 +1541,9 @@ export const Navbar = () => {
   };
 
   const toggleBurger = () => {
-    console.log("Burger toggled");
     setBurgerOpen(!burgerOpen);
   };
   
-
   useEffect(() => {
     const sections = ['home', 'about', 'skills', 'projects', 'contact'];
 
@@ -893,7 +1555,6 @@ export const Navbar = () => {
           const topBound = element.offsetTop;
           const bottomBound = topBound + element.offsetHeight;
           const scrollTop = window.scrollY;
-          // Check if the section is in view
           if (scrollTop >= topBound && scrollTop < bottomBound) {
             currentSection = section;
             break;
@@ -909,7 +1570,10 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <img src="/images/cometLogo.png" alt="Comet Logo" className="logo" />
+      {/* Wrap the logo in an anchor tag */}
+      <a href="#home" onClick={(e) => handleItemClick(e, 'home')} className="logo-link">
+        <img src="/images/logo3.png" alt="Comet Logo" className="logo" />
+      </a>
       <div className="burger" onClick={toggleBurger}>
         <div className="line"></div>
         <div className="line"></div>
@@ -923,7 +1587,7 @@ export const Navbar = () => {
               className={activeItem === item ? 'active' : ''}
               onClick={(e) => handleItemClick(e, item)}
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)} {/* Capitalize the first letter */}
+              {item.charAt(0).toUpperCase() + item.slice(1)}
             </a>
           </li>
         ))}
@@ -961,7 +1625,7 @@ export default Navbar;
 }
 
 .white-block{
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   max-width: 60%;
   margin: 0 auto;
   backdrop-filter: blur(10px);
@@ -1003,7 +1667,7 @@ export default Navbar;
   width: 100%; /* Fill the entire width of the section */
 }
 
-.gradient-heading {
+#skills .gradient-heading {
   color: white;
   font-size: 5rem;
   display: inline-block; /* Allows the text to only take up as much space as it needs */
@@ -1059,7 +1723,39 @@ export default Navbar;
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-==== ./src/components/Skills/Skills.js ====
+
+@media screen and (max-width: 768px) {
+
+  #skills .gradient-heading{
+    font-size: 2rem;
+  }
+
+  
+
+  .white-block {
+    max-width: 95%;
+  }
+
+  #skills h1 {
+    font-size: 3rem;
+  }
+
+  #skills h2 {
+    font-size: 2rem;
+  }
+
+  #skills h3 {
+    font-size: 1.5rem;
+  }
+
+  .skills-icons {
+    gap: 1rem;
+  }
+
+  .skill img {
+    width: 50px;
+  }
+}==== ./src/components/Skills/Skills.js ====
 import React from 'react';
 import './Skills.css';
 
