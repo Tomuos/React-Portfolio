@@ -48,6 +48,22 @@ img {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .message {
+    font-size: 2rem; /* Smaller font size for mobile devices */
+  }
+
+  .message h1 {
+    font-size: 1.5em; /* Adjust heading size for mobile devices */
+  }
+
+  img {
+    max-width: 90%;
+    height: auto;
+  }
+  
+}
+
 @media screen and (max-width: 768px) {
   .message {
     font-size: 1.5rem; /* Smaller font size for mobile devices */

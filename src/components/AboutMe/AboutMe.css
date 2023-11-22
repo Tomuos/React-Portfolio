@@ -17,6 +17,7 @@ margin: 0 auto;  /* Centers the content horizontally */
 background-color: rgba(0, 0, 0, 0.3);
 border-radius: 10px;
 backdrop-filter: blur(10px);
+padding-bottom: 2.5rem;
 }
 
 .gradient-heading-container {
