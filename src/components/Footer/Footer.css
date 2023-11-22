@@ -23,7 +23,7 @@
 
 .footer-content {
     
-        max-width: 60%;  /* Limits the content width to 80% */
+        max-width: 90%;  /* Limits the content width to 80% */
         margin: 0 auto;  /* Centers the content horizontally */
         padding: 2rem; /* Adds padding around the content */
         display: flex;
@@ -35,7 +35,7 @@
         margin-bottom: 2rem;;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
         .footer-content {
             max-width: 80%;
         }

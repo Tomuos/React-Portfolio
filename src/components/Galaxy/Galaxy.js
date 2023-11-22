@@ -139,7 +139,7 @@ export const Galaxy = () => {
           <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
           <div className="message">
             <h1>Hello and welcome</h1>
-            <p>You have reached Tom's Dev space</p>
+            <p>You have reached Tom's dev space.</p>
             <p>My universe of code 😀</p>
           </div>
         </div>

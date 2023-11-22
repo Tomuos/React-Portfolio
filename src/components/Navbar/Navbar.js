@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import debounce from 'lodash/debounce';
+
 
 export const Navbar = () => {
   const [activeItem, setActiveItem] = useState('home');
@@ -21,13 +23,14 @@ export const Navbar = () => {
   
   useEffect(() => {
     const sections = ['home', 'about', 'skills', 'projects', 'contact'];
-
+    const offset = 50; // You can adjust this value as needed
+  
     const onScroll = () => {
       let currentSection = 'home';
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const topBound = element.offsetTop;
+          const topBound = element.offsetTop - offset;
           const bottomBound = topBound + element.offsetHeight;
           const scrollTop = window.scrollY;
           if (scrollTop >= topBound && scrollTop < bottomBound) {
@@ -38,10 +41,13 @@ export const Navbar = () => {
       }
       setActiveItem(currentSection);
     };
-
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+  
+    const debouncedScroll = debounce(onScroll, 10); // Debounce time can be adjusted
+  
+    window.addEventListener('scroll', debouncedScroll);
+    return () => window.removeEventListener('scroll', debouncedScroll);
   }, []);
+  
 
   return (
     <nav className="navbar">
