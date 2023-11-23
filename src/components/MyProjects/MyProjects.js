@@ -1,8 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './MyProjects.css';
 
 export const MyProjects = ({ className }) => {
+    const [slideIndex, setSlideIndex] = useState(1);
+   
+  
+    function moveSlide(n) {
+      setSlideIndex((prevSlideIndex) => {
+        let newIndex = prevSlideIndex + n;
+        // Wrap slide index when out of bounds
+        if (newIndex < 1) {
+          newIndex = slides.length; // Go to the last slide
+        } else if (newIndex > slides.length) {
+          newIndex = 1; // Go back to the first slide
+        }
+        return newIndex;
+      });
+    }
+    
+    
+  
+    const slideIndexToShow = slideIndex - 1; // Adjust for array indexing
+  
+    const slides = [
+      {
+        image: "images/figjam1.png",
+        alt: "Ben fishing",
+        caption: "Fishing",
+      },
+      {
+        image: "images/figjam2.png",
+        alt: "Boys and ducks",
+        caption: "Feeding time",
+      },
+      {
+        image: "images/figma-mob.png",
+        alt: "The boys in the woods",
+        caption: "The woods",
+      },
+      {
+        image: "images/figma-desk.png",
+        alt: "Boys with sunflowers",
+        caption: "Sunflowers",
+      },
+      {
+        image: "images/team-JSON.png",
+        alt: "Boys with sunflowers",
+        caption: "Sunflowers",
+      },
+    ];
+
+
   const projects = [
     {
       id: "kindr",
@@ -39,6 +88,7 @@ export const MyProjects = ({ className }) => {
         <p>It was a team effort and I tended to work more on the frontend side of things as I enjoyed creating something that matched our Figma designs</p>
         <p>I learnt a lot from my team, and who knows maybe one day I'll convince them to collab again.</p>
 
+        
 
           <div className="project-video-wrapper">
             <iframe 
