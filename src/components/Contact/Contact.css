@@ -113,21 +113,41 @@
   
   
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     .contact-container {
-      max-width: 80%;  /* Limits the content width to 80% */
-      margin: 0 auto;  /* Centers the content horizontally */
-      padding: 2rem; /* Adds padding around the content */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-      border-radius: 10px; /* Rounded corners */
-      backdrop-filter: blur(10px); /* Blurred background effect */
+      max-width: 80%;
+      padding: 2rem;
+      gap: 2rem;
+    }
+  
+    #contact .gradient-heading {
+      font-size: 3rem; /* Adjusted for medium-sized devices */
+      
+    }
+  
+    .social-links {
+      gap: 15px;
+      padding-top: 15px;
+    }
   }
-
-  #contact .gradient-heading{
-    font-size: 2rem;
+  
+  @media (max-width: 600px) {
+    .contact-container {
+      max-width: 90%; /* Even wider for very small screens */
+      padding: 1rem;
+    }
+  
+    #contact .gradient-heading {
+      font-size: 2rem; /* Adjusted for small devices */
+    }
+  
+    .social-links a {
+      font-size: 0.8em; /* Smaller icons */
+    }
+  
+    .social-links {
+      gap: 10px;
+      padding-top: 10px;
+    }
   }
-
-  }
+  
