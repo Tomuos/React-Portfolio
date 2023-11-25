@@ -52,6 +52,49 @@ export const MyProjects = ({ className }) => {
     return () => clearInterval(timer);
   }, [moveSlide, slideIndex]);
   
+  document.querySelectorAll('.project-image').forEach(image => {
+    let frame;
+
+    const handleMouseMove = (e) => {
+        if (frame) {
+            cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+            const { left, top, width, height } = e.target.getBoundingClientRect();
+            const x = (e.clientX - left) / width;
+            const y = (e.clientY - top) / height;
+
+            const tiltX = (y - 0.5) * 20;
+            const tiltY = (0.5 - x) * 20;
+
+            e.target.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+
+            const shadowX = tiltY * 1.5;
+            const shadowY = tiltX * 1.5;
+            e.target.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(0, 0, 0, 0.5)`;
+        });
+    };
+
+    image.addEventListener('mousemove', handleMouseMove);
+
+    image.addEventListener('mouseleave', (e) => {
+        if (frame) {
+            cancelAnimationFrame(frame);
+        }
+        
+        e.target.style.transition = 'transform 0.5s ease-out, box-shadow 0.5s ease-out';
+        e.target.style.transform = 'none';
+        e.target.style.boxShadow = '10px 10px 30px rgba(0, 0, 0, 0.5)';
+    });
+
+    image.addEventListener('mouseenter', (e) => {
+        e.target.style.transition = 'none';
+    });
+});
+
+
+
 
   // Define your 'projects' array here
   const projects = [
