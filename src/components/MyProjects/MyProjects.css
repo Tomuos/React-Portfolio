@@ -114,6 +114,10 @@
     gap: 2rem; /* Adds space between child elements */
 }
 
+#projects .mid-link {
+    font-size: 1.5rem;
+    text-align: center;
+}
 
 .github-link {
     display: flex;
@@ -151,52 +155,36 @@
     border-radius: 30px;
   }
   
-  #my-projects .slider-container {
+  #projects .slider-container {
     position: relative;
     max-width: 1000px; /* Adjust max-width as needed */
     margin: auto; /* This centers the slider on the page */
-    margin-top: 30px;
     overflow: hidden;
     border-radius: 30px;
-    padding: 1rem; /* Add padding around the slides */
-}
-
+  }
   
-  #my-projects .slider {
+  #projects .slider {
     display: flex;
-    width: 100%; /* Ensure the slider takes up the full width of the container */
     transition: transform 0.5s ease;
   }
   
-  #my-projects .slide {
-    flex: 0 0 100%; /* Each slide takes full width of the container */
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    box-sizing: border-box;
+  #projects .slide {
+    display: flex; /* Use flexbox to provide easier alignment */
+    justify-content: center; /* Center horizontally in the flex container */
+    align-items: center; /* Center vertically in the flex container */
+    min-width: 100%; /* Each slide takes full width of the container */
+    box-sizing: border-box; /* Include padding and borders in the element's total width and height */
     position: relative;
-    min-width: 100%;
   }
   
-  #my-projects .slide img {
+  #projects .slide img {
     width: 100%; /* Full width of the slide */
-    height: 100%; /* Make the image fill the slide vertically */
-    object-fit: fill; /* This will stretch the image to fill the area, without preserving the aspect ratio */
+    height: 600px; /* Fixed height for all images */
+    object-fit: cover; /* Cover the area, cropping the image if necessary */
   }
   
-  #my-projects .slide,
-  #my-projects .slide img {
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
   
-  #my-projects .slide {
-    background-size: cover;
-    background-position: center;
-  }
-  
-  #my-projects .slide span {
+  #projects .slide span {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -205,7 +193,7 @@
     padding: 5px;
   }
   
-  #my-projects .slide-arrow {
+  #projects .slide-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -217,11 +205,11 @@
     z-index: 2;
   }
   
-  #my-projects .prev-arrow {
+  #projects .prev-arrow {
     left: 10px;
   }
   
-  #my-projects .next-arrow {
+  #projects .next-arrow {
     right: 10px;
   }
   
@@ -261,11 +249,10 @@
         height: auto;
     }
 
-    .project-image, .project-video {
-        width: 100%; /* Full width for project images and videos */
-        height: auto;
-    }
+   
 
+
+    
     .project-container {
         max-width: 100%; /* Use full width of the screen */
     }
@@ -284,7 +271,7 @@
     
 
     .project-video-wrapper {
-        padding-top: 75%; /* Adjust aspect ratio for mobile */
+        padding-top: 2%; /* Adjust aspect ratio for mobile */
     }
 
     .github-link img {
@@ -295,25 +282,31 @@
 
 }
 
+
+
 @media screen and (max-width: 768px) {
-    #my-projects .slider-container {
-     
-        margin-top: 30px;
-        overflow: hidden;
-        border-radius: 30px;
-        padding: 1rem; /* Add padding around the slides */
+    .project-container {
+        padding: 1rem; /* Smaller padding */
+        max-width: 100%; /* Use full width of the screen */
+    }
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    #projects .slider-container {
+      width: 100%;
     }
   
-    #my-projects .slide img {
-        width: 100%; /* Full width of the slide */
-        height: 100%; /* Make the image fill the slide vertically */
-        object-fit: fill; /* This will stretch the image to fill the area, without preserving the aspect ratio */   
-    
+    #projects .slide img {
+      height: 200px; /* Adjust the height for smaller screens */
+      width: 100vw;
       border-radius: 10px;
     }
   
-    #my-projects .slide span {
+    #projects .slide span {
       position: absolute;
+      font-size: 0.5rem;
       bottom: 0; /* Align the bottom of the span with the bottom of the slide */
       left: 50%; /* Center the span from the left */
       transform: translateX(-50%); /* Center the span horizontally */

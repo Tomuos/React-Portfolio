@@ -96,7 +96,7 @@ export const MyProjects = ({ className }) => {
           {/* <p>{slides[slideIndex].caption}</p> */}
           <a href={projects[0].links.find(link => link.type === "app").url} target="_blank" rel="noopener noreferrer">
             <img src={projects[0].image} alt="Kindr website link" className="project-image link-icon" />
-            
+            <p className='mid-link'>⬆ Check out the app ⬆</p>
           </a>
 
           <div className="project-video-wrapper">
@@ -106,7 +106,7 @@ export const MyProjects = ({ className }) => {
               className="project-video"
               allowFullScreen
             ></iframe>
-            <p>Kindr App presentation</p>
+            
           </div>
 
           <a href={projects[0].links.find(link => link.type === "github").url} target="_blank" rel="noopener noreferrer" className="github-link">
