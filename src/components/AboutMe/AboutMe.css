@@ -232,15 +232,19 @@ width: 60%;
 }
 
 .about-me-image {
-width: 40%;
-
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  padding: 2rem; /* Add some padding around the image */
 }
 
 .about-me-image img {
-padding-top: 2em;
-width: 100%;
-border-radius: 30px;
+  border-radius: 50%; /* Make the image circular */
+  max-width: 450px; /* Maximum width of the image, adjust as needed */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area properly */
 }
+
 
 
 /* #hobbiesSection {
@@ -365,9 +369,11 @@ text-align: center; /* This will center the title and text */
     width: 100%; /* Full width to utilize space */
   }
 
-  .about-me-image img {
-    max-width: 100%; /* Ensure image is not larger than its container */
-    height: auto; /* Maintain aspect ratio */
+  @media screen and (max-width: 768px) {
+    .about-me-image img {
+      max-width: 200px; /* Adjust the size for mobile devices */
+      /* Other styles remain the same */
+    }
   }
 
   #about .content{
