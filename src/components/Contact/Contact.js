@@ -69,9 +69,10 @@ export const Contact = () => {
             <FaLinkedinIn size={60} />
           </a>
             <span className="sr-only">LinkedIn</span>
-          <a href="/images/Tom BT CV 2023 Nov 16.pdf" download>
-            <BsFillFileEarmarkPdfFill size={60} />
-          </a>
+            <a href="/images/Tom27thNovCVstars.pdf" target="_blank" rel="noopener noreferrer">
+              <BsFillFileEarmarkPdfFill size={60} />
+            </a>
+
             <span className="sr-only">CV</span>
         </div>
       </div> 
