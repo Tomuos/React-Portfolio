@@ -124,6 +124,18 @@
   50% { transform: translateY(-10px); }
 }
 
+@media screen and (max-width: 1200px) {
+
+#skills .gradient-heading{
+  font-size: 2rem;
+}
+.white-block{
+  
+  max-width: 85%;
+  
+}
+}
+
 @media screen and (max-width: 768px) {
 
   #skills .gradient-heading{

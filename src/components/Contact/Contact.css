@@ -121,7 +121,7 @@
     }
   
     #contact .gradient-heading {
-      font-size: 3rem; /* Adjusted for medium-sized devices */
+      font-size: 2rem; /* Adjusted for medium-sized devices */
       
     }
   
@@ -130,9 +130,7 @@
       padding-top: 15px;
     }
 
-    .gradient-heading{
-      font-size: 2rem;
-    }
+    
   }
   
   @media (max-width: 600px) {
