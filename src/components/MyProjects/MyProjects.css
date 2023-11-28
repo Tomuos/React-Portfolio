@@ -40,8 +40,9 @@
     text-decoration: none;
     font-style: bold;
     transition: text-decoration 0.3s;
-    text-align: left;
-    padding: 1rem 0;
+    text-align: center;
+    padding: 1rem;
+    
 }
 
 #projects a {
@@ -251,6 +252,46 @@
     
 }
 
+@media screen and (max-width: 1200px) {
+  .project-container {
+    max-width: 100%; /* Use full width of the screen */
+    padding: 1rem; /* Smaller padding */
+}
+
+.gradient-heading{
+  font-size: 2rem;
+}
+
+  #projects p, #projects a {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+}
+
+#projects .slider-container {
+  width: 100%;
+}
+
+#projects .slide img {
+  height: 500px; /* Adjust the height for smaller screens */
+  width: 100vw;
+  border-radius: 10px;
+}
+
+#projects .slide span {
+  position: absolute;
+  font-size: 0.75rem;
+  bottom: 0; /* Align the bottom of the span with the bottom of the slide */
+  left: 50%; /* Center the span from the left */
+  transform: translateX(-50%); /* Center the span horizontally */
+  width: auto; /* Let the span size according to its content */
+  max-width: 90%; /* Give some padding from the edges of the screen */
+  margin: 0 auto; /* Center the span */
+  padding: 0.5rem; /* Add some padding inside the span */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  text-align: center; /* Center the text inside the span */
+}
+}
+
 /* Responsive Styles for Mobile Devices */
 @media screen and (max-width: 768px) {
     #projects p, #projects a {
@@ -275,7 +316,7 @@
     }
 
     #projects .gradient-heading {
-        font-size: 3rem; /* Smaller heading font size */
+        font-size: 2rem; /* Smaller heading font size */
     }
 
     .github-link {

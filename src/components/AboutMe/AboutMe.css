@@ -59,7 +59,7 @@ margin: 0; /* Remove any default margin */
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem;
 }
 
 #about h2 {
@@ -68,6 +68,15 @@ margin: 0; /* Remove any default margin */
   text-align: center;
   padding: 2rem 0;
 }
+
+#familySection {
+  display: flex; /* Use flexbox to align children */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  text-align: center; /* Center text within children */
+  padding: 2rem; /* Add padding for spacing around the content */
+}
+
 
 #about .gallery ul {
   display: flex;
@@ -315,6 +324,170 @@ text-align: center; /* This will center the title and text */
   visibility: visible;
 }
 
+
+
+
+
+/*  */
+/*  */
+/*  */
+/* Responsive adjustments screen size 1200 */
+@media screen and (max-width: 1200px) {
+  .about-me-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items for a better look */
+  }
+
+  
+
+  #about p {
+    font-size: 1.5rem; /* Adjust font size for readability */
+    text-align: center; /* Center-align the text */
+     
+  }
+
+  .about-me-image {
+    
+    width: 100%; /* Full width to utilize space */
+  }
+
+  @media screen and (max-width: 1200px) {
+    .about-me-image img {
+      max-width: 400px; /* Adjust the size for mobile devices */
+      /* Other styles remain the same */
+    }
+  }
+
+  #about .content{
+    max-width: 100%;
+  }
+
+  .gradient-heading{
+    font-size: 2rem;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .hobby-item, .hobby-item2 {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Height is auto to maintain aspect ratio */
+    min-height: 200px; /* Minimum height to keep some consistency */
+  }
+
+  .hobby-item img, .hobby-item2 img {
+    height: auto; /* Adjust height automatically */
+    min-height: 200px; /* Minimum height to match the hobby-item2 size */
+    object-fit: contain; /* Show the full image on smaller screens */
+  }
+
+  .hobby-item span, .hobby-item2 span {
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Start at 50% from the left */
+    transform: translateX(-50%); /* Offset by half its width to center */
+    width: calc(100% - 1rem); /* Width minus padding */
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    text-align: center; /* Center the text */
+    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effects */
+    opacity: 0; /* Hide caption initially */
+    visibility: hidden; /* Hide caption initially */
+  }
+  
+}
+@media screen and (max-width: 1200px) {
+  .hobbies-gallery {
+    display: flex;
+    flex-direction: row; /* Use row layout to fit more items in a row on tablets */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    gap: 1rem; /* Space between items */
+    padding: 1rem; /* Padding around the gallery */
+    margin: 0 auto; /* Center the gallery horizontally */
+  }
+
+  .hobby-item, .hobby-item2 {
+    width: calc(50% - 1rem); /* Adjust width to have two items per row with space between */
+    margin: 0.5rem; /* Provide some space around the items */
+    border-radius: 10px; /* Apply border-radius */
+  }
+
+  .hobby-item img, .hobby-item2 img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px; /* Apply border-radius */
+  }
+
+  /* Increase the size of the images and adjust span positioning for larger screens */
+  .hobby-item img, .hobby-item2 img {
+    max-width: 600px; /* Override any max-width restrictions */
+    max-height: none; /* Override any max-height restrictions */
+    height: 300px; /* New fixed height for a better view on tablets */
+  }
+
+  .hobby-item span, .hobby-item2 span {
+    padding: 0.5rem; /* Padding for the span */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    text-align: center; /* Center the text */
+    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+    margin-top: -5px; /* Negative margin to overlap the bottom of the image */
+  }
+
+  .hobby-item:hover img {
+    transform: none; /* Slightly enlarge images on hover */
+  }
+
+  .hobby-item2:hover img {
+    transform: none; /* Slightly enlarge images on hover */
+  }
+
+  .hobby-item span {
+    opacity: 1; /* Make the span fully visible on hover */
+    visibility: visible;
+  }
+  .hobby-item2 span {
+    opacity: 1; /* Make the span fully visible on hover */
+    visibility: visible;
+  }
+  /* Adjustments for hover effects are not needed for mobile */
+
+  @media screen and (max-width: 1200px) {
+    .slider-container {
+      width: 100%;
+    }
+  
+    .slide img {
+      height: 500px; /* Adjust the height for smaller screens */
+      width: 100vw;
+      border-radius: 10px;
+    }
+  
+    .slide span {
+      position: absolute;
+      bottom: 0; /* Align the bottom of the span with the bottom of the slide */
+      left: 50%; /* Center the span from the left */
+      transform: translateX(-50%); /* Center the span horizontally */
+      width: auto; /* Let the span size according to its content */
+      max-width: 90%; /* Give some padding from the edges of the screen */
+      margin: 0 auto; /* Center the span */
+      padding: 0.5rem; /* Add some padding inside the span */
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      color: white;
+      text-align: center; /* Center the text inside the span */
+    }
+  
+  }
+}
+
+/*  */
+/*  */
+/*  */
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .hobby-item, .hobby-item2 {

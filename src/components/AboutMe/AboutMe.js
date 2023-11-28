@@ -79,12 +79,13 @@ export const AboutMe = () => {
               passion to a forward-thinking company.
             </p>
           </div>
-        </div>
+        
 
         <h3>Coder & Tech Enthusiast 💻</h3>
         <p>
           I'm a full-stack developer with a passion for creating beautiful, functional and accessible web applications. I have a keen interest in the latest technologies and enjoy learning new skills.
         </p>
+        </div>
         <div className="gallery">
           <ul>
             <li>
@@ -116,14 +117,16 @@ export const AboutMe = () => {
             <button className="slide-arrow next-arrow" onClick={() => moveSlide(1)}>❯</button>
 
           </div>
+          <div className="familySection">
           <p>The boys love the outdoors and occasionally they become right posers.</p>
         </div>
 
-        <div id="hobbiesSection">
+        <div id="content">
           <h3>Hobbies and Funtimes</h3>
           <p>
             I also love hosting pizza parties and gaming — the new Zelda game TOTK is my current favorite!
           </p>
+          </div>
 
             <h2>My Pizza's</h2>
 

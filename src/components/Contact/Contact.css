@@ -113,7 +113,7 @@
   
   
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .contact-container {
       max-width: 80%;
       padding: 2rem;
@@ -128,6 +128,10 @@
     .social-links {
       gap: 15px;
       padding-top: 15px;
+    }
+
+    .gradient-heading{
+      font-size: 2rem;
     }
   }
   
