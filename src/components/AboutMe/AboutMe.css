@@ -74,7 +74,7 @@ margin: 0; /* Remove any default margin */
   flex-direction: column; /* Stack children vertically */
   align-items: center; /* Center children horizontally */
   text-align: center; /* Center text within children */
-  padding: 2rem; /* Add padding for spacing around the content */
+  
 }
 
 
@@ -585,13 +585,13 @@ text-align: center; /* This will center the title and text */
 }
 
 @media screen and (max-width: 768px) {
-  .slider-container {
+   .slider-container {
     width: 100%;
   }
 
-  .slide img {
+   .slide img {
     height: 200px; /* Adjust the height for smaller screens */
-    width: 100vw;
+    width: 800px;
     border-radius: 10px;
   }
 

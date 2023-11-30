@@ -127,7 +127,7 @@ export const AboutMe = () => {
             I also love hosting pizza parties and gaming — the new Zelda game TOTK is my current favorite!
           </p>
           </div>
-
+          </div>
             <h2>My Pizza's</h2>
 
           <div className="hobbies-gallery">
@@ -169,7 +169,7 @@ export const AboutMe = () => {
             </div>
           </div>
         </div>
-      </div>
+      
     </section>
   );
 };
