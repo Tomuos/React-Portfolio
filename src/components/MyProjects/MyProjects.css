@@ -47,7 +47,7 @@
 
 #projects a {
     color: rgb(133, 241, 255);
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-decoration: none;
     transition: text-decoration 0.3s;
 }
@@ -100,14 +100,21 @@
 .project-image, .project-video {
     width: 900px;
     height: auto;
-    border-radius: 30px;
+    /* border-radius: 30px; */
 }
+
+.project-image {
+  margin-bottom: -5px; /* Adjust the value to pull the image down and cover the white space */
+}
+
   
 .project-image {
   
   transition: transform 0.5s cubic-bezier(0.3, 0.7, 0.4, 1.5), box-shadow 0.5s cubic-bezier(0.3, 0.7, 0.4, 1.5);
   transform-style: preserve-3d;
+  backface-visibility: hidden;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); /* Initial shadow */
+  
 }
 
 
@@ -119,7 +126,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     gap: 2rem; /* Adds space between child elements */
@@ -171,7 +178,7 @@
     max-width: 1000px; /* Adjust max-width as needed */
     margin: auto; /* This centers the slider on the page */
     overflow: hidden;
-    border-radius: 30px;
+    /* border-radius: 30px; */
   }
   
   #projects .slider {
@@ -354,7 +361,7 @@
   
     #projects .slide img {
       height: 200px; /* Adjust the height for smaller screens */
-      width: 100vw;
+      width: 100%;
       border-radius: 10px;
     }
   

@@ -79,6 +79,9 @@ export const MyProjects = ({ className }) => {
         <div className="gradient-heading-container">
           <h1 className='gradient-heading'>Projects</h1>
         </div>
+        <p>Here are some of the projects I have worked on.</p>
+        <h2>Kindr</h2>
+        <p>The first Project here is Kindr, you'll see some images below of the figjam where we came up with the idea, some of the Figma designs for desktop and mobile and of course a Team photo of Paul, Naomi, Bryony, Christan, James and myself "Jason and the Arguments". </p>
 
         <div id='my-projects' className="slider-container">
           <div className="slider" style={{ transform: `translateX(-${slideIndex * 100}%)` }}>
@@ -93,8 +96,8 @@ export const MyProjects = ({ className }) => {
           <button className="slide-arrow next-arrow" onClick={() => moveSlide(1)}>&gt;</button>
         </div>
 
-        <p>Please take a look at the app the team and I worked on. Things I worked on were the navigation for mobile and pc responsiveness, FAQ page accordian to name a few.</p>
-        <p>It was a team effort and I tended to work more on the frontend side of things as I enjoyed creating something that matched our Figma designs</p>
+        <p>I was more frontend support on this app. Some of the areas I worked on were the navbar for mobile (burger menu) and desktop responsiveness, FAQ page accordian for hiding walls and various other bits and pieces.</p>
+        <p>As part of the frontend team we put a lot of effort into the designs on figma click <a  href='https://www.figma.com/file/AhRjaYy49cudHAV8tdzgoH/Json-and-the-Arguments-Hi-fi-Wireframes?type=design&node-id=95-597&mode=design&t=35NR6a1BEA1WhpyJ-0'>here</a> to see them </p>
         <p>I learnt a lot from my team, and who knows maybe one day I'll convince them to collab again.</p>
         <div className="project-content">
           {/* <p>{slides[slideIndex].caption}</p> */}
@@ -124,7 +127,35 @@ export const MyProjects = ({ className }) => {
             Link to the GitHub repo code
           </a>
         </div>
+
+              
+                      {/* this is where i want to add my other project word constructor it will have figma images perhaps i should add another slider*/}
+                      <h2>Word Constructor</h2>
+
+                      
+               
+                
+                <p>Word Constructor is a game where you have to guess the word by selecting letters from the alphabet. Luckily there are some helpful images for you work out what the word is. I made this game for my Son who struggles with his reading but I found when I could turn anything he found difficult into a game he really enjoyed it</p>
+                
+                <a href='https://word-constructor.netlify.app/' target="_blank" rel="noopener noreferrer">
+                  <TiltComponent 
+                    imageSrc={"images/Word-con.png"} 
+                    altText="Word Constructor link"
+                  />
+                  <p className='mid-link'>⬆ Word Constructor Demo ⬆</p>
+                </a>
+
+                <p> No mobile fuctionality currently as I couldn't get touch support to work with it. It uses <a href='https://react-dnd.github.io/react-dnd/about'>React-dnd</a> which is a drag and drop library for doing exactly that.</p>
+                <p>I was surprised how quickly my son understood what to do, he did try to use the keyboard at one point to i've added some keyboard support so if you click on the empty slots you could type instead.</p>
+
+
+                <p></p>
+
+
       </div>
+
+
+
     </section>
   );
 };
