@@ -81,7 +81,9 @@ export const MyProjects = ({ className }) => {
         </div>
         <p>Here are some of the projects I have worked on.</p>
         <h2>Kindr</h2>
-        <p>The first Project here is Kindr, you'll see some images below of the figjam where we came up with the idea, some of the Figma designs for desktop and mobile and of course a Team photo of Paul, Naomi, Bryony, Christan, James and myself "Jason and the Arguments". </p>
+        <p>Tech Stack: React, React-Router, Supabase and netlify</p>
+        <p>Kindr is a community driven app where you can ask for help or offer help in your community. The idea is bringing people together to make a kinder and better community</p>
+        <p>You'll see some images below of the figjam where we came up with the idea, some of the Figma designs for desktop and mobile and of course a Team photo of Paul, Naomi, Bryony, Christan, James and myself "Jason and the Arguments". </p>
 
         <div id='my-projects' className="slider-container">
           <div className="slider" style={{ transform: `translateX(-${slideIndex * 100}%)` }}>
@@ -132,10 +134,11 @@ export const MyProjects = ({ className }) => {
                       {/* this is where i want to add my other project word constructor it will have figma images perhaps i should add another slider*/}
                       <h2>Word Constructor</h2>
 
-                      
+                      {/* i would like to add a slider here too  */}
                
                 
                 <p>Word Constructor is a game where you have to guess the word by selecting letters from the alphabet. Luckily there are some helpful images for you work out what the word is. I made this game for my Son who struggles with his reading but I found when I could turn anything he found difficult into a game he really enjoyed it</p>
+                <p>The original design was to include sound but for now it can wait</p>
                 
                 <a href='https://word-constructor.netlify.app/' target="_blank" rel="noopener noreferrer">
                   <TiltComponent 
@@ -145,9 +148,9 @@ export const MyProjects = ({ className }) => {
                   <p className='mid-link'>⬆ Word Constructor Demo ⬆</p>
                 </a>
 
-                <p> No mobile fuctionality currently as I couldn't get touch support to work with it. It uses <a href='https://react-dnd.github.io/react-dnd/about'>React-dnd</a> which is a drag and drop library for doing exactly that.</p>
-                <p>I was surprised how quickly my son understood what to do, he did try to use the keyboard at one point to i've added some keyboard support so if you click on the empty slots you could type instead.</p>
-
+                <p> No mobile functionality currently as I couldn't get touch support to work with it. It uses <a href='https://react-dnd.github.io/react-dnd/about'>React-dnd</a> which is a drag and drop library for doing exactly that.</p>
+                
+                <p>I was surprised how quickly my son understood what to do, he did try to use the keyboard at one point to I've added some keyboard support so if you click on the empty slots you could type instead.</p>
 
                 <p></p>
 
