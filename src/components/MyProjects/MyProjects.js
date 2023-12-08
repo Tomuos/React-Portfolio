@@ -31,8 +31,10 @@ export const MyProjects = ({ className }) => {
     },
   ];
 
+  
+  
   const [slideIndex, setSlideIndex] = useState(0);
-
+  
   // Function to move the slide
   const moveSlide = useCallback((n) => {
     let newIndex = slideIndex + n;
@@ -43,17 +45,54 @@ export const MyProjects = ({ className }) => {
     }
     setSlideIndex(newIndex);
   }, [slideIndex, slides.length]);
-
+  
   useEffect(() => {
     const timer = setInterval(() => {
       moveSlide(1); // Automatically move to the next slide
     }, 5000); // Change slide every 5000ms (5 seconds)
-  
+    
     return () => clearInterval(timer);
   }, [moveSlide, slideIndex]);
-  
+
   
 
+  
+  
+  const wordConstructorSlides = [
+    {
+      image: "images/WordCon1.png",
+      alt: "Initial design for word constructor in Figma",
+      caption: "Initial design for word constructor in Figma",
+    },
+    {
+      image: "images/WordCon2.png",
+      alt: "First design for word constructor in React",
+      caption: "First design for word constructor in React",
+    },
+    
+  ];
+
+  // State for the Word Constructor slide index
+const [wordConstructorSlideIndex, setWordConstructorSlideIndex] = useState(0);
+
+// Function to move the Word Constructor slide
+const moveWordConstructorSlide = useCallback((n) => {
+  let newIndex = wordConstructorSlideIndex + n;
+  if (newIndex < 0) {
+    newIndex = wordConstructorSlides.length - 1;
+  } else if (newIndex >= wordConstructorSlides.length) {
+    newIndex = 0;
+  }
+  setWordConstructorSlideIndex(newIndex);
+}, [wordConstructorSlideIndex, wordConstructorSlides.length]);
+
+useEffect(() => {
+  const wordConstructorTimer = setInterval(() => {
+    moveWordConstructorSlide(1); // Automatically move to the next slide
+  }, 5000); // Adjust the time as needed
+
+  return () => clearInterval(wordConstructorTimer);
+}, [moveWordConstructorSlide, wordConstructorSlideIndex]);
 
 
 
@@ -108,7 +147,7 @@ export const MyProjects = ({ className }) => {
               imageSrc={projects[0].image} 
               altText="Kindr website link"
             />
-            <p className='mid-link'>⬆ Check out the app ⬆</p>
+            <p>⬆ Check out the app ⬆</p>
           </a>
 
 
@@ -128,25 +167,40 @@ export const MyProjects = ({ className }) => {
             </span>
             Link to the GitHub repo code
           </a>
-        </div>
+        
 
               
                       {/* this is where i want to add my other project word constructor it will have figma images perhaps i should add another slider*/}
                       <h2>Word Constructor</h2>
 
-                      {/* i would like to add a slider here too  */}
+                      {/* Slider for Word Constructor */}
+                        <div className="slider-container">
+                          <div className="slider" style={{ transform: `translateX(-${wordConstructorSlideIndex * 100}%)` }}>
+                            {wordConstructorSlides.map((slide, index) => (
+                              <div className="slide" key={index}>
+                                <img src={slide.image} alt={slide.alt} />
+                                <span>{slide.caption}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <button className="slide-arrow prev-arrow" onClick={() => moveWordConstructorSlide(-1)}>&lt;</button>
+                          <button className="slide-arrow next-arrow" onClick={() => moveWordConstructorSlide(1)}>&gt;</button>
+                        </div>
                
                 
                 <p>Word Constructor is a game where you have to guess the word by selecting letters from the alphabet. Luckily there are some helpful images for you work out what the word is. I made this game for my Son who struggles with his reading but I found when I could turn anything he found difficult into a game he really enjoyed it</p>
                 <p>The original design was to include sound but for now it can wait</p>
                 
+                <div className='centered-project-image'>
                 <a href='https://word-constructor.netlify.app/' target="_blank" rel="noopener noreferrer">
-                  <TiltComponent 
-                    imageSrc={"images/Word-con.png"} 
-                    altText="Word Constructor link"
-                  />
-                  <p className='mid-link'>⬆ Word Constructor Demo ⬆</p>
+                    <TiltComponent 
+                      imageSrc={"images/Word-con.png"} 
+                      altText="Word Constructor link"
+                      className="tilt-component"
+                    />
+                  <p>⬆ Word Constructor Demo ⬆</p>
                 </a>
+                </div>
 
                 <p> No mobile functionality currently as I couldn't get touch support to work with it. It uses <a href='https://react-dnd.github.io/react-dnd/about'>React-dnd</a> which is a drag and drop library for doing exactly that.</p>
                 
@@ -154,7 +208,7 @@ export const MyProjects = ({ className }) => {
 
                 <p></p>
 
-
+          </div>
       </div>
 
 

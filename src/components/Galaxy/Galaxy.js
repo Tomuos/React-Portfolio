@@ -138,7 +138,7 @@ export const Galaxy = () => {
         <div className="overlay">
           <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
           <div className="message">
-            <h1>Hello and welcome</h1>
+            <h1>Welcome</h1>
             <p>You have reached Tom's dev space.</p>
             <p>My universe of code 😀</p>
           </div>

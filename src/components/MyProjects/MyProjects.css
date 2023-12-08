@@ -207,7 +207,7 @@
     bottom: 10px;
     left: 10px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 5px;
   }
   
@@ -235,7 +235,19 @@
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
   }
   
-
+  .tilt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure full width */
+  }
+  
+  /* Responsive styles for the TiltComponent */
+  .tilt-component {
+    width: 100%; /* Use the full width */
+    max-width: 300px; /* Optional: if you want to limit the width */
+    margin: 0 auto; /* For centering if not using flexbox */
+  }
 
 /* Keyframes for floating animation */
 @keyframes float {
@@ -379,5 +391,53 @@
       color: white;
       text-align: center; /* Center the text inside the span */
     }
+     
+    }
   
-  }
+    @media screen and (min-width: 769px) {
+      .tilt-component {
+        /* Your tilt effect styles */
+        transition: transform 0.5s cubic-bezier(0.3, 0.7, 0.4, 1.5);
+        transform-style: preserve-3d;
+        /* ... other styles for tilting ... */
+      }
+
+      tilt-component {
+        /* Disable tilt effect styles */
+        transition: none;
+        transform: none;
+        
+        /* Fix image sizing */
+        width: 100%; /* Full width of the container */
+        max-width: none; /* Remove any max-width constraints */
+        height: auto; /* Maintain aspect ratio */
+        
+        /* Remove extra spacing if added by tilt effect */
+        margin: 0; /* Adjust as needed */
+        padding: 0; /* Adjust as needed */
+      }
+    }
+
+  @media screen and (max-width: 768px) {
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tilt-component {
+        width: 100%;
+        max-width: 300px; /* This max-width is to ensure that the image is not too wide on mobile */
+        margin: 0 auto; /* This will center the component if it's less than 100% width */
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .slide img {
+        width: 100%; /* Full width of the slide */
+        height: auto; /* Adjust height automatically */
+    }
+
+    
+}
