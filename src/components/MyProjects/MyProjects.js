@@ -173,6 +173,8 @@ useEffect(() => {
                       {/* this is where i want to add my other project word constructor it will have figma images perhaps i should add another slider*/}
                       <h2>Word Constructor</h2>
 
+                      <p>Tech Stack: React, React-dnd and netlify</p>
+
                       {/* Slider for Word Constructor */}
                         <div className="slider-container">
                           <div className="slider" style={{ transform: `translateX(-${wordConstructorSlideIndex * 100}%)` }}>
@@ -206,7 +208,14 @@ useEffect(() => {
                 
                 <p>I was surprised how quickly my son understood what to do, he did try to use the keyboard at one point to I've added some keyboard support so if you click on the empty slots you could type instead.</p>
 
-                <p></p>
+                <p>It was a fun project to make I may come back to it or make something like this in another project.</p>
+
+                <a href='https://github.com/Tomuos/word-games/tree/main/word-constructor' target="_blank" rel="noopener noreferrer" class="github-link">
+                <span class="github-icon-wrapper">
+                    <img src="images/github.png" alt="GitHub Logo" style={{width: "150px" }} />
+                </span>
+                Link to the GitHub repo code
+               </a>
 
           </div>
       </div>

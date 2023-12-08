@@ -31,7 +31,12 @@
 }
 
 
-
+#projects h2{
+  text-decoration: underline;
+  text-align: center;
+  font-size: 3rem;
+  color: aquamarine;
+}
 
 #projects p 
  {
