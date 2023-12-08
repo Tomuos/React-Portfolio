@@ -6,6 +6,8 @@
 }
 
 .overlay {
+  display: flex;
+  flex-direction: row;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,17 +21,17 @@
 }
 
 
-.message {
+.galaxyMsg {
   color: white;
   font-size: 3rem; /* Large font size for larger screens */
 }
 
-.message h1 {
+.galaxyHi {
   background: linear-gradient(to right, rgb(179, 0, 255), rgb(0, 140, 255));
-  -webkit-background-clip: text;
+  -webkit-background-clip: text;  
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2em; /* Adjust heading size */
+  font-size: 12em; /* Adjust heading size */
   text-align: center;
 }
 
@@ -50,17 +52,15 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .overlay {
-    flex-direction: column;
-  }
+@media screen and (max-width: 1280px) {
+  
 
-  .message {
+  .galaxyMsg {
     font-size: 2rem; /* Smaller font size for mobile devices */
   }
 
-  .message h1 {
-    font-size: 2.5em; /* Adjust heading size for mobile devices */
+  .galaxyHi {
+    font-size: 8em; /* Adjust heading size for mobile devices */
   }
 
   .pillars {
@@ -70,13 +70,29 @@
   
 }
 
-@media screen and (max-width: 768px) {
-  .message {
-    font-size: 1.5rem; /* Smaller font size for mobile devices */
+@media screen and (max-width: 1200px){
+  .overlay {
+    flex-direction: column;
   }
 
-  .message h1 {
-    font-size: 1.5em; /* Adjust heading size for mobile devices */
+  .galaxyMsg {
+    font-size: 2rem; /* Smaller font size for mobile devices */
+  }
+
+  .galaxyHi {
+    font-size: 8rem; /* Adjust heading size for mobile devices */
+  
+}
+  
+}
+
+@media screen and (max-width: 768px) {
+  .galaxyMsg {
+    font-size: 1.2rem; /* Smaller font size for mobile devices */
+  }
+
+  .galaxyHi {
+    font-size: 5em; /* Adjust heading size for mobile devices */
   }
 }
 
@@ -85,7 +101,7 @@
     flex-direction: column;
   }
 
-  .message, .pillars {
+  .galaxyMsg .pillars {
     margin: 10px 0; /* Add some margin for spacing */
   }
   .pillars {
@@ -94,11 +110,11 @@
 }
 
 @media screen and (max-width: 320px) {
-  .message {
+  .galaxyMsg {
     font-size: 1rem; /* Smaller font size for mobile devices */
   }
 
-  .message, .pillars {
+  .galaxyMsg, .pillars {
     margin: 2px 0; /* Add some margin for spacing */
   }
 
