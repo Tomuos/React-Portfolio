@@ -136,12 +136,12 @@ export const Galaxy = () => {
       <div style={{ height: '100vh', overflow: 'hidden' }}>
         <div ref={galaxyRef} className="galaxy-canvas" />
         <div className="overlay">
-          <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
           <div className="message">
             <h1 className='galaxyHi'>Welcome</h1>
             <p className='galaxyMsg'>You have reached Tom's dev space.</p>
             <p className='galaxyMsg'>My universe of code 😀</p>
           </div>
+          <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
         </div>
       </div>
     </section>
