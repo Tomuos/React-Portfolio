@@ -94,6 +94,7 @@
   .galaxyHi {
     font-size: 5em; /* Adjust heading size for mobile devices */
   }
+  
 }
 
 @media screen and (max-width: 768px) {
