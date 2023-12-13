@@ -193,7 +193,7 @@ useEffect(() => {
                 <p>Word Constructor is a game where you have to guess the word by selecting letters from the alphabet. Luckily there are some helpful images for you work out what the word is. I made this game for my Son who struggles with his reading but I found when I could turn anything he found difficult into a game he really enjoyed it</p>
                 <p>The original design was to include sound but for now it can wait</p>
                 
-                <div className='centered-project-image'>
+                
                 <a href='https://word-constructor.netlify.app/' target="_blank" rel="noopener noreferrer">
                     <TiltComponent 
                       imageSrc={"images/Word-con.png"} 
@@ -218,7 +218,7 @@ useEffect(() => {
                </a>
 
           </div>
-      </div>
+      
 
 
 

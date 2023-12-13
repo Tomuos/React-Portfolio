@@ -291,12 +291,12 @@
 }
 
 #projects .slider-container {
-  width: 100%;
+  width: 80%;
 }
 
 #projects .slide img {
   height: 500px; /* Adjust the height for smaller screens */
-  width: 100vw;
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -314,6 +314,35 @@
   color: white;
   text-align: center; /* Center the text inside the span */
 }
+
+.tilt-component{
+  /* Disable tilt effect styles */
+  transition: none;
+  transform: none;
+  
+  /* Fix image sizing */
+  width: 80%; /* Full width of the container */
+  max-width: none; /* Remove any max-width constraints */
+  height: auto; /* Maintain aspect ratio */
+  
+  /* Remove extra spacing if added by tilt effect */
+  margin: 0; /* Adjust as needed */
+  padding: 0; /* Adjust as needed */
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .tilt-component {
+    /* Disable tilt effect styles */
+    transition: none;
+    transform: none;
+    /* Adjust width and height as needed */
+    width: auto;
+    height: auto;
+    /* Remove extra spacing if added by tilt effect */
+    margin: 0;
+    padding: 0;
+  }
 }
 
 /* Responsive Styles for Mobile Devices */
@@ -399,40 +428,19 @@
      
     }
   
-    @media screen and (min-width: 769px) {
-      .tilt-component {
-        /* Your tilt effect styles */
-        transition: transform 0.5s cubic-bezier(0.3, 0.7, 0.4, 1.5);
-        transform-style: preserve-3d;
-        /* ... other styles for tilting ... */
-      }
 
-      tilt-component {
-        /* Disable tilt effect styles */
-        transition: none;
-        transform: none;
-        
-        /* Fix image sizing */
-        width: 100%; /* Full width of the container */
-        max-width: none; /* Remove any max-width constraints */
-        height: auto; /* Maintain aspect ratio */
-        
-        /* Remove extra spacing if added by tilt effect */
-        margin: 0; /* Adjust as needed */
-        padding: 0; /* Adjust as needed */
-      }
-    }
 
   @media screen and (max-width: 768px) {
     .project-content {
         flex-direction: column;
         align-items: center;
+        
     }
 
   
 
-    .slider-container {
-        width: 100%;
+    #projects .slider-container {
+        width: 90%;
     }
 
     #projects .slide img {
@@ -441,6 +449,13 @@
       object-fit: contain; /* make sure the full image is visible */
     }
     
+    .project-video-wrapper {
+      position: relative;
+      padding-top: 30%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+      height: 200px;
+      width: 90%;
+      overflow: hidden;
+    }
 
     
 }
@@ -451,7 +466,7 @@
     transform: none;
     
     /* Fix image sizing */
-    width: 100%; /* Full width of the container */
+    width: 90%; /* Full width of the container */
     max-width: none; /* Remove any max-width constraints */
     height: auto; /* Maintain aspect ratio */
     
