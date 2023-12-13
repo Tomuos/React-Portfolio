@@ -70,9 +70,10 @@
   
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1400px){
   .overlay {
     flex-direction: column;
+    padding-top: 8rem;
   }
 
   .galaxyMsg {
@@ -86,7 +87,52 @@
   
 }
 
+@media screen and (max-width: 1200px){
+  .overlay {
+    flex-direction: column;
+    padding-top: 5rem;
+  }
+
+  .galaxyMsg {
+    font-size: 2rem; /* Smaller font size for mobile devices */
+  }
+
+  .galaxyHi {
+    font-size: 8rem; /* Adjust heading size for mobile devices */
+  
+}
+  
+
+}
+
+@media screen and (max-width: 850px) {
+  .overlay {
+    flex-direction: row;
+    padding-top: 2rem;
+  }
+
+  .galaxyMsg {
+    font-size: 1.5rem; /* Smaller font size for mobile devices */
+  }
+
+  .galaxyHi {
+    font-size: 6rem; /* Adjust heading size for mobile devices */
+  }
+  .pillars {
+    max-width: 100%;
+    height: 350px;
+    
+  }
+}
+
+
 @media screen and (max-width: 768px) {
+
+  .overlay {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
   .galaxyMsg {
     font-size: 1.2rem; /* Smaller font size for mobile devices */
   }
