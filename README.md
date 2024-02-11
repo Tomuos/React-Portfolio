@@ -26,5 +26,19 @@ Explore the live version to see my work in action, including a responsive design
 
 ## More projects to be added soon. 
 
-- **Movie Review app:** Search movies checkout the stats and if you like you can leave a review
+- **Movie Review app:** Search movies checkout the stats and if you like, you can leave a review
 
+- **Phonics memory game:** A game to help kids learn phonics, the idea is to match the end of the word. Dog and log, Cat and Hat simple and easy is what i'm aiming for.
+
+
+## Technologies Used
+- **React:** A JavaScript library for building user interfaces.
+- **HTML5:** The latest version of the HTML markup language.
+- **CSS3:** The latest version of the Cascading Style Sheets language.
+- **Netlify:** A platform that offers continuous deployment and hosting services for static websites.
+- **GitHub:** A provider of Internet hosting for software development and version control using Git.
+
+## 
+Thank you for visiting my portfolio site. If you have any questions or would like to connect, please feel free to reach out to me through the contact form on the site or via email at Tomulvlup@gmail.com or on [LinkedIn](https://www.linkedin.com/in/tomulvlup/). 
+
+![See-you-soon](./readme-images/See-you-space-cowboy.png)
