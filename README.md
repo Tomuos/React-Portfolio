@@ -41,4 +41,4 @@ Explore the live version to see my work in action, including a responsive design
 ## 
 Thank you for visiting my portfolio site. If you have any questions or would like to connect, please feel free to reach out to me through the contact form on the site or via email at Tomulvlup@gmail.com or on [LinkedIn](https://www.linkedin.com/in/tomulvlup/). 
 
-![See-you-soon](./readme-images/See-you-space-cowboy.png)
+![See-you-soon](./readme-images/landscape-see-you-space-cowboy.png)
