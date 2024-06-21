@@ -8,7 +8,7 @@ export const Footer = () => {
            
             <div className="footer-content">
             
-                <p>© 2023 Tom Burns-Tinkler. Website by Tom Burns-Tinkler, Created with React</p>
+                <p>Website by Tom Burns-Tinkler, Created with React</p>
                 <p>Thank you for visiting 👩‍🚀🚀</p>
                 
             </div>

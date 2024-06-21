@@ -6,13 +6,14 @@ export const Galaxy = () => {
   const galaxyRef = useRef(null);
 
   useEffect(() => {
+    const galaxyElement = galaxyRef.current;
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x1A0064);
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    if (galaxyRef.current) {
-      galaxyRef.current.appendChild(renderer.domElement);
+    if (galaxyElement) {
+      galaxyElement.appendChild(renderer.domElement);
     }
 
     const updateCamera = () => {
@@ -55,12 +56,11 @@ export const Galaxy = () => {
 
     return () => {
       window.removeEventListener('resize', updateCamera);
-      if (galaxyRef.current) {
-        galaxyRef.current.removeChild(renderer.domElement);
+      if (galaxyElement) {
+        galaxyElement.removeChild(renderer.domElement);
       }
     };
   }, []);
-
 
   // Function to create particles
   function createParticles() {
@@ -102,35 +102,35 @@ export const Galaxy = () => {
     return new THREE.Points(geometry, material);
   }
 
-    // Enhanced createStars function with varied sizes and initial velocities
-    function createStars() {
-      const starTexture = new THREE.TextureLoader().load('/images/lens-flair.png');
-      const stars = [];
-      const numStars = 1000;
-  
-      for (let i = 0; i < numStars; i++) {
-        const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
-        const star = new THREE.Sprite(starMaterial);
-  
-        // Randomize position
-        star.position.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
-  
-        // Randomize scale for varied sizes
-        const scale = Math.random() * 0.1 + 0.05; // Adjust this range for size variation
-        star.scale.set(scale, scale, scale);
-  
-        // Store velocity for movement
-        star.velocity = new THREE.Vector3(
-          (Math.random() - 0.5) * 0.002, 
-          (Math.random() - 0.5) * 0.002, 
-          (Math.random() - 0.5) * 0.002
-        );
-  
-        stars.push(star);
-      }
-  
-      return stars;
+  // Enhanced createStars function with varied sizes and initial velocities
+  function createStars() {
+    const starTexture = new THREE.TextureLoader().load('/images/lens-flair.png');
+    const stars = [];
+    const numStars = 1000;
+
+    for (let i = 0; i < numStars; i++) {
+      const starMaterial = new THREE.SpriteMaterial({ map: starTexture });
+      const star = new THREE.Sprite(starMaterial);
+
+      // Randomize position
+      star.position.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
+
+      // Randomize scale for varied sizes
+      const scale = Math.random() * 0.1 + 0.05; // Adjust this range for size variation
+      star.scale.set(scale, scale, scale);
+
+      // Store velocity for movement
+      star.velocity = new THREE.Vector3(
+        (Math.random() - 0.5) * 0.002,
+        (Math.random() - 0.5) * 0.002,
+        (Math.random() - 0.5) * 0.002
+      );
+
+      stars.push(star);
     }
+
+    return stars;
+  }
 
   return (
     <section id="home" className="flex justify-center items-center relative">
