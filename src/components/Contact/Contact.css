@@ -94,6 +94,24 @@
     cursor: pointer;
   }
 
+
+  .floating-astronaut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 500px;
+    animation: floating 5s ease-in-out infinite;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Floating animation */
+  @keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
   .social-links {
     display: flex;
     justify-content: center;

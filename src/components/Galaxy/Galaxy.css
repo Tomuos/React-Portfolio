@@ -35,10 +35,18 @@
   text-align: center;
 }
 
-.pillars {
+.Tom-in-space {
   max-width: 100%;
   height: 800px;
-  
+  animation: floating 5s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+/* Floating animation */
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -63,7 +71,7 @@
     font-size: 8em; /* Adjust heading size for mobile devices */
   }
 
-  .pillars {
+  .Tom-in-space {
     max-width: 80%;
     height: auto;
   }
@@ -118,7 +126,7 @@
   .galaxyHi {
     font-size: 6rem; /* Adjust heading size for mobile devices */
   }
-  .pillars {
+  .Tom-in-space {
     max-width: 100%;
     height: 350px;
     
@@ -151,7 +159,7 @@
   .galaxyMsg .pillars {
     margin: 10px 0; /* Add some margin for spacing */
   }
-  .pillars {
+  .Tom-in-space {
     max-width: 80%;
     height: auto;}
 }
@@ -166,7 +174,7 @@
   }
 
 
-  .pillars {
+  .Tom-in-space {
     max-width: 70%;
     height: auto;
   }

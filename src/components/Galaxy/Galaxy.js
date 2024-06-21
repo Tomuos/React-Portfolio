@@ -6,19 +6,15 @@ export const Galaxy = () => {
   const galaxyRef = useRef(null);
 
   useEffect(() => {
-    // Initialize scene, camera, and renderer
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x1A0064);
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    
-    // Append renderer to the DOM
     if (galaxyRef.current) {
       galaxyRef.current.appendChild(renderer.domElement);
     }
 
-    // Handle window resize
     const updateCamera = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -26,40 +22,45 @@ export const Galaxy = () => {
     };
     window.addEventListener('resize', updateCamera);
 
-    // Cleanup function
-    const cleanup = () => {
-      window.removeEventListener('resize', updateCamera);
-      galaxyRef.current.removeChild(renderer.domElement);
-    };
-
-    // Create particles
     const particles = createParticles();
     scene.add(particles);
 
-  // Create stars
-  const stars = createStars();
-  stars.forEach(star => scene.add(star));
+    const stars = createStars();
+    stars.forEach(star => scene.add(star));
 
-  // Animation loop
-  const animate = () => {
-    requestAnimationFrame(animate);
+    const boundary = 20;
 
-    // Animate stars
-    stars.forEach(star => {
-      star.position.add(star.velocity);
-    });
+    const animate = () => {
+      requestAnimationFrame(animate);
 
-    // Particles rotation
-    particles.rotation.x += 0.0003;
-    particles.rotation.y += 0.0003;
+      stars.forEach(star => {
+        star.position.add(star.velocity);
 
-    renderer.render(scene, camera);
-  };
-  animate();
+        if (star.position.x > boundary) star.position.x = -boundary;
+        else if (star.position.x < -boundary) star.position.x = boundary;
 
-  // Cleanup on component unmount
-  return cleanup;
-}, []);
+        if (star.position.y > boundary) star.position.y = -boundary;
+        else if (star.position.y < -boundary) star.position.y = boundary;
+
+        if (star.position.z > boundary) star.position.z = -boundary;
+        else if (star.position.z < -boundary) star.position.z = boundary;
+      });
+
+      particles.rotation.x += 0.0003;
+      particles.rotation.y += 0.0003;
+
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', updateCamera);
+      if (galaxyRef.current) {
+        galaxyRef.current.removeChild(renderer.domElement);
+      }
+    };
+  }, []);
+
 
   // Function to create particles
   function createParticles() {
@@ -141,7 +142,7 @@ export const Galaxy = () => {
             <p className='galaxyMsg'>You have reached Tom's dev space.</p>
             <p className='galaxyMsg'>My universe of code 😀</p>
           </div>
-          <img src="/images/pillarsofTom.png" alt="Pillars of Tom" className="pillars" />
+          <img src="images/Tom-in-space.png" alt="astronaut Tom" className="Tom-in-space" />
         </div>
       </div>
     </section>
